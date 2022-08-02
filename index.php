@@ -59,8 +59,8 @@ if ( $post_layout == 'one-column' ) {
 							endwhile;
 
 							the_posts_pagination( array(
-								'prev_text' => __( 'Prev', 'textdomain' ),
-								'next_text' => __( 'Next', 'textdomain' ),
+								'prev_text' => __( 'Prev', 'remark' ),
+								'next_text' => __( 'Next', 'remark' ),
 							) );
 
 						else :
