@@ -1,0 +1,138 @@
+.widget-area {
+  .wp-block-categories.wp-block-tag-cloud[class]{
+    a {
+      background: transparent;
+      color: #758598;
+      display: block;
+      color: #758598;
+      font-size: 16px !important;
+      letter-spacing: 0.15px;
+      line-height: 24px;
+      font-weight: 400;
+      transition: 0.3s linear 0s;
+
+      &:hover {
+        background: none;
+        color: #ba2a25;
+
+      }
+    }
+  }
+
+  .widget, .widget_block {
+    background: #ffffff;
+    padding: 20px;
+
+    .widget-title {
+      font-weight: 600;
+      font-size: 24px;
+      color: #1e293b;
+      margin-bottom: 20px;
+
+    }
+
+    select {
+      padding: 10px;
+
+    }
+
+    .cat-item {
+      position: relative;
+
+      .toggle-icon {
+        cursor: pointer;
+        position: absolute;
+        right: 5px;
+        top: 0;
+
+        &.active {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    .tagcloud, .wp-block-tag-cloud {
+      a {
+        font-size: 12px !important;
+        font-weight: 400;
+        color: #758598;
+        margin: 0 1px 6px 0;
+        padding: 3px 7px;
+        display: inline-block;
+        border: 1px solid #758598;
+        border-radius: 20px;
+
+        &:hover {
+          background: #ba2a25;
+          border: 1px solid #ba2a25;
+          color: #ffffff;
+
+        }
+      }
+    }
+
+    ul {
+      @media(max-width: 767px) {
+        margin-bottom: 30px;
+        
+      }
+      
+      li {
+        margin-bottom: 10px;
+
+        a {
+          color: #758598;
+          font-size: 16px;
+          letter-spacing: .15px;
+          line-height: 24px;
+          font-weight: 400;
+          transition: .3s linear 0s;
+
+          &:hover {
+            color: #ba2a25;
+          }
+        } 
+      }
+    }
+
+    input[type="search"] {
+      width: 100%;
+      padding: 8px 11px;
+      border: 0;
+      background: #efefef;
+      outline: none;
+    }
+    input[type="submit"] {
+      display: none;
+    }
+
+    audio {
+      min-width: 100%;
+
+    }
+
+    .wp-block-file a {
+      display: block;
+      margin: 0 0 10px;
+      
+    }
+
+    .wp-block-file__button {
+      display: inline-block !important;
+      margin-bottom: 0;
+
+    }
+
+    .wp-block-media-text {
+      display: inherit;
+    }
+  }
+
+  .widget_nav_menu {
+    li > ul, li > ol {
+      margin-bottom: 0;
+      margin-left: 15px;
+    }
+  }
+
+}
