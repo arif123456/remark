@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap");
 @font-face {
   font-family: "Lato";
   src: url("../fonts/Lato-Black.ttf");
@@ -120,6 +121,31 @@ Pagination
   margin: 30px 0;
 }
 
+.post-title {
+  font-size: 17px;
+  line-height: 22px;
+  margin-bottom: 11px;
+}
+
+.fa-clock {
+  margin-right: 2px;
+}
+
+.post-thumbnail {
+  overflow: hidden;
+}
+.post-thumbnail img {
+  transform: scale(1);
+  transition: 0.3s linear 0s;
+}
+
+.type-post:hover .post-thumbnail {
+  overflow: hidden;
+}
+.type-post:hover .post-thumbnail img {
+  transform: scale(1.05);
+}
+
 .pagination {
   width: 100%;
   background: #fff;
@@ -232,6 +258,10 @@ Post comment
   padding: 12px 30px;
   text-transform: uppercase;
   font-weight: 800;
+}
+
+.search-results .pagination {
+  margin: 0;
 }
 
 /* =========================

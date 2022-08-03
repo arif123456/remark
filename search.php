@@ -40,7 +40,10 @@ get_header();
 
 						endwhile;
 
-						the_posts_navigation();
+						the_posts_pagination( array(
+							'prev_text' => __( 'Prev', 'remark' ),
+							'next_text' => __( 'Next', 'remark' ),
+						) );
 
 						else :
 

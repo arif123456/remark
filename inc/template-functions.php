@@ -97,7 +97,7 @@ function remark_post_title() {
 	?>
 		<?php if ( ! empty ( $post_title ) ) { ?>
 			<?php if ( get_the_title() ) : ?>
-				<h2 class="text-lg font-bold mb-2"><a class="text-slate-800 visited:text-slate-800 hover:text-red-700" href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+				<h2 class="text-lg font-bold mb-2 post-title"><a class="font-bold text-black visited:text-black hover:text-red-700" href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 			<?php endif; ?>
 			<?php if ( is_sticky() ) echo '<span class="sticky-post">' . __( 'Sticky post', 'remark' ) . '</span>'; ?>
 		<?php } ?>
@@ -173,7 +173,7 @@ function post_author() {
 function remark_post_date() {
 	?>
 		<div class="text-sm font-semibold text-gray-500 mb-4 md:mb-0 lg:mb-0">
-			<i class="fa-solid fa-calendar"></i>
+			<i class="far fa-clock"></i>
 			<?php echo get_the_date( 'M j, Y' ); ?>
 		</div>
 	<?php
@@ -225,6 +225,7 @@ function remark_post_content() {
 					if ( $post_content == 'excerpt' ) {
 
 						the_excerpt();
+						echo '<a class="inline-block mb-4 text-sm font-semibold bg-red-700 hover:text-white visited:text-white text-white p-2 rounded" href="' . esc_url( get_permalink() ) . '">' . esc_html__( 'Read More', 'remark' ) . '</a>'; 
 					} else {
 	
 						the_content(
@@ -246,7 +247,7 @@ function remark_post_content() {
 					
 			?>
 		</div><!-- .entry-content -->
-		<?php } echo '<a href="' . esc_url( get_permalink() ) . '">' . esc_html__( 'Read more', 'remark' ) . '</a>'; ?>
+		<?php } ?>
 		
 	<?php
 }

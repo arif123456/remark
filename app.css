@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.1.4 | MIT License | https://tailwindcss.com
+! tailwindcss v3.1.7 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -763,6 +763,10 @@ video {
   border-radius: 0.5rem;
 }
 
+.rounded {
+  border-radius: 0.25rem;
+}
+
 .border {
   border-width: 1px;
 }
@@ -792,6 +796,11 @@ video {
   background-color: rgb(185 28 28 / var(--tw-bg-opacity));
 }
 
+.bg-gray-900 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(17 24 39 / var(--tw-bg-opacity));
+}
+
 .bg-\[\#111111\] {
   --tw-bg-opacity: 1;
   background-color: rgb(17 17 17 / var(--tw-bg-opacity));
@@ -812,6 +821,14 @@ video {
 
 .p-10 {
   padding: 2.5rem;
+}
+
+.p-2\.5 {
+  padding: 0.625rem;
+}
+
+.p-2 {
+  padding: 0.5rem;
 }
 
 .px-16 {
@@ -1012,6 +1029,11 @@ video {
   color: rgb(17 37 67 / var(--tw-text-opacity));
 }
 
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
 .text-gray-500 {
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity));
@@ -1044,12 +1066,16 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.visited\:text-slate-800:visited {
-  color: rgb(30 41 59 );
+.visited\:text-black:visited {
+  color: rgb(0 0 0 );
 }
 
 .visited\:text-white:visited {
   color: rgb(255 255 255 );
+}
+
+.visited\:text-slate-800:visited {
+  color: rgb(30 41 59 );
 }
 
 .hover\:bg-slate-800:hover {
@@ -1112,8 +1138,8 @@ video {
     width: 25%;
   }
 
-  .md\:w-1\/2 {
-    width: 50%;
+  .md\:w-full {
+    width: 100%;
   }
 
   .md\:w-1\/5 {

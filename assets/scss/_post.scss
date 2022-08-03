@@ -8,6 +8,38 @@ Pagination
   }
 }
 
+.post-title {
+  font-size: 17px;
+  line-height: 22px;
+  margin-bottom: 11px;
+}
+
+.fa-clock {
+  margin-right: 2px;
+
+}
+
+.post-thumbnail {
+  overflow: hidden;
+
+  img {
+    transform: scale(1);
+    transition: .3s linear 0s;
+  }
+}
+
+.type-post {
+  &:hover {
+    .post-thumbnail {
+      overflow: hidden;
+    
+      img {
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+
 .pagination {
   width: 100%;
   background: #fff;
@@ -164,5 +196,11 @@ Post comment
       text-transform: uppercase;
       font-weight: 800;
     }
+  }
+}
+
+.search-results {
+  .pagination {
+    margin: 0;
   }
 }
