@@ -66,7 +66,7 @@ if ( ! function_exists( 'remark_blog_post' ) ) {
 					
 				?>
 			
-				<div class="flex-none md:flex lg:flex items-start md:items-center lg:items-center justify-between gap-10 mb-2">
+				<ul class="gap-10 mb-2 post-meta">
 					<?php 
 						/**
 						 * @func post_author
@@ -76,7 +76,7 @@ if ( ! function_exists( 'remark_blog_post' ) ) {
 						*/
 						do_action( 'remark_post_meta' );
 					?>	
-				</div>
+				</ul>
 				<?php 
 					/**
 					 * @func remark_post_content
@@ -148,13 +148,9 @@ add_action( 'remark_post_meta', 'remark_post_meta' );
  */
 function post_author() {
 	?>
-		<div>
+		<li>
 			<a class="mb-8 md:mb-0 lg:mb-0 flex items-center" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>">
-					<span class="mr-2 rounded-full border border-gray-100 shadow-sm">
-						<?php
-							echo get_avatar(get_the_author_meta('user_email'), 38 );
-						?>
-					</span>
+					<i class="fa fa-user mr-2"></i>
 					<span class="text-sm font-semibold text-gray-500">
 						<?php 
 								global $current_user; wp_get_current_user();
@@ -163,7 +159,7 @@ function post_author() {
 						?>
 					</span>
 			</a>
-		</div>
+		</li>
 	<?php
 }
 
@@ -172,10 +168,12 @@ function post_author() {
  */
 function remark_post_date() {
 	?>
-		<div class="text-sm font-semibold text-gray-500 mb-4 md:mb-0 lg:mb-0">
-			<i class="far fa-clock"></i>
+		<li class="text-sm font-semibold text-gray-500 mb-4 md:mb-0 lg:mb-0">
+			<span class="mr-2">
+				<i class="far fa-clock"></i>
+			</span>
 			<?php echo get_the_date( 'M j, Y' ); ?>
-		</div>
+		</li>
 	<?php
 }
 
@@ -184,13 +182,13 @@ function remark_post_date() {
  */
 function remark_post_comment() {
 	?>
-		<div class="mb-4 md:mb-0 lg:mb-0">
-			<i class="fa-solid fa-comment"></i>
+		<li class="mb-4 md:mb-0 lg:mb-0">
+			<i class="fa-solid fa-comment mr-2"></i>
 			<?php 
 				if ( comments_open() ) {
 						comments_popup_link( '0', '1', '%', 'post-comments' );
 				} ?>
-		</div>
+		</li>
 	<?php
 }
 
@@ -199,7 +197,7 @@ function remark_post_comment() {
  */
 function remark_post_category() {
 	?>
-		<div>
+		<li class="post-category">
 			<?php
 
 				$category = get_the_category();
@@ -207,7 +205,7 @@ function remark_post_category() {
 				echo '<span><a class="text-xs font-semibold bg-red-700 hover:text-white visited:text-white text-white uppercase ml-0 md:ml-4 lg:ml-4 py-1 px-3" href="'. esc_url( $category_link ) .'">'. $category[0]->cat_name .'</a></span>';
 
 			?>
-		</div>
+		</li>
 	<?php
 }
 
@@ -290,7 +288,7 @@ if ( ! function_exists( 'remark_header' ) ) {
 							remark_navigation();
 						?>
 						
-						<div class="remark__header-right-section flex justify-end gap-7 w-full md:w-1/5 lg:w-1/5">
+						<div class="remark__header-right-section flex justify-end gap-7 w-full md:w-1/12 lg:w-1/12">
 							<?php 
 								/**
 								 * Header search.
@@ -361,7 +359,7 @@ if ( ! function_exists( 'remark_site_logo' ) ) {
 				$remark_description = get_bloginfo( 'description', 'display' );
 				if ( $remark_description || is_customize_preview() ) :
 					?>
-					<p class="site-description"><?php echo $remark_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
+					<p class="site-description"><?php echo $remark_description; ?></p>
 				<?php endif; ?>
 			</div><!-- .site-branding -->
 			<div class="toggle-icon-mobile">
@@ -380,13 +378,13 @@ if ( ! function_exists( 'remark_navigation' ) ) {
 	 */
 	function remark_navigation() {
 		?>
-			<nav id="site-navigation" class="w-full md:w-3/5 lg:w-3/5">
+			<nav id="site-navigation" class="w-full md:w-3/4 lg:w-3/4">
 				<?php
 				wp_nav_menu(
 					array(
 						'container_id'    => 'primary-menu',
 						'container_class' => 'mt-4 p-4 md:mt-0 lg:mt-0 md:p-0 lg:p-0 lg:block',
-						'menu_class'      => 'nav-menu flex-none md:flex lg:flex flex-nowrap md:flex-wrap lg:flex-wrap lg:-mx-4 list-none m-0',
+						'menu_class'      => 'nav-menu gap-1.5 flex-none md:flex lg:flex flex-nowrap md:flex-wrap lg:flex-wrap lg:-mx-4 list-none m-0',
 						'theme_location'  => 'primary',
 						'li_class'        => 'lg:mx-4',
 						'fallback_cb'     => false,
@@ -502,5 +500,55 @@ if ( ! function_exists( 'remark_footer_copyright_' ) ) {
 				</div><!-- .site-info -->
 			</div>
 		<?php
+	}
+}
+
+if ( ! function_exists( 'remark_breadcrumbs' ) ) {
+	/**
+	 * Footer Copyright
+	 *
+	 * @since 1.0.0
+	 */
+	function remark_breadcrumbs() {
+		$enable_bradcrumb = get_theme_mod( 'remark_enable_breadcrumb', true );
+
+		if ( $enable_bradcrumb === 'show' ) {
+			?>
+				<div class="bg-gray-50 border-t-2 border-slate-100	p-8">
+					<div class="container mx-auto">
+						<div class="px-8">
+							<?php 
+								echo '<a class="text-[#222] visited:text-[#222]" href="'.home_url().'" rel="nofollow">Home</a>';
+								if ( is_category() || is_single() ) {
+									echo '<i class="fa-solid fa-angles-right mx-2 text-xs"></i>';
+									$category = get_the_category();
+									$category_link = get_category_link( $category[0]->term_id );
+									echo '<a href="' . esc_url( $category_link ) . '">' . $category[0]->cat_name . '</a>';
+
+									if ( is_single() ) {
+										echo '<i class="fa-solid fa-angles-right mx-2 text-xs"></i>';
+										the_title();
+									}
+								} elseif( is_page() ) {
+									echo '<i class="fa-solid fa-angles-right mx-2 text-xs"></i>';
+									echo the_title();
+								} elseif ( is_search() ) {
+									echo '<i class="fa-solid fa-angles-right mx-2 text-xs"></i> Search Results for...';
+									echo '"<em>';
+									echo the_search_query();
+									echo '</em>"';
+								} elseif (  is_tag() ) {
+									echo '<i class="fa-solid fa-angles-right mx-2 text-xs"></i>';
+									$tag = get_the_tags();
+									$tag_link = get_category_link( $tag[0]->term_id );
+									echo '<a href="' . esc_url( $tag_link ) . '">' . $tag[0]->name . '</a>';
+									
+								}
+							?>
+						</div>
+					</div>
+				</div>
+			<?php
+		}
 	}
 }

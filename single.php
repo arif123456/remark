@@ -8,13 +8,21 @@
  */
 
 get_header();
+
+/**
+ * Breadcrumbs
+ *
+ * @since 1.0.0
+ */
+remark_breadcrumbs();
+
 ?>
 
 	<main id="primary" class="site-main">
 
 		<div class="container mx-auto">
 
-			<div class="flex-none md:flex lg:flex gap-10 pt-8 md:p-10 lg:p-10">
+			<div class="flex-none md:flex lg:flex gap-10 pt-8 md:p-6 lg:p-6">
 
 				<div class="w-full md:w-3/4 lg:w-3/4">
 					<?php

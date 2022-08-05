@@ -103,6 +103,14 @@ function remark_customize_register( $wp_customize ) {
 				) 
 		);
 
+		$wp_customize->add_section( 'remark_breadcrumbs_section', 
+			array(
+					'title'         => __( 'Breadcrumbs', 'remark' ),
+					'priority'      => 1,
+					'panel'         => 'remark_blog_option_panel'
+			) 
+		);
+
 		$wp_customize->add_section( 'remark_blog_sidebar_layout_section', 
 				array(
 						'title'         => __( 'Sidebar', 'remark' ),
@@ -312,14 +320,6 @@ function remark_customize_register( $wp_customize ) {
 			) 
 		);
 
-		$wp_customize->add_section( 'remark_single_blog_post_content_section', 
-			array(
-					'title'         => __( 'Related Post', 'remark' ),
-					'priority'      => 1,
-					'panel'         => 'remark_single_blog_post_panel'
-			) 
-		);
-
 		/* Feature Image */
 		$wp_customize->add_setting( 'remark_single_blog_post_feature_image',
 			array(
@@ -446,21 +446,21 @@ function remark_customize_register( $wp_customize ) {
 			) 
 		);
 
-		/* Related Post */
-		$wp_customize->add_setting( 'remark_single_blog_post_related',
+		/* Breadcrumbs */
+		$wp_customize->add_setting( 'remark_enable_breadcrumb',
 			array(
-					'sanitize_callback' => 'remark_sanitize_single_post_related',
+					'sanitize_callback' => 'remark_sanitize_breadcrumb',
 					'transport'         => 'refresh',
 					'default'   => 'hide',
 			)
 		);
 
-		$wp_customize->add_control( 'remark_single_blog_post_related', 
+		$wp_customize->add_control( 'remark_enable_breadcrumb', 
 			array(
 					'type'        => 'radio',
-					'label'       => 'Related Post',
+					'label'       => 'Breadcrumbs',
 					'priority'    => 10,
-					'section'     => 'remark_single_blog_post_content_section',
+					'section'     => 'remark_breadcrumbs_section',
 					'choices'           => array(
 							'hide'       => __( 'Hide', 'remark' ),
 							'show'      => __( 'Show', 'remark' ),
@@ -542,7 +542,7 @@ function remark_sanitize_post_content_option( $input ) {
 	return ( $input === "excerpt" ) ? "excerpt" : "full-content";
 }
 
-function remark_sanitize_single_post_related( $input ) {
+function remark_sanitize_breadcrumb( $input ) {
 	return ( $input === "hide" ) ? "hide" : "show";
 }
 

@@ -8,15 +8,26 @@ Pagination
   }
 }
 
+.post-meta {
+  li {
+    display: inline-block;
+    margin-right: 15px;
+
+    &.post-category {
+      span {
+        display: inline-block;
+        margin-bottom: 8px;
+
+      }
+    }
+
+  }
+}
+
 .post-title {
   font-size: 17px;
   line-height: 22px;
   margin-bottom: 11px;
-}
-
-.fa-clock {
-  margin-right: 2px;
-
 }
 
 .post-thumbnail {
