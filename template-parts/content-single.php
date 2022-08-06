@@ -40,7 +40,7 @@
 	<div class="bg-white p-8 mb-7">
 		<?php if ( ! empty( $post_title ) ) { ?> 
 		<?php if ( get_the_title() ) : ?>
-			<h2 class="text-3xl font-bold mb-2"><?php the_title(); ?></h2>
+			<h2 class="text-3xl font-bold text-[#272368] visited:text-[#272368] mb-4"><?php the_title(); ?></h2>
 		<?php endif; ?>
 		<?php if ( is_sticky() ) echo '<span class="sticky-post">' . __( 'Sticky post', 'remark' ) . '</span>'; ?>
 		<?php } ?>
@@ -48,9 +48,9 @@
 		<ul class="post-meta gap-10 mb-2">
 			<?php if ( ! empty( $author_meta ) ) { ?> 
 			<li>
-				<a class="mb-8 md:mb-0 lg:mb-0" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>">
-						<i class="fa fa-user mr-2"></i>
-						<span class="text-sm font-semibold text-gray-500">
+				<a class="mb-8 md:mb-0 lg:mb-0 text-sm font-medium text-[#272368] visited:text-[#272368] hover:text-indigo-600" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>">
+						<i class="fa fa-user mr-2 text-indigo-600"></i>
+						<span>
 							<?php 
 									global $current_user; wp_get_current_user();
 									echo get_the_author(); 
@@ -62,15 +62,15 @@
 			<?php } ?>
 
 			<?php if ( ! empty( $publish_date ) ) { ?>
-			<li class="text-sm font-semibold text-gray-500">
-				<i class="far fa-clock mr-2"></i>
+			<li class="text-sm mb-4 md:mb-0 lg:mb-0 font-medium text-[#272368] visited:text-[#272368]">
+				<i class="far fa-clock mr-2 text-indigo-600"></i>
 				<?php echo get_the_date( 'M j, Y' ); ?>
 			</li>
 			<?php } ?>
 
 			<?php if ( ! empty( $comment_meta ) ) { ?>
-			<li>
-				<i class="fa-solid fa-comment mr-2"></i>
+			<li class="text-sm font-medium text-[#272368] visited:text-[#272368] hover:text-indigo-600">
+				<i class="fa-solid fa-comment mr-2 text-indigo-600"></i>
 				<?php 
 					if ( comments_open() ) {
 							comments_popup_link( '0', '1', '%', 'post-comments' );
@@ -86,7 +86,7 @@
 					if ( is_array( $categories) || is_object( $categories )) {
 						foreach ( $categories as $category ) {
 							$category_link = get_category_link( $category->term_id );
-							echo '<span><a class="text-xs font-semibold bg-red-700 text-white visited:text-white uppercase ml-4 py-1	px-3" href="'. esc_url( $category_link ) .'">'. $category->cat_name .'</a></span>';
+							echo '<span><a class="text-sm font-medium bg-indigo-600 visited:text-white uppercase ml-4 py-1	px-3" href="'. esc_url( $category_link ) .'">'. $category->cat_name .'</a></span>';
 						}
 					}
 
@@ -95,7 +95,7 @@
 			<?php } ?>
 		</ul>
 	</div>
-	<div class="entry-content bg-white p-8 text-base font-normal text-gray-500 leading-6">
+	<div class="entry-content bg-white p-8 font-medium text-[#1d495e] leading-7">
 		<?php
 			the_content(
 				sprintf(
@@ -121,7 +121,7 @@
 						$tags = get_the_tags();
 						if ( is_array( $tags ) || is_object( $tags ) ) {
 							foreach( $tags as $tag ) {
-								echo '<li class="inline-block mb-2"><a class="text-sm	font-font-normal text-slate-800 bg-[#F2F4F3] hover:bg-red-700 hover:text-white rounded-lg py-1 px-4 mr-2" href="' . esc_url( get_tag_link( $tag->term_id ) ) . '">' . $tag->name . '</a></li>';
+								echo '<li class="inline-block mb-2"><a class="text-sm	font-font-normal text-slate-800 bg-[#F2F4F3] hover:bg-indigo-600 hover:text-white rounded-lg py-1 px-4 mr-2" href="' . esc_url( get_tag_link( $tag->term_id ) ) . '">' . $tag->name . '</a></li>';
 								
 							}
 						}

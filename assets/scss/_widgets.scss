@@ -13,10 +13,18 @@
 
       &:hover {
         background: none;
-        color: #ba2a25;
+        color: #4f46e5;
 
       }
     }
+  }
+
+  p {
+    color: #1d495e;
+    font-size: 15px;
+    line-height: 28px;
+    font-weight: 500;
+
   }
 
   .widget, .widget_block {
@@ -26,7 +34,7 @@
     .widget-title {
       font-weight: 600;
       font-size: 24px;
-      color: #1e293b;
+      color: #272368;
       margin-bottom: 20px;
 
     }
@@ -55,16 +63,16 @@
       a {
         font-size: 12px !important;
         font-weight: 400;
-        color: #758598;
+        color: #272368;
         margin: 0 1px 6px 0;
         padding: 3px 7px;
         display: inline-block;
-        border: 1px solid #758598;
+        border: 1px solid #1d495e;
         border-radius: 20px;
 
         &:hover {
-          background: #ba2a25;
-          border: 1px solid #ba2a25;
+          background: #4f46e5;
+          border: 1px solid #4f46e5;
           color: #ffffff;
 
         }
@@ -81,7 +89,7 @@
         margin-bottom: 10px;
 
         a {
-          color: #758598;
+          color: #272368;
           font-size: 16px;
           letter-spacing: .15px;
           line-height: 24px;
@@ -89,9 +97,16 @@
           transition: .3s linear 0s;
 
           &:hover {
-            color: #ba2a25;
+            color: #4f46e5;
           }
         } 
+
+        time {
+          color: #1d495e;
+          font-size: 12px;
+          font-weight: 300;
+
+        }
       }
     }
 

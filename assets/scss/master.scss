@@ -1,3 +1,10 @@
+@import './widgets';
+@import './post';
+@import './header';
+@import './footer';
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
+
 @font-face {
   font-family: 'Lato';
   src: url('../fonts/Lato-Black.ttf');
@@ -7,14 +14,15 @@
   font-weight: normal;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
 
 body {
   font-family: 'Lato';
   
 }
 
-@import './widgets';
-@import './post';
-@import './header';
-@import './footer';
+p, li, .entry-content {
+  color: #1d495e;
+  font-size: 15px;
+  line-height: 28px;
+
+}

@@ -97,7 +97,7 @@ function remark_post_title() {
 	?>
 		<?php if ( ! empty ( $post_title ) ) { ?>
 			<?php if ( get_the_title() ) : ?>
-				<h2 class="text-lg font-bold mb-2 post-title"><a class="font-bold text-black visited:text-black hover:text-red-700" href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+				<h2 class="text-lg font-bold mb-2 post-title"><a class="font-bold text-[#272368] visited:text-[#272368] hover:text-indigo-600" href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 			<?php endif; ?>
 			<?php if ( is_sticky() ) echo '<span class="sticky-post">' . __( 'Sticky post', 'remark' ) . '</span>'; ?>
 		<?php } ?>
@@ -149,9 +149,9 @@ add_action( 'remark_post_meta', 'remark_post_meta' );
 function post_author() {
 	?>
 		<li>
-			<a class="mb-8 md:mb-0 lg:mb-0 flex items-center" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>">
-					<i class="fa fa-user mr-2"></i>
-					<span class="text-sm font-semibold text-gray-500">
+			<a class="mb-8 md:mb-0 lg:mb-0 flex items-center text-sm font-medium text-[#272368] visited:text-[#272368] hover:text-indigo-600" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>">
+					<i class="fa fa-user mr-2 text-indigo-600"></i>
+					<span class="text-sm">
 						<?php 
 								global $current_user; wp_get_current_user();
 								echo get_the_author(); 
@@ -168,9 +168,9 @@ function post_author() {
  */
 function remark_post_date() {
 	?>
-		<li class="text-sm font-semibold text-gray-500 mb-4 md:mb-0 lg:mb-0">
+		<li class="text-sm mb-4 md:mb-0 lg:mb-0 font-medium text-[#272368] visited:text-[#272368]">
 			<span class="mr-2">
-				<i class="far fa-clock"></i>
+				<i class="far fa-clock text-indigo-600"></i>
 			</span>
 			<?php echo get_the_date( 'M j, Y' ); ?>
 		</li>
@@ -182,8 +182,8 @@ function remark_post_date() {
  */
 function remark_post_comment() {
 	?>
-		<li class="mb-4 md:mb-0 lg:mb-0">
-			<i class="fa-solid fa-comment mr-2"></i>
+		<li class="mb-4 md:mb-0 lg:mb-0 text-sm font-medium text-[#272368] visited:text-[#272368] hover:text-indigo-600">
+			<i class="fa-solid fa-comment mr-2 text-indigo-600"></i>
 			<?php 
 				if ( comments_open() ) {
 						comments_popup_link( '0', '1', '%', 'post-comments' );
@@ -202,7 +202,7 @@ function remark_post_category() {
 
 				$category = get_the_category();
 				$category_link = get_category_link( $category[0]->term_id );
-				echo '<span><a class="text-xs font-semibold bg-red-700 hover:text-white visited:text-white text-white uppercase ml-0 md:ml-4 lg:ml-4 py-1 px-3" href="'. esc_url( $category_link ) .'">'. $category[0]->cat_name .'</a></span>';
+				echo '<span><a class="text-sm font-medium bg-indigo-600 visited:text-white uppercase ml-0 md:ml-4 lg:ml-4 py-1 px-3" href="'. esc_url( $category_link ) .'">'. $category[0]->cat_name .'</a></span>';
 
 			?>
 		</li>
@@ -217,13 +217,13 @@ function remark_post_content() {
 	$post_content = get_theme_mod( 'remark_blog_post_content_option', true );
 	?>
 		<?php if ( ! empty( $show_content ) ) { ?>
-		<div class="entry-content text-sm	font-normal text-gray-500 leading-6">
+		<div class="entry-content font-medium text-[#1d495e] leading-7">
 			<?php
 				
 					if ( $post_content == 'excerpt' ) {
 
 						the_excerpt();
-						echo '<a class="inline-block mb-4 text-sm font-semibold bg-red-700 hover:text-white visited:text-white text-white p-2 rounded" href="' . esc_url( get_permalink() ) . '">' . esc_html__( 'Read More', 'remark' ) . '</a>'; 
+						echo '<a class="inline-block mb-4 text-sm font-semibold bg-indigo-600 hover:text-white visited:text-white text-white p-2 rounded" href="' . esc_url( get_permalink() ) . '">' . esc_html__( 'Read More', 'remark' ) . '</a>'; 
 					} else {
 	
 						the_content(
@@ -388,7 +388,7 @@ if ( ! function_exists( 'remark_navigation' ) ) {
 						'theme_location'  => 'primary',
 						'li_class'        => 'lg:mx-4',
 						'fallback_cb'     => false,
-						'a_class'     => 'text-sm text-slate-800 visited:text-slate-800 active:text-red-700 hover:text-red-700 font-semibold uppercase pr-5',
+						'a_class'     => 'text-sm text-[#272368] visited:text-[#272368] active:text-[#272368] hover:text-indigo-600 font-semibold uppercase pr-5',
 					)
 				);
 				?>
