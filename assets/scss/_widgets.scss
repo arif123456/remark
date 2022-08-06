@@ -31,6 +31,18 @@
     background: #ffffff;
     padding: 20px;
 
+    .cat-toggle-icon {
+      position: absolute;
+      right: 12px;
+      cursor: pointer;
+      transition: .3s linear 0s;
+
+      &.active {
+        transform: rotate(180deg);
+
+      }
+    }
+
     .widget-title {
       font-weight: 600;
       font-size: 24px;

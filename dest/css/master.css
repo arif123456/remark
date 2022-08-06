@@ -24,6 +24,15 @@
   background: #ffffff;
   padding: 20px;
 }
+.widget-area .widget .cat-toggle-icon, .widget-area .widget_block .cat-toggle-icon {
+  position: absolute;
+  right: 12px;
+  cursor: pointer;
+  transition: 0.3s linear 0s;
+}
+.widget-area .widget .cat-toggle-icon.active, .widget-area .widget_block .cat-toggle-icon.active {
+  transform: rotate(180deg);
+}
 .widget-area .widget .widget-title, .widget-area .widget_block .widget-title {
   font-weight: 600;
   font-size: 24px;
