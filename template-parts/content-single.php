@@ -13,11 +13,11 @@
 	$comment_meta = get_theme_mod( 'remark_single_blog_post_comment', true );
 	$publish_date = get_theme_mod( 'remark_single_blog_post_publish_date', true );
 	$post_category = get_theme_mod( 'remark_single_blog_post_category', true );
-	$tag = get_theme_mod( 'remark_single_blog_post_tag', true );
+	$blog_post_tag = get_theme_mod( 'remark_single_blog_post_tag', true );
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('mb-7'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'mb-7' ); ?>>
 
 	<?php if ( ! empty( $feature_image ) ) { ?>
 
@@ -25,11 +25,11 @@
 
 		<?php 
 
-			if ( has_post_thumbnail() ) {
+		if ( has_post_thumbnail() ) {
 
-				remark_post_thumbnail();
+			remark_post_thumbnail();
 
-			}
+		}
 		
 		?>
 
@@ -42,8 +42,11 @@
 		<?php if ( get_the_title() ) : ?>
 			<h2 class="text-3xl font-bold text-[#272368] visited:text-[#272368] mb-4"><?php the_title(); ?></h2>
 		<?php endif; ?>
-		<?php if ( is_sticky() ) echo '<span class="sticky-post">' . __( 'Sticky post', 'remark' ) . '</span>'; ?>
-		<?php } ?>
+		<?php 
+			if ( is_sticky() ) {
+				echo '<span class="sticky-post">' . __( 'Sticky post', 'remark' ) . '</span>';
+			}	
+		?>
 		
 		<ul class="post-meta gap-10 mb-2">
 			<?php if ( ! empty( $author_meta ) ) { ?> 
@@ -86,7 +89,7 @@
 					if ( is_array( $categories) || is_object( $categories )) {
 						foreach ( $categories as $category ) {
 							$category_link = get_category_link( $category->term_id );
-							echo '<span><a class="text-sm font-medium bg-indigo-600 visited:text-white uppercase ml-4 py-1	px-3" href="'. esc_url( $category_link ) .'">'. $category->cat_name .'</a></span>';
+							echo '<span><a class="text-sm font-medium bg-indigo-600 visited:text-white uppercase ml-4 py-1	px-3" href="' . esc_url( $category_link ) . '">' . $category->cat_name . '</a></span>';
 						}
 					}
 
@@ -113,15 +116,15 @@
 			);
 
 		?>
-		<?php if ( ! empty( $tag ) ) { ?> 
+		<?php if ( ! empty( $blog_post_tag ) ) { ?> 
 			<div class="block">
 				<ul class="clear-both pb-3">
 					<span class="text-base font-bold text-slate-800 mr-2"><?php esc_html_e( 'Tags:', 'remark' ); ?></span>
 					<?php 
-						$tags = get_the_tags();
-						if ( is_array( $tags ) || is_object( $tags ) ) {
-							foreach( $tags as $tag ) {
-								echo '<li class="inline-block mb-2"><a class="text-sm	font-font-normal text-slate-800 bg-[#F2F4F3] hover:bg-indigo-600 hover:text-white rounded-lg py-1 px-4 mr-2" href="' . esc_url( get_tag_link( $tag->term_id ) ) . '">' . $tag->name . '</a></li>';
+						$post_tags = get_the_tags();
+						if ( is_array( $post_tags ) || is_object( $post_tags ) ) {
+							foreach( $post_tags as $post_tag ) {
+								echo '<li class="inline-block mb-2"><a class="text-sm	font-font-normal text-slate-800 bg-[#F2F4F3] hover:bg-indigo-600 hover:text-white rounded-lg py-1 px-4 mr-2" href="' . esc_url( get_tag_link( $post_tag->term_id ) ) . '">' . $post_tag->name . '</a></li>';
 								
 							}
 						}

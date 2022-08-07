@@ -97,7 +97,7 @@ function remark_post_title() {
 	?>
 		<?php if ( ! empty ( $post_title ) ) { ?>
 			<?php if ( get_the_title() ) : ?>
-				<h2 class="text-lg font-bold mb-2 post-title"><a class="font-bold text-[#272368] visited:text-[#272368] hover:text-indigo-600" href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+				<h2 class="text-lg font-bold mb-2 post-title"><a class="break-all	font-bold text-[#272368] visited:text-[#272368] hover:text-indigo-600" href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 			<?php endif; ?>
 			<?php if ( is_sticky() ) echo '<span class="sticky-post">' . __( 'Sticky post', 'remark' ) . '</span>'; ?>
 		<?php } ?>
@@ -116,28 +116,28 @@ function remark_post_meta() {
 	/**
 	 * author
 	 */
-	if( ! empty( $author ) ) {
+	if ( ! empty( $author ) ) {
 		post_author();
 	}
 
 	/**
 	 * post date
 	 */
-	if( ! empty( $publish_date ) ) {
+	if ( ! empty( $publish_date ) ) {
 		remark_post_date();
 	}
 
 	/**
 	 * post comment
 	 */
-	if( ! empty( $comment ) ) {
+	if ( ! empty( $comment ) ) {
 		remark_post_comment();
 	}
 
 	/**
 	 * post category
 	 */
-	if( ! empty( $post_category ) ) {
+	if ( ! empty( $post_category ) ) {
 		remark_post_category();
 	}
 }
@@ -220,7 +220,7 @@ function remark_post_content() {
 		<div class="entry-content font-medium text-[#1d495e] leading-7">
 			<?php
 				
-					if ( $post_content == 'excerpt' ) {
+					if ( 'excerpt' == $post_content ) {
 
 						the_excerpt();
 						echo '<a class="inline-block mb-4 text-sm font-semibold bg-indigo-600 hover:text-white visited:text-white text-white p-2 rounded" href="' . esc_url( get_permalink() ) . '">' . esc_html__( 'Read More', 'remark' ) . '</a>'; 

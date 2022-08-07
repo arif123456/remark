@@ -1,7 +1,7 @@
 === remark ===
 
 Contributors: wpfound
-Tags: right-sidebar,one-columns, two-columns, custom-menu, custom-logo, featured-images, sticky-post, threaded-comments
+Tags: right-sidebar,  two-columns, custom-menu, custom-logo, featured-images, sticky-post, threaded-comments
 
 Requires at least: 5.9
 Tested up to: 6.0

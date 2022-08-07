@@ -140,7 +140,7 @@ function remark_widgets_init() {
 			'name'          => esc_html__( 'Footer widget', 'remark' ),
 			'id'            => 'footer-widget',
 			'description'   => esc_html__( 'Add widgets here.', 'remark' ),
-			'before_widget' => '<section id="%1$s" class="'. $widget_column .' widget %2$s">',
+			'before_widget' => '<section id="%1$s" class="' . $widget_column . ' widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
 			'after_title'   => '</h2>',
@@ -153,8 +153,8 @@ add_action( 'widgets_init', 'remark_widgets_init' );
  * Enqueue scripts and styles.
  */
 function remark_scripts() {
-	$ver_app_css = filemtime(__DIR__ . '/app.css');
-	$ver_master_css = filemtime(__DIR__ . '/dest/css/master.css');
+	$ver_app_css = filemtime( __DIR__ . '/app.css' );
+	$ver_master_css = filemtime( __DIR__ . '/dest/css/master.css' );
 	
 	wp_enqueue_style( 'tailwind-style', get_template_directory_uri() . '/app.css', [], $ver_app_css );
 	wp_enqueue_style( 'fontawesome-css', get_template_directory_uri() . '/assets/css/fontawesome.css', array(), date( 's' ), 'all' );
@@ -162,7 +162,7 @@ function remark_scripts() {
 	wp_enqueue_style( 'remark-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'remark-style', 'rtl', 'replace' );
 
-	$ver_script = filemtime(__DIR__ . '/dest/js/script.js');
+	$ver_script = filemtime( __DIR__ . '/dest/js/script.js' );
 	wp_enqueue_script( 'remark-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'remark-script', get_template_directory_uri() . '/dest/js/script.js', [], $ver_script );
 	wp_enqueue_script( 'tailwind-app', get_template_directory_uri() . '/app.js', array(), _S_VERSION, true );
@@ -178,7 +178,7 @@ add_action( 'wp_enqueue_scripts', 'remark_scripts' );
  */
 function remark_enqueue_customizer_style() {
 
-	wp_register_style( 'remark-customizer', get_template_directory_uri() . '/assets/css/customizer.css', NULL, NULL, 'all' );
+	wp_register_style( 'remark-customizer', get_template_directory_uri() . '/assets/css/customizer.css', null, null, 'all' );
 	wp_enqueue_style( 'remark-customizer' );
 
 }
@@ -212,12 +212,10 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 }
 
 
-function remark_add_class_nav_item($classes, $items, $args)
-{
-    if (isset($args->a_class)) {
-        $classes['class'] = $args->a_class;
-    }
-    return $classes;
+function remark_add_class_nav_item( $classes, $args ) {
+	if ( isset( $args->a_class ) ) {
+		$classes['class'] = $args->a_class;
+	}
+	return $classes;
 }
-
-add_filter('nav_menu_link_attributes', 'remark_add_class_nav_item', 1, 3);
+add_filter( 'nav_menu_link_attributes', 'remark_add_class_nav_item', 1, 3 );

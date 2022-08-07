@@ -16,7 +16,7 @@ get_header();
 
 $post_layout = get_theme_mod( 'remark_blog_post_layout_option', true );
 
-if ( $post_layout == 'one-column' ) {
+if ( 'one-column' == $post_layout ) {
 	$post_layout = 'w-full';
 } else {
 	$post_layout = 'w-full md:w-full lg:w-1/2';
@@ -66,17 +66,14 @@ remark_breadcrumbs();
 
 							endwhile;
 
-							the_posts_pagination( array(
-								'prev_text' => __( 'Prev', 'remark' ),
-								'next_text' => __( 'Next', 'remark' ),
-							) );
+							the_posts_pagination();
 
-						else :
+							else :
 
-							get_template_part( 'template-parts/content', 'none' );
+								get_template_part( 'template-parts/content', 'none' );
 
-						endif;
-					?>
+							endif;
+							?>
 					</div>
 				</div>
 				<div class="w-full md:w-1/4 lg:w-1/4 pt-8 md:pt-0 lg:pt-0">

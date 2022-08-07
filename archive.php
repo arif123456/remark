@@ -45,14 +45,11 @@ remark_breadcrumbs();
 
 						endwhile;
 
-						the_posts_pagination( array(
-							'prev_text' => __( 'Prev', 'textdomain' ),
-							'next_text' => __( 'Next', 'textdomain' ),
-						) );
+						the_posts_pagination();
 
 						else :
 
-						get_template_part( 'template-parts/content', 'none' );
+							get_template_part( 'template-parts/content', 'none' );
 
 						endif;
 						?>

@@ -49,7 +49,7 @@ function remark_customize_register( $wp_customize ) {
 			array(
 					'sanitize_callback' => 'remark_sanitize_checkbox',
 					'transport'         => 'refresh',
-					'default'       =>  true
+					'default'       => true,
 			)
 		);
 
@@ -83,7 +83,7 @@ function remark_customize_register( $wp_customize ) {
 				array(
 						'title'         => __( 'Meta', 'remark' ),
 						'priority'      => 1,
-						'panel'         => 'remark_blog_option_panel'
+						'panel'         => 'remark_blog_option_panel',
 				) 
 		);
 
@@ -91,7 +91,7 @@ function remark_customize_register( $wp_customize ) {
 				array(
 						'title'         => __( 'Post Content', 'remark' ),
 						'priority'      => 1,
-						'panel'         => 'remark_blog_option_panel'
+						'panel'         => 'remark_blog_option_panel',
 				) 
 		);
 
@@ -539,11 +539,11 @@ function remark_sanitize_checkbox( $input ) {
 }
 
 function remark_sanitize_post_content_option( $input ) {
-	return ( $input === "excerpt" ) ? "excerpt" : "full-content";
+	return ( 'excerpt' === $input ) ? 'excerpt' : 'full-content';
 }
 
 function remark_sanitize_breadcrumb( $input ) {
-	return ( $input === "hide" ) ? "hide" : "show";
+	return ( 'hide' === $input ) ? 'hide' : 'show';
 }
 
 /**
