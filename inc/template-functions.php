@@ -463,7 +463,7 @@ if ( ! function_exists( 'remark_footer_widget' ) ) {
 	}
 }
 
-if ( ! function_exists( 'remark_footer_copyright_' ) ) {
+if ( ! function_exists( 'remark_footer_copyright' ) ) {
 	add_action( 'remark_footer_copyright_content', 'remark_footer_copyright' );
 	/**
 	 * Footer Copyright
