@@ -33,7 +33,7 @@
 .widget-area .widget .cat-toggle-icon.active, .widget-area .widget_block .cat-toggle-icon.active {
   transform: rotate(180deg);
 }
-.widget-area .widget .widget-title, .widget-area .widget_block .widget-title {
+.widget-area .widget .widget-title, .widget-area .widget h2, .widget-area .widget_block .widget-title, .widget-area .widget_block h2 {
   font-weight: 600;
   font-size: 24px;
   color: #272368;
