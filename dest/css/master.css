@@ -750,9 +750,3 @@ End Submenu
 body {
   font-family: "Lato";
 }
-
-p, li, .entry-content {
-  color: #1d495e;
-  font-size: 15px;
-  line-height: 28px;
-}

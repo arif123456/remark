@@ -39,14 +39,11 @@
 	
 	<div class="bg-white p-8 mb-7">
 		<?php if ( ! empty( $post_title ) ) { ?> 
-		<?php if ( get_the_title() ) : ?>
-			<h2 class="text-3xl font-bold text-[#272368] visited:text-[#272368] mb-4"><?php the_title(); ?></h2>
-		<?php endif; ?>
-		<?php 
-			if ( is_sticky() ) {
-				echo '<span class="sticky-post">' . __( 'Sticky post', 'remark' ) . '</span>';
-			}	
-		?>
+			<?php if ( get_the_title() ) : ?>
+				<h2 class="break-all text-3xl font-bold text-[#272368] visited:text-[#272368] mb-4"><?php the_title(); ?></h2>
+			<?php endif; ?>
+			<?php if ( is_sticky() ) echo '<span class="sticky-post">' . __( 'Sticky post', 'remark' ) . '</span>'; ?>
+		<?php } ?>
 		
 		<ul class="post-meta gap-10 mb-2">
 			<?php if ( ! empty( $author_meta ) ) { ?> 
@@ -98,7 +95,7 @@
 			<?php } ?>
 		</ul>
 	</div>
-	<div class="entry-content bg-white p-8 font-medium text-[#1d495e] leading-7">
+	<div class="entry-content prose max-w-none bg-white p-8">
 		<?php
 			the_content(
 				sprintf(
