@@ -97,7 +97,7 @@ function remark_post_title() {
 	?>
 		<?php if ( ! empty ( $post_title ) ) { ?>
 			<?php if ( get_the_title() ) : ?>
-				<h2 class="text-lg font-bold mb-2 post-title"><a class="break-all	font-bold text-[#272368] visited:text-[#272368] hover:text-indigo-600" href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+				<h2 class="text-lg font-bold mb-2 post-title"><a class="break-all	font-bold text-[#222] visited:text-[#222] hover:text-[#BB0000]" href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 			<?php endif; ?>
 			<?php if ( is_sticky() ) echo '<span class="sticky-post">' . __( 'Sticky post', 'remark' ) . '</span>'; ?>
 		<?php } ?>
@@ -149,8 +149,8 @@ add_action( 'remark_post_meta', 'remark_post_meta' );
 function post_author() {
 	?>
 		<li>
-			<a class="mb-8 md:mb-0 lg:mb-0 flex items-center text-sm font-medium text-[#272368] visited:text-[#272368] hover:text-indigo-600" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>">
-					<i class="fa fa-user mr-2 text-indigo-600"></i>
+			<a class="mb-8 md:mb-0 lg:mb-0 flex items-center text-sm font-medium text-[#818181] visited:text-[#818181] hover:text-[#BB0000]" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>">
+					<i class="fa fa-user mr-2 text-[#818181]"></i>
 					<span class="text-sm">
 						<?php 
 								global $current_user; wp_get_current_user();
@@ -168,9 +168,9 @@ function post_author() {
  */
 function remark_post_date() {
 	?>
-		<li class="text-sm mb-4 md:mb-0 lg:mb-0 font-medium text-[#272368] visited:text-[#272368]">
+		<li class="text-sm mb-4 md:mb-0 lg:mb-0 font-medium text-[#818181] visited:text-[#818181]">
 			<span class="mr-2">
-				<i class="far fa-clock text-indigo-600"></i>
+				<i class="far fa-clock text-[#818181]"></i>
 			</span>
 			<?php echo get_the_date( 'M j, Y' ); ?>
 		</li>
@@ -182,8 +182,8 @@ function remark_post_date() {
  */
 function remark_post_comment() {
 	?>
-		<li class="mb-4 md:mb-0 lg:mb-0 text-sm font-medium text-[#272368] visited:text-[#272368] hover:text-indigo-600">
-			<i class="fa-solid fa-comment mr-2 text-indigo-600"></i>
+		<li class="mb-4 md:mb-0 lg:mb-0 text-sm font-medium text-[#818181] visited:text-[#818181] hover:text-[#BB0000]">
+			<i class="fa-solid fa-comment mr-2 text-[#818181]"></i>
 			<?php 
 				if ( comments_open() ) {
 						comments_popup_link( '0', '1', '%', 'post-comments' );
@@ -202,7 +202,7 @@ function remark_post_category() {
 
 				$category = get_the_category();
 				$category_link = get_category_link( $category[0]->term_id );
-				echo '<span><a class="text-sm font-medium bg-indigo-600 visited:text-white uppercase ml-0 md:ml-4 lg:ml-4 py-1 px-3" href="'. esc_url( $category_link ) .'">'. $category[0]->cat_name .'</a></span>';
+				echo '<span><a class="text-sm font-medium bg-[#BB0000] visited:text-white uppercase ml-0 md:ml-4 lg:ml-4 py-1 px-3" href="'. esc_url( $category_link ) .'">'. $category[0]->cat_name .'</a></span>';
 
 			?>
 		</li>
@@ -217,13 +217,13 @@ function remark_post_content() {
 	$post_content = get_theme_mod( 'remark_blog_post_content_option', true );
 	?>
 		<?php if ( ! empty( $show_content ) ) { ?>
-		<div class="entry-content font-medium text-[#1d495e] leading-7">
+		<div class="entry-content font-medium text-[#3a3a3a] leading-7">
 			<?php
 				
 					if ( 'excerpt' == $post_content ) {
 
 						the_excerpt();
-						echo '<a class="inline-block mb-4 text-sm font-semibold bg-indigo-600 hover:text-white visited:text-white text-white p-2 rounded" href="' . esc_url( get_permalink() ) . '">' . esc_html__( 'Read More', 'remark' ) . '</a>'; 
+						echo '<a class="inline-block mb-4 text-sm font-semibold bg-[#BB0000] hover:text-white visited:text-white text-white p-2 rounded" href="' . esc_url( get_permalink() ) . '">' . esc_html__( 'Read More', 'remark' ) . '</a>'; 
 					} else {
 	
 						the_content(
@@ -271,7 +271,7 @@ if ( ! function_exists( 'remark_header' ) ) {
 		?>
 			<header id="masthead" class="site-header bg-white shadow-md">
 				<div class="container mx-auto">
-					<div class="menu-wrap flex-none md:flex lg:flex items-center gap-4 py-6 md:py-0 lg:py-0 items-center">
+					<div class="menu-wrap flex-none md:flex lg:flex items-center gap-4 py-4 md:py-0 lg:py-0 items-center">
 						<?php 
 							/**
 							 * Site logo.
@@ -302,6 +302,9 @@ if ( ! function_exists( 'remark_header' ) ) {
 				</div>
 			</header><!-- #masthead -->
 		<?php
+
+			get_template_part( 'inc/mobile-menu' );		
+
 	}
 }
 
@@ -323,9 +326,6 @@ if ( ! function_exists( 'remark_header_search' ) ) {
 								<i class="fa-solid fa-magnifying-glass"></i>
 							</div>
 							<div class="search_form">
-								<!-- <div class="close-icon">
-									<i class="fa-solid fa-xmark"></i>
-								</div> -->
 								<?php get_search_form(); ?>
 							</div>
 						<?php
@@ -344,7 +344,7 @@ if ( ! function_exists( 'remark_site_logo' ) ) {
 	 */
 	function remark_site_logo() {
 		?>
-			<div class="site-branding w-full md:w-1/5 lg:w-1/5">
+			<div class="site-branding w-1/2 md:w-1/5 lg:w-1/5">
 				<?php
 				the_custom_logo();
 				if ( is_front_page() && is_home() ) :
@@ -362,9 +362,15 @@ if ( ! function_exists( 'remark_site_logo' ) ) {
 					<p class="site-description"><?php echo $remark_description; ?></p>
 				<?php endif; ?>
 			</div><!-- .site-branding -->
-			<div class="toggle-icon-mobile">
-				<i class="fa-solid fa-list"></i>
-			</div>
+
+			<button class="toggle nav-toggle mobile-nav-toggle" data-toggle-target=".menu-modal"  data-toggle-body-class="showing-menu-modal" aria-expanded="false" data-set-focus=".close-nav-toggle">
+					<span class="toggle-inner">
+							<span class="toggle-icon">
+									<!-- <img src="<?php echo esc_url( get_theme_file_uri( '/images/toggle-menu.png' ) ); ?>" alt="Icon"> -->
+									<i class="fa-solid fa-list"></i>
+							</span>
+					</span>
+			</button><!-- .nav-toggle -->
 		<?php
 	}
 	
@@ -378,7 +384,8 @@ if ( ! function_exists( 'remark_navigation' ) ) {
 	 */
 	function remark_navigation() {
 		?>
-			<nav id="site-navigation" class="w-full md:w-3/4 lg:w-3/4">
+
+			<nav id="site-navigation" class="w-full md:w-3/4 lg:w-3/4" aria-label="<?php echo esc_attr_x( 'Horizontal', 'remark' ); ?>" role="navigation">
 				<?php
 				wp_nav_menu(
 					array(
@@ -388,7 +395,7 @@ if ( ! function_exists( 'remark_navigation' ) ) {
 						'theme_location'  => 'primary',
 						'li_class'        => 'lg:mx-4',
 						'fallback_cb'     => false,
-						'a_class'     => 'text-sm text-[#272368] visited:text-[#272368] active:text-[#272368] hover:text-indigo-600 font-semibold uppercase pr-5',
+						'a_class'     => 'text-sm text-[#222] visited:text-[#222] active:text-[#222] hover:text-[#BB0000] font-semibold uppercase pr-5',
 					)
 				);
 				?>
@@ -519,16 +526,16 @@ if ( ! function_exists( 'remark_breadcrumbs' ) ) {
 						<div class="px-8">
 							<?php 
 								echo '<a class="text-[#222] visited:text-[#222]" href="'.home_url().'" rel="nofollow">Home</a>';
-								if ( is_category() || is_single() ) {
+								if ( is_category() ) {
 									echo '<i class="fa-solid fa-angles-right mx-2 text-xs"></i>';
 									$category = get_the_category();
 									$category_link = get_category_link( $category[0]->term_id );
-									echo '<a href="' . esc_url( $category_link ) . '">' . $category[0]->cat_name . '</a>';
-
-									if ( is_single() ) {
-										echo '<i class="fa-solid fa-angles-right mx-2 text-xs"></i>';
-										the_title();
-									}
+									echo '<a class="visited:text-[#BB0000] text-[#BB0000]" href="' . esc_url( $category_link ) . '">' . $category[0]->cat_name . '</a>';
+									
+								} elseif ( is_single() ) {
+									echo '<i class="fa-solid fa-angles-right mx-2 text-xs"></i>';
+									the_title();
+									
 								} elseif( is_page() ) {
 									echo '<i class="fa-solid fa-angles-right mx-2 text-xs"></i>';
 									echo the_title();

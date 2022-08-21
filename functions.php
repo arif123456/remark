@@ -159,11 +159,16 @@ function remark_scripts() {
 	wp_enqueue_style( 'tailwind-style', get_template_directory_uri() . '/app.css', [], $ver_app_css );
 	wp_enqueue_style( 'fontawesome-css', get_template_directory_uri() . '/assets/css/fontawesome.css', array(), date( 's' ), 'all' );
 	wp_enqueue_style( 'master-style', get_template_directory_uri() . '/dest/css/master.css', [], $ver_master_css );
+	
+	// Webfont load.
+	wp_enqueue_style( 'remark-latofont', 'https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap', array(), _S_VERSION );
+
 	wp_enqueue_style( 'remark-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'remark-style', 'rtl', 'replace' );
 
 	$ver_script = filemtime( __DIR__ . '/dest/js/script.js' );
 	wp_enqueue_script( 'remark-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'remark-accessibility', get_template_directory_uri() . '/js/accessibility.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'remark-script', get_template_directory_uri() . '/dest/js/script.js', [], $ver_script );
 	wp_enqueue_script( 'tailwind-app', get_template_directory_uri() . '/app.js', array(), _S_VERSION, true );
 

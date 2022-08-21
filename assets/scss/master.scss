@@ -3,17 +3,9 @@
 @import './header';
 @import './footer';
 
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
-
-@font-face {
-  font-family: 'Lato';
-  src: url('../fonts/Lato-Black.ttf');
-  src: url('../fonts/Lato-Bold.ttf');
-  src: url('../fonts/Lato-Light.ttf');
-  src: url('../fonts/Lato-Regular.ttf');
-  font-weight: normal;
-}
-
+$base-color: #ddd;
+$linkColor: #000;
+$hoverColor: #BB0000;
 
 body {
   font-family: 'Lato';

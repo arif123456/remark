@@ -18,6 +18,7 @@
       $(this).toggleClass('active');
       $(this).next().slideToggle();
     })
+
   })
 
 })(jQuery);
