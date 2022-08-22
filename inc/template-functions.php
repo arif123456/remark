@@ -36,9 +36,10 @@ function remark_pingback_header() {
 }
 add_action( 'wp_head', 'remark_pingback_header' );
 
+/**
+ * Post content.
+*/
 if ( ! function_exists( 'remark_blog_post' ) ) {
-
-	add_action( 'remark_post_action', 'remark_blog_post' );
 
 	/**
 	 * Post content.
@@ -88,6 +89,7 @@ if ( ! function_exists( 'remark_blog_post' ) ) {
 
 	}
 }
+add_action( 'remark_post_action', 'remark_blog_post' );
 
 /**
  * Post title
@@ -260,8 +262,10 @@ function remark_feature_image() {
 	}
 }
 
+/**
+ * Theme header.
+ */
 if ( ! function_exists( 'remark_header' ) ) {
-	add_action( 'remark_header_action', 'remark_header' );
 	/**
 	 * Theme header.
 	 *
@@ -269,9 +273,9 @@ if ( ! function_exists( 'remark_header' ) ) {
 	 */
 	function remarK_header() {
 		?>
-			<header id="masthead" class="site-header bg-white shadow-md">
+			<header id="masthead" class="site-header bg-white shadow-md py-2">
 				<div class="container mx-auto">
-					<div class="menu-wrap flex-none md:flex lg:flex items-center gap-4 py-4 md:py-0 lg:py-0 items-center">
+					<div class="menu-wrap flex-none md:flex lg:flex items-center gap-12 py-4 md:py-0 lg:py-0 items-center">
 						<?php 
 							/**
 							 * Site logo.
@@ -296,7 +300,11 @@ if ( ! function_exists( 'remark_header' ) ) {
 
 	}
 }
+add_action( 'remark_header_action', 'remark_header' );
 
+/**
+ * Site logo
+ */
 if ( ! function_exists( 'remark_site_logo' ) ) {
 	/**
 	 * Site logo
@@ -337,6 +345,9 @@ if ( ! function_exists( 'remark_site_logo' ) ) {
 	
 }
 
+/**
+ * Navigation
+ */
 if ( ! function_exists( 'remark_navigation' ) ) {
 	/**
 	 * Navigation
@@ -366,12 +377,8 @@ if ( ! function_exists( 'remark_navigation' ) ) {
 }
 
 /**
- * Footer
- *
- * @since 1.0.0
+ * Footer inside
  */
-add_action( 'remark_footer', 'remark_footer_inside' );
-
 if( ! function_exists( 'remark_footer_inside' ) ) {
 	/**
 	 * Footer
@@ -406,14 +413,17 @@ if( ! function_exists( 'remark_footer_inside' ) ) {
 		<?php
 	}
 }
+add_action( 'remark_footer', 'remark_footer_inside' );
 
+/**
+ * Footer Widget
+ */
 if ( ! function_exists( 'remark_footer_widget' ) ) {
 	/**
 	 * Footer Widget
 	 *
 	 * @since 1.0.0
 	 */
-	add_action( 'remark_footer_widget_content', 'remark_footer_widget' );
 	function remark_footer_widget() {
 		if ( ! is_active_sidebar( 'footer-widget' ) ) {
 			return;
@@ -436,14 +446,11 @@ if ( ! function_exists( 'remark_footer_widget' ) ) {
 		<?php
 	}
 }
+add_action( 'remark_footer_widget_content', 'remark_footer_widget' );
 
 /**
  * Footer Copyright
- *
- * @since 1.0.0
  */
-add_action( 'remark_footer_copyright_content', 'remark_footer_copyright' );
-
 if ( ! function_exists( 'remark_footer_copyright' ) ) {
 	/**
 	 * Footer Copyright
@@ -473,7 +480,11 @@ if ( ! function_exists( 'remark_footer_copyright' ) ) {
 		<?php
 	}
 }
+add_action( 'remark_footer_copyright_content', 'remark_footer_copyright' );
 
+/**
+ * Footer Copyright
+ */
 if ( ! function_exists( 'remark_breadcrumbs' ) ) {
 	/**
 	 * Footer Copyright

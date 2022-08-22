@@ -208,5 +208,4 @@ function remark_add_sub_toggles_to_main_menu( $args, $item, $depth ) {
 	return $args;
 
 }
-
 add_filter( 'nav_menu_item_args', 'remark_add_sub_toggles_to_main_menu', 10, 3 );

@@ -445,78 +445,6 @@ Submenu
 /* =========================
 End Submenu
 ==========================*/
-.remark__header-right-section {
-  position: relative;
-}
-.remark__header-right-section .search-overlay {
-  text-align: right;
-}
-.remark__header-right-section .search-overlay i {
-  cursor: pointer;
-}
-.remark__header-right-section .header-search:hover .search_form {
-  opacity: 1;
-  visibility: visible;
-}
-.remark__header-right-section .search_form {
-  position: absolute;
-  right: 0;
-  top: 40px;
-  transition: 0.3s linear 0s;
-  width: 360px;
-  background: #fff;
-  padding: 7px 12px 14px;
-  border-radius: 0 0 18px 18px;
-  opacity: 0;
-  visibility: hidden;
-  box-shadow: 0 50px 50px rgba(128, 128, 128, 0.4);
-  z-index: 3;
-}
-.remark__header-right-section .search_form:before {
-  content: "";
-  position: absolute;
-  top: 5px;
-  left: -18px;
-  background: url("../../assets/images/search-corner.png");
-  width: 18px;
-  height: 18px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-.remark__header-right-section .search_form:after {
-  content: "";
-  position: absolute;
-  top: 5px;
-  right: -18px;
-  background: url("../../assets/images/search-corner.png");
-  width: 18px;
-  height: 18px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  transform: rotate(-90deg);
-}
-.remark__header-right-section .search_form .close-icon {
-  position: absolute;
-  right: 12px;
-  top: 10px;
-  cursor: pointer;
-}
-.remark__header-right-section .search_form label, .remark__header-right-section .search_form input {
-  width: 100%;
-}
-.remark__header-right-section .search_form input {
-  outline: none;
-  padding: 8px 8px;
-  background: #eee;
-  border-radius: 5px;
-  border: 0;
-}
-.remark__header-right-section .search_form .search-submit {
-  display: none;
-}
-
 .entry-footer {
   clear: both;
 }
@@ -541,6 +469,15 @@ End Submenu
     width: 130px;
   }
 }
+.site-branding .site-title {
+  font-size: 24px;
+  margin-bottom: 2px;
+  font-weight: 700;
+}
+.site-branding .site-title a {
+  color: #bb2a26;
+  text-decoration: none;
+}
 
 .toggle-icon-mobile {
   display: none;
@@ -563,6 +500,10 @@ End Submenu
   }
 }
 
+.site-header {
+  padding: 25px 0;
+  margin-bottom: 30px;
+}
 @media (max-width: 1024px) {
   .site-header {
     position: relative;

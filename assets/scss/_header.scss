@@ -207,6 +207,18 @@ End Submenu
       width: 130px;
     }
   }
+
+  .site-title {
+    font-size: 24px;
+    margin-bottom: 2px;
+    font-weight: 700;
+
+    a {
+      color: #bb2a26;
+      text-decoration: none;
+
+    }
+  }
 }
 
 .toggle-icon-mobile {
@@ -231,6 +243,9 @@ End Submenu
 }
 
 .site-header {
+  padding: 25px 0;
+  margin-bottom: 30px;
+
   @media(max-width: 1024px) {
     position: relative;
 
