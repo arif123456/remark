@@ -451,31 +451,22 @@ if ( ! function_exists( 'remark_footer_copyright' ) ) {
 	 * @since 1.0.0
 	 */
 	function remark_footer_copyright() {
-		$copyright_content = get_theme_mod( 'remark_footer_copyright', true );
 		?>
 			<div class="site-info bg-[#0B0B0B] py-8">
 				<div class="container mx-auto text-center text-gray-400	">
 					<p class="mb-0">
-						<?php 
-							if ( $copyright_content ) {
-								echo wp_kses_post( $copyright_content );
-							} else {
-								?>
-									<?php
+						<?php
 
-										echo date_i18n(
-												_x( '©Y', 'copyright date format', 'remark' )
-										);
+							echo date_i18n(
+									_x( '©Y', 'copyright date format', 'remark' )
+							);
 
-										?>
-										<span>
-										<?php echo bloginfo('name'); ?>
-										<?php printf( __( '/ Designed & Built by', 'remark' ) ); ?>
-										</span>
-										<a class="text-sky-500 hover:text-white visited:text-white" href="<?php echo esc_url( __( 'https://www.wpfound.com/', 'remark' ) ); ?>" target='_blank'><?php printf( __( 'WPFound', 'remark' ) ); ?></a>
-								<?php
-							}
-						?>
+							?>
+							<span>
+							<?php echo bloginfo('name'); ?>
+							<?php printf( __( '/ Designed & Built by', 'remark' ) ); ?>
+							</span>
+							<a class="text-sky-500 hover:text-white visited:text-white" href="<?php echo esc_url( __( 'https://www.wpfound.com/', 'remark' ) ); ?>" target='_blank'><?php printf( __( 'WPFound', 'remark' ) ); ?></a>
 					</p>
 				</div><!-- .site-info -->
 			</div>

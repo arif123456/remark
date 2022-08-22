@@ -464,7 +464,7 @@ function remark_customize_register( $wp_customize ) {
 		$wp_customize->add_control( 'remark_footer_widget_layout', 
 			array(
 					'type'        => 'select',
-					'label'       => 'Copyright',
+					'label'       => 'Widget Column',
 					'priority'    => 10,
 					'section'     => 'remark_footer_copyright_section',
 					'choices'           => array(
@@ -473,24 +473,6 @@ function remark_customize_register( $wp_customize ) {
 						'column-3'      => __( 'Column 3', 'remark' ),
 						'column-4'      => __( 'Column 4', 'remark' ),
 					),
-		
-			) 
-		);
-
-		/* Footer Copyright */
-		$wp_customize->add_setting( 'remark_footer_copyright',
-			array(
-				'sanitize_callback' => 'wp_kses_post',
-				'transport'         => 'refresh',
-			)
-		);
-
-		$wp_customize->add_control( 'remark_footer_copyright', 
-			array(
-					'type'        => 'textarea',
-					'label'       => 'Copyright',
-					'priority'    => 10,
-					'section'     => 'remark_footer_copyright_section',
 		
 			) 
 		);
