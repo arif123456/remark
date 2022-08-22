@@ -457,7 +457,7 @@ if ( ! function_exists( 'remark_footer_copyright' ) ) {
 				<div class="container mx-auto text-center text-gray-400	">
 					<p class="mb-0">
 						<?php 
-							if ( ! empty( $copyright_content ) ) {
+							if ( $copyright_content ) {
 								echo wp_kses_post( $copyright_content );
 							} else {
 								?>
