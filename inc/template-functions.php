@@ -359,17 +359,35 @@ if ( ! function_exists( 'remark_navigation' ) ) {
 
 			<nav id="site-navigation" class="w-full md:w-3/4 lg:w-3/4" aria-label="<?php echo esc_attr_x( 'Horizontal', 'remark' ); ?>" role="navigation">
 				<?php
-				wp_nav_menu(
-					array(
-						'container_id'    => 'primary-menu',
-						'container_class' => 'mt-4 p-4 md:mt-0 lg:mt-0 md:p-0 lg:p-0 lg:block',
-						'menu_class'      => 'nav-menu gap-1.5 flex-none md:flex lg:flex flex-nowrap md:flex-wrap lg:flex-wrap lg:-mx-4 list-none m-0',
-						'theme_location'  => 'primary',
-						'li_class'        => 'lg:mx-4',
-						'fallback_cb'     => false,
-						'a_class'     => 'text-sm text-[#222] visited:text-[#222] active:text-[#222] hover:text-[#BB0000] font-semibold uppercase pr-5',
-					)
-				);
+				if ( has_nav_menu( 'primary' ) ) {
+					wp_nav_menu(
+						array(
+							'container_id'    => 'primary-menu',
+							'container_class' => 'mt-4 p-4 md:mt-0 lg:mt-0 md:p-0 lg:p-0 lg:block',
+							'menu_class'      => 'nav-menu gap-1.5 flex-none md:flex lg:flex flex-nowrap md:flex-wrap lg:flex-wrap lg:-mx-4 list-none m-0',
+							'theme_location'  => 'primary',
+							'li_class'        => 'lg:mx-4',
+							'fallback_cb'     => false,
+							'a_class'     => 'text-sm text-[#222] visited:text-[#222] active:text-[#222] hover:text-[#BB0000] font-semibold uppercase pr-5',
+						)
+					);
+				} else {
+					?>
+						<ul class="remark__default-menu">
+							<?php 
+								wp_list_pages(
+									array(
+										'match_menu_classes' => true,
+										'show_sub_menu_icons' => true,
+										'title_li' => false,
+										'walker'   => new Remark_Walker_Page(),
+									)
+								);
+							?>
+						</ul>
+					<?php
+				}
+				
 				?>
 			</nav><!-- #site-navigation -->
 		<?php

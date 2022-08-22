@@ -393,6 +393,7 @@ Submenu
   transition: 0.3s linear 0s;
   display: block;
 }
+
 .nav-menu li:hover ul.sub-menu {
   opacity: 1;
   visibility: visible;
@@ -520,6 +521,92 @@ End Submenu
   .site-header #site-navigation li {
     margin-bottom: 10px;
   }
+}
+.site-header .remark__default-menu {
+  margin: 0;
+}
+.site-header .remark__default-menu li {
+  display: inline-block;
+  margin-right: 22px;
+  position: relative;
+}
+.site-header .remark__default-menu li a {
+  font-size: 16px;
+  color: #222;
+  font-weight: 500;
+}
+.site-header .remark__default-menu li.page_item_has_children {
+  position: relative;
+}
+.site-header .remark__default-menu li.page_item_has_children .icon:before {
+  content: "";
+  position: absolute;
+  background: url("../../assets/images/angle-right.svg");
+  width: 14px;
+  height: 14px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right;
+  right: -16px;
+  top: 2px;
+  transform: rotate(90deg);
+}
+.site-header .remark__default-menu li:hover .children {
+  opacity: 1;
+  visibility: visible;
+  top: 100%;
+}
+.site-header .remark__default-menu .children {
+  position: absolute;
+  left: 0;
+  top: 120%;
+  width: 260px;
+  z-index: 3;
+  background: #fff;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: 0.3s linear 0s;
+  -moz-transition: 0.3s linear 0s;
+  -ms-transition: 0.3s linear 0s;
+  transition: 0.3s linear 0s;
+  display: block;
+  margin: 0;
+  border: 1px solid #eee;
+}
+.site-header .remark__default-menu .children li {
+  margin: 0;
+  display: block;
+}
+.site-header .remark__default-menu .children li .icon:before {
+  transform: rotate(0deg) translateY(-50%);
+  top: 50%;
+  right: 8px;
+}
+.site-header .remark__default-menu .children li a {
+  display: block;
+  padding: 7px 15px;
+}
+.site-header .remark__default-menu .children li .children {
+  position: absolute;
+  left: 100%;
+  top: 0;
+  opacity: 0;
+  transform: translateY(10px);
+  visibility: hidden;
+  -webkit-transition: 0.3s linear 0s;
+  -moz-transition: 0.3s linear 0s;
+  -ms-transition: 0.3s linear 0s;
+  transition: 0.3s linear 0s;
+}
+@media (max-width: 767px) {
+  .site-header .remark__default-menu .children li .children {
+    left: 0;
+  }
+}
+.site-header .remark__default-menu li .children li:hover > .children {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0px);
 }
 
 .mobile-nav-toggle {
