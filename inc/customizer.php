@@ -35,33 +35,6 @@ function remark_customize_register( $wp_customize ) {
 	/*==========================
 	Blog Settings
 	==========================*/
-	/* Header Options */
-		$wp_customize->add_section( 'remark_header_section',
-			array(
-					//'priority'       => 100,
-					'title'            => __( 'Remark: Header', 'remark' ),
-					'priority'    => 30,
-			) 
-		);
-
-		/* Enable search */
-		$wp_customize->add_setting( 'remark_header_search',
-			array(
-					'sanitize_callback' => 'remark_sanitize_checkbox',
-					'transport'         => 'refresh',
-					'default'       => true,
-			)
-		);
-
-		$wp_customize->add_control( 'remark_header_search', 
-				array(
-						'type'        => 'checkbox',
-						'label'       => 'Enable Search',
-						'priority'    => 10,
-						'section'     => 'remark_header_section',
-				) 
-		);
-
 	  /* Blog Options */
 		$wp_customize->add_panel( 'remark_blog_option_panel', 
 			array(

@@ -287,17 +287,6 @@ if ( ! function_exists( 'remark_header' ) ) {
 							 */
 							remark_navigation();
 						?>
-						
-						<div class="remark__header-right-section flex justify-end gap-7 w-full md:w-1/12 lg:w-1/12">
-							<?php 
-								/**
-								 * Header search.
-								 *
-								 * @since 1.0.0
-								 */
-								remark_header_search();
-							?>
-						</div>
 					</div>
 				</div>
 			</header><!-- #masthead -->
@@ -305,34 +294,6 @@ if ( ! function_exists( 'remark_header' ) ) {
 
 			get_template_part( 'inc/mobile-menu' );		
 
-	}
-}
-
-
-if ( ! function_exists( 'remark_header_search' ) ) {
-	/**
-	 * Header search
-	 *
-	 * @since 1.0.0
-	 */
-	function remark_header_search() {
-		?>
-			<div class="header-search">
-				<?php 
-					$enable_search = get_theme_mod( 'remark_header_search', true );
-					if ( $enable_search ) {
-						?>
-							<div class="search-overlay">
-								<i class="fa-solid fa-magnifying-glass"></i>
-							</div>
-							<div class="search_form">
-								<?php get_search_form(); ?>
-							</div>
-						<?php
-					} 
-				?>
-			</div>
-		<?php
 	}
 }
 
@@ -490,23 +451,31 @@ if ( ! function_exists( 'remark_footer_copyright' ) ) {
 	 * @since 1.0.0
 	 */
 	function remark_footer_copyright() {
+		$copyright_content = get_theme_mod( 'remark_footer_copyright', true );
 		?>
 			<div class="site-info bg-[#0B0B0B] py-8">
 				<div class="container mx-auto text-center text-gray-400	">
 					<p class="mb-0">
-						<?php
+						<?php 
+							if ( ! empty( $copyright_content ) ) {
+								echo wp_kses_post( $copyright_content );
+							} else {
+								?>
+									<?php
 
-							echo date_i18n(
-									_x( '©Y', 'copyright date format', 'remark' )
-							);
+										echo date_i18n(
+												_x( '©Y', 'copyright date format', 'remark' )
+										);
 
-							?>
-							<span>
-							<?php echo bloginfo('name'); ?>
-							<?php printf( __( '/ Designed & Built by', 'remark' ) ); ?>
-							</span>
-							<a class="text-sky-500 hover:text-white visited:text-white" href="<?php echo esc_url( __( 'https://www.wpfound.com/', 'remark' ) ); ?>" target='_blank'><?php printf( __( 'WPFound', 'remark' ) ); ?></a>
-						
+										?>
+										<span>
+										<?php echo bloginfo('name'); ?>
+										<?php printf( __( '/ Designed & Built by', 'remark' ) ); ?>
+										</span>
+										<a class="text-sky-500 hover:text-white visited:text-white" href="<?php echo esc_url( __( 'https://www.wpfound.com/', 'remark' ) ); ?>" target='_blank'><?php printf( __( 'WPFound', 'remark' ) ); ?></a>
+								<?php
+							}
+						?>
 					</p>
 				</div><!-- .site-info -->
 			</div>
