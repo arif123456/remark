@@ -59,7 +59,9 @@ remark_breadcrumbs();
 								*/
 								?>
 									<div class="<?php echo $post_layout; ?> pl-3.5 pr-3.5">
+									
 										<?php get_template_part( 'template-parts/content', get_post_type() ); ?>
+
 									</div>
 								<?php
 								
