@@ -167,6 +167,7 @@ function remark_scripts() {
 	wp_style_add_data( 'remark-style', 'rtl', 'replace' );
 
 	$ver_script = filemtime( __DIR__ . '/dest/js/script.js' );
+	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'remark-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'remark-accessibility', get_template_directory_uri() . '/js/accessibility.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'remark-script', get_template_directory_uri() . '/dest/js/script.js', [], $ver_script );
