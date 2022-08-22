@@ -404,13 +404,19 @@ if ( ! function_exists( 'remark_navigation' ) ) {
 	}
 }
 
+/**
+ * Footer
+ *
+ * @since 1.0.0
+ */
+add_action( 'remark_footer', 'remark_footer_inside' );
+
 if( ! function_exists( 'remark_footer_inside' ) ) {
 	/**
 	 * Footer
 	 *
 	 * @since 1.0.0
 	 */
-	add_action( 'remark_footer', 'remark_footer_inside' );
 	function remark_footer_inside() {
 		?>
 			<footer id="colophon" class="site-footer">
@@ -470,8 +476,14 @@ if ( ! function_exists( 'remark_footer_widget' ) ) {
 	}
 }
 
+/**
+ * Footer Copyright
+ *
+ * @since 1.0.0
+ */
+add_action( 'remark_footer_copyright_content', 'remark_footer_copyright' );
+
 if ( ! function_exists( 'remark_footer_copyright' ) ) {
-	add_action( 'remark_footer_copyright_content', 'remark_footer_copyright' );
 	/**
 	 * Footer Copyright
 	 *
@@ -484,9 +496,7 @@ if ( ! function_exists( 'remark_footer_copyright' ) ) {
 				<div class="container mx-auto text-center text-gray-400	">
 					<p class="mb-0">
 						<?php 
-							if ( ! empty( $copyright_content ) ) {
-								echo wp_kses_post( $copyright_content );
-							} else {
+							if ( empty( $copyright_content ) ) {
 								?>
 									<?php
 
@@ -501,6 +511,9 @@ if ( ! function_exists( 'remark_footer_copyright' ) ) {
 										</span>
 										<a class="text-sky-500 hover:text-white visited:text-white" href="<?php echo esc_url( __( 'https://www.wpfound.com/', 'remark' ) ); ?>" target='_blank'><?php printf( __( 'WPFound', 'remark' ) ); ?></a>
 								<?php
+								
+							} else {
+								echo wp_kses_post( $copyright_content );
 							}
 						?>
 					</p>
