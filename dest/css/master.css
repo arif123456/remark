@@ -141,11 +141,16 @@ Pagination
 
 .post-meta li {
   display: inline-block;
-  margin-right: 15px;
+  margin: 0 15px 8px 0;
 }
 .post-meta li.post-category span {
   display: inline-block;
   margin-bottom: 8px;
+}
+.post-meta li.post-category span a {
+  padding: 8px 8px;
+  display: inline-block;
+  border-radius: 4px;
 }
 
 .post-title {
