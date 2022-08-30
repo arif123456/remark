@@ -14,7 +14,7 @@
 
 get_header();
 
-$post_layout = get_theme_mod( 'remark_blog_post_layout_option', 'one-column' );
+$post_layout = get_theme_mod( 'remark_blog_post_layout_option', true );
 
 if ( 'one-column' == $post_layout ) {
 	$post_layout = 'w-full';
