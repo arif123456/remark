@@ -491,7 +491,7 @@ if ( ! function_exists( 'remark_footer_copyright' ) ) {
 							<?php echo bloginfo('name'); ?>
 							<?php printf( __( '/ Designed & Built by', 'remark' ) ); ?>
 							</span>
-							<a class="text-sky-500 hover:text-white visited:text-white" href="<?php echo esc_url( __( 'https://www.wpfound.com/', 'remark' ) ); ?>" target='_blank'><?php printf( __( 'WPFound', 'remark' ) ); ?></a>
+							<a class="text-sky-500 hover:text-white visited:text-white ml-1" href="<?php echo esc_url( __( 'https://www.wpfound.com/', 'remark' ) ); ?>" target='_blank'><?php printf( __( 'WPFound', 'remark' ) ); ?></a>
 					</p>
 				</div><!-- .site-info -->
 			</div>
