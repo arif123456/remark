@@ -1,38 +1,6 @@
 .remark__widget-area {
   .widget {
-    flex-basis: 22%;
-    max-width: 100%;
     margin: 0;
-
-    @media(min-width: 768px) and (max-width: 1024px) {
-      flex-basis: 46%;
-      
-    }
-
-    &.column-1 {
-      flex-basis: 100%;
-
-    }
-
-    &.column-2 {
-      flex-basis: 48%;
-
-      @media(min-width: 768px) and (max-width: 1024px) {
-        flex-basis: 46%;
-        
-      }
-
-    }
-
-    &.column-3 {
-      flex-basis: 31%;
-
-      @media(min-width: 768px) and (max-width: 1024px) {
-        flex-basis: 46%;
-        
-      }
-      
-    }
 
     .wp-social-link {
       font-size: inherit;

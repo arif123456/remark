@@ -444,38 +444,6 @@ function remark_customize_register( $wp_customize ) {
 		Start Single Post Setting 
 		==========================*/
 
-		/* Footer Options */
-		$wp_customize->add_section( 'remark_footer_copyright_section', 
-			array(
-				'title'         => __( 'Remark: Footer', 'remark' ),
-				'priority'      => 40,
-			) 
-		);
-
-		/* Footer Column */
-		$wp_customize->add_setting( 'remark_footer_widget_layout',
-			array(
-				'sanitize_callback' => 'wp_kses_post',
-				'transport'         => 'refresh',
-				'default'   => 'column-4',
-			)
-		);
-
-		$wp_customize->add_control( 'remark_footer_widget_layout', 
-			array(
-					'type'        => 'select',
-					'label'       => 'Widget Column',
-					'priority'    => 10,
-					'section'     => 'remark_footer_copyright_section',
-					'choices'           => array(
-						'column-1'      => __( 'Column 1', 'remark' ),
-						'column-2'      => __( 'Column 2', 'remark' ),
-						'column-3'      => __( 'Column 3', 'remark' ),
-						'column-4'      => __( 'Column 4', 'remark' ),
-					),
-		
-			) 
-		);
 }
 add_action( 'customize_register', 'remark_customize_register' );
 

@@ -216,7 +216,7 @@ function remark_post_category() {
  */
 function remark_post_content() {
 	$show_content = get_theme_mod( 'remark_post_content_show', true );
-	$post_content = get_theme_mod( 'remark_blog_post_content_option', true );
+	$post_content = get_theme_mod( 'remark_blog_post_content_option', 'excerpt' );
 	?>
 		<?php if ( ! empty( $show_content ) ) { ?>
 		<div class="entry-content font-medium text-[#3a3a3a] leading-7">
@@ -449,7 +449,7 @@ if ( ! function_exists( 'remark_footer_widget' ) ) {
 		?>
 			<div class="bg-[#111111] py-20">
 				<div class="container mx-auto">
-					<div class="remark__widget-area flex-wrap justify-between flex-none md:flex lg:flex gap-0 md:gap-8 lg:gap-8">
+					<div class="remark__widget-area justify-between gap-0 md:gap-8 lg:gap-8">
 						<?php 
 						
 							if ( is_active_sidebar( 'footer-widget' ) ) {
@@ -491,7 +491,7 @@ if ( ! function_exists( 'remark_footer_copyright' ) ) {
 							<?php echo bloginfo('name'); ?>
 							<?php printf( __( '/ Designed & Built by', 'remark' ) ); ?>
 							</span>
-							<a class="text-sky-500 hover:text-white visited:text-white" href="<?php echo esc_url( __( 'https://www.wpfound.com/', 'remark' ) ); ?>" target='_blank'><?php printf( __( 'WPFound', 'remark' ) ); ?></a>
+							<a class="text-sky-500 hover:text-white visited:text-white ml-1" href="<?php echo esc_url( __( 'https://www.wpfound.com/', 'remark' ) ); ?>" target='_blank'><?php printf( __( 'WPFound', 'remark' ) ); ?></a>
 					</p>
 				</div><!-- .site-info -->
 			</div>
@@ -510,7 +510,7 @@ if ( ! function_exists( 'remark_breadcrumbs' ) ) {
 	 * @since 1.0.0
 	 */
 	function remark_breadcrumbs() {
-		$enable_bradcrumb = get_theme_mod( 'remark_enable_breadcrumb', true );
+		$enable_bradcrumb = get_theme_mod( 'remark_enable_breadcrumb', 'hide' );
 
 		if ( $enable_bradcrumb === 'show' ) {
 			?>
