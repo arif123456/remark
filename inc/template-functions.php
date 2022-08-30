@@ -216,7 +216,7 @@ function remark_post_category() {
  */
 function remark_post_content() {
 	$show_content = get_theme_mod( 'remark_post_content_show', true );
-	$post_content = get_theme_mod( 'remark_blog_post_content_option', true );
+	$post_content = get_theme_mod( 'remark_blog_post_content_option', 'excerpt' );
 	?>
 		<?php if ( ! empty( $show_content ) ) { ?>
 		<div class="entry-content font-medium text-[#3a3a3a] leading-7">
@@ -510,7 +510,7 @@ if ( ! function_exists( 'remark_breadcrumbs' ) ) {
 	 * @since 1.0.0
 	 */
 	function remark_breadcrumbs() {
-		$enable_bradcrumb = get_theme_mod( 'remark_enable_breadcrumb', true );
+		$enable_bradcrumb = get_theme_mod( 'remark_enable_breadcrumb', 'hide' );
 
 		if ( $enable_bradcrumb === 'show' ) {
 			?>
