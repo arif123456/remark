@@ -449,7 +449,7 @@ if ( ! function_exists( 'remark_footer_widget' ) ) {
 		?>
 			<div class="bg-[#111111] py-20">
 				<div class="container mx-auto">
-					<div class="remark__widget-area flex-wrap justify-between flex-none md:flex lg:flex gap-0 md:gap-8 lg:gap-8">
+					<div class="remark__widget-area justify-between gap-0 md:gap-8 lg:gap-8">
 						<?php 
 						
 							if ( is_active_sidebar( 'footer-widget' ) ) {
