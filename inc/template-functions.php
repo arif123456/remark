@@ -449,7 +449,7 @@ if ( ! function_exists( 'remark_footer_widget' ) ) {
 		?>
 			<div class="bg-[#111111] py-20">
 				<div class="container mx-auto">
-					<div class="remark__widget-area flex-wrap justify-between flex-none md:flex lg:flex gap-0 md:gap-8 lg:gap-8">
+					<div class="remark__widget-area justify-between gap-0 md:gap-8 lg:gap-8">
 						<?php 
 						
 							if ( is_active_sidebar( 'footer-widget' ) ) {
@@ -491,7 +491,7 @@ if ( ! function_exists( 'remark_footer_copyright' ) ) {
 							<?php echo bloginfo('name'); ?>
 							<?php printf( __( '/ Designed & Built by', 'remark' ) ); ?>
 							</span>
-							<a class="text-sky-500 hover:text-white visited:text-white" href="<?php echo esc_url( __( 'https://www.wpfound.com/', 'remark' ) ); ?>" target='_blank'><?php printf( __( 'WPFound', 'remark' ) ); ?></a>
+							<a class="text-sky-500 hover:text-white visited:text-white ml-1" href="<?php echo esc_url( __( 'https://www.wpfound.com/', 'remark' ) ); ?>" target='_blank'><?php printf( __( 'WPFound', 'remark' ) ); ?></a>
 					</p>
 				</div><!-- .site-info -->
 			</div>
