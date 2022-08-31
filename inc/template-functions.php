@@ -56,7 +56,7 @@ if ( ! function_exists( 'remark_blog_post' ) ) {
 				remark_feature_image()
 				
 			?>
-			<div class="p-4">
+			<div class="px-7 pt-6 pb-3">
 				
 				
 				<?php 
