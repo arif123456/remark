@@ -110,10 +110,10 @@ function remark_post_title() {
  * Post meta
  */
 function remark_post_meta() {
-	$comment = get_theme_mod( 'remark_blog_post_comment', true );
+	$comment = get_theme_mod( 'remark_blog_post_comment', false );
 	$author = get_theme_mod( 'remark_blog_post_author', true );
 	$publish_date = get_theme_mod( 'remark_blog_post_publish_date', true );
-	$post_category = get_theme_mod( 'remark_blog_post_category', true );
+	$post_category = get_theme_mod( 'remark_blog_post_category', false );
 	
 	/**
 	 * author

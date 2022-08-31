@@ -170,7 +170,7 @@ function remark_customize_register( $wp_customize ) {
 				array(
 						'sanitize_callback' => 'remark_sanitize_checkbox',
 						'transport'         => 'refresh',
-						'default'       =>  true
+						'default'       =>  false
 				)
 		);
 
@@ -188,7 +188,7 @@ function remark_customize_register( $wp_customize ) {
 				array(
 						'sanitize_callback' => 'remark_sanitize_checkbox',
 						'transport'         => 'refresh',
-						'default'       =>  true
+						'default'       =>  false
 				)
 		);
 
@@ -370,7 +370,7 @@ function remark_customize_register( $wp_customize ) {
 			array(
 					'sanitize_callback' => 'remark_sanitize_checkbox',
 					'transport'         => 'refresh',
-					'default'       =>  true
+					'default'       =>  false
 			)
 		);
 
@@ -388,7 +388,7 @@ function remark_customize_register( $wp_customize ) {
 			array(
 					'sanitize_callback' => 'remark_sanitize_checkbox',
 					'transport'         => 'refresh',
-					'default'       =>  true
+					'default'       =>  false
 			)
 		);
 

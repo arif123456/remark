@@ -10,9 +10,9 @@
 	$feature_image = get_theme_mod( 'remark_single_blog_post_feature_image', true );
 	$post_title = get_theme_mod( 'remark_single_blog_post_title_tag', true );
 	$author_meta = get_theme_mod( 'remark_signle_blog_post_author', true );
-	$comment_meta = get_theme_mod( 'remark_single_blog_post_comment', true );
+	$comment_meta = get_theme_mod( 'remark_single_blog_post_comment', false );
 	$publish_date = get_theme_mod( 'remark_single_blog_post_publish_date', true );
-	$post_category = get_theme_mod( 'remark_single_blog_post_category', true );
+	$post_category = get_theme_mod( 'remark_single_blog_post_category', false );
 	$blog_post_tag = get_theme_mod( 'remark_single_blog_post_tag', true );
 
 ?>
