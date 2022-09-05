@@ -357,7 +357,7 @@ if ( ! function_exists( 'remark_navigation' ) ) {
 	function remark_navigation() {
 		?>
 
-			<nav id="site-navigation" class="w-full md:w-3/4 lg:w-3/4" aria-label="<?php echo esc_attr_x( 'Horizontal', 'remark' ); ?>" role="navigation">
+			<nav id="site-navigation" class="w-full md:w-3/4 lg:w-3/4" aria-label="<?php esc_attr_e( 'Horizontal', 'remark' ); ?>" role="navigation">
 				<?php
 				if ( has_nav_menu( 'primary' ) ) {
 					wp_nav_menu(

@@ -117,6 +117,8 @@ Submenu
   -ms-transition: .3s linear 0s;
   transition: .3s linear 0s;
   display: block;
+  box-shadow: 0 10px 72px 4px rgba(9, 21, 0, 0.10);
+  margin-top: 8px;
 
 }
 
@@ -156,6 +158,7 @@ Submenu
   -moz-transition: .3s linear 0s;
   -ms-transition: .3s linear 0s;
   transition: .3s linear 0s;
+  margin-top: 0;
 
   @media( max-width: 767px ) {
     left: 0;

@@ -100,6 +100,12 @@ function remark_setup() {
 		)
 	);
 
+	/**
+	 * Add support for block styles.
+	 *
+	 */
+	add_theme_support( 'wp-block-styles' );
+
 }
 add_action( 'after_setup_theme', 'remark_setup' );
 
@@ -153,13 +159,22 @@ add_action( 'widgets_init', 'remark_widgets_init' );
 function remark_scripts() {
 	$ver_app_css = filemtime( __DIR__ . '/app.css' );
 	$ver_master_css = filemtime( __DIR__ . '/dest/css/master.css' );
-	
+
+	//Include the webfont file.
+	require_once get_theme_file_path( 'inc/class-remark-webfont-loader.php' );
+
 	wp_enqueue_style( 'tailwind-style', get_template_directory_uri() . '/app.css', [], $ver_app_css );
 	wp_enqueue_style( 'fontawesome-css', get_template_directory_uri() . '/assets/css/fontawesome.css', array(), date( 's' ), 'all' );
 	wp_enqueue_style( 'master-style', get_template_directory_uri() . '/dest/css/master.css', [], $ver_master_css );
-	
-	// Webfont load.
-	wp_enqueue_style( 'remark-latofont', 'https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap', array(), _S_VERSION );
+	wp_enqueue_style( 'theme-style', get_template_directory_uri() . '/assets/css/theme-style.css', array(), _S_VERSION );
+
+	// Load webfont url.
+	wp_enqueue_style(
+		'remark-webfont',
+		remark_get_webfont_url( 'https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap' ),
+		array(),
+		_S_VERSION
+	);
 
 	wp_enqueue_style( 'remark-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'remark-style', 'rtl', 'replace' );
@@ -220,7 +235,9 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
-
+/**
+ * Add class of nav item
+ */
 function remark_add_class_nav_item( $classes, $item, $args ) {
 	if ( isset( $args->a_class ) ) {
 		$classes['class'] = $args->a_class;

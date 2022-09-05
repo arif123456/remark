@@ -189,7 +189,13 @@ Pagination
   background: #fff;
   text-align: center;
   padding: 15px 0;
-  margin: 30px 14px;
+  margin: 30px 14px 80px;
+}
+@media (max-width: 767px) {
+  .pagination {
+    width: 92%;
+    margin: 30px 0 80px 14px;
+  }
 }
 .pagination .nav-links {
   display: flex;
@@ -273,7 +279,7 @@ Post comment
 }
 .comments-area .comment-form input[type=text], .comments-area .comment-form input[type=email], .comments-area .comment-form input[type=url] {
   width: 100%;
-  padding: 7px 10px;
+  padding: 12px 10px;
   outline: none;
 }
 .comments-area .comment-form textarea {
@@ -300,6 +306,14 @@ Post comment
   font-weight: 800;
   cursor: pointer;
 }
+.comments-area .comment-form .comment-form-cookies-consent[class] {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.comments-area .comment-form .comment-form-cookies-consent[class] label {
+  margin-bottom: 0;
+}
 
 .search-results .pagination {
   margin: 0;
@@ -310,6 +324,10 @@ Post comment
 }
 .search-results .entry-meta a:hover {
   color: #BB0000;
+}
+
+.gallery-item .wp-caption-text {
+  text-align: left;
 }
 
 /* =========================
@@ -407,6 +425,8 @@ Submenu
   -ms-transition: 0.3s linear 0s;
   transition: 0.3s linear 0s;
   display: block;
+  box-shadow: 0 10px 72px 4px rgba(9, 21, 0, 0.1);
+  margin-top: 8px;
 }
 
 .nav-menu li:hover ul.sub-menu {
@@ -445,6 +465,7 @@ Submenu
   -moz-transition: 0.3s linear 0s;
   -ms-transition: 0.3s linear 0s;
   transition: 0.3s linear 0s;
+  margin-top: 0;
 }
 @media (max-width: 767px) {
   .nav-menu ul.sub-menu li ul.sub-menu {
@@ -941,8 +962,4 @@ button.toggle {
 }
 .site-footer a {
   color: #bb0000;
-}
-
-body {
-  font-family: "Lato";
 }

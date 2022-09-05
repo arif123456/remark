@@ -1,65 +1,8 @@
-/*!
-Theme Name: Remark
-Theme URI: https://github.com/arif123456/remark
-Author: Ariful Islam
-Author URI: https://profiles.wordpress.org/wpfound/
-Description: Remark is a WordPress Blog Theme for personal use. Fully responsive design. This Theme builds with most popular A utility-first CSS framework Tailwind CSS, Font-Awesome, HTML5
-Version: 1.0.1
-Tested up to: 6.0
-Requires PHP: 5.6
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: remark
-Tags: right-sidebar, two-columns, custom-menu, custom-logo, featured-images, sticky-post, threaded-comments
-
-*/
-
-
-/*--------------------------------------------------------------
->>> TABLE OF CONTENTS:
-----------------------------------------------------------------
-# Generic
-	- Normalize
-	- Box sizing
-# Base
-	- Typography
-	- Elements
-	- Links
-	- Forms
-## Layouts
-# Components
-	- Navigation
-	- Posts and pages
-	- Comments
-	- Widgets
-	- Media
-	- Captions
-	- Galleries
-# plugins
-	- Jetpack infinite scroll
-# Utilities
-	- Accessibility
-	- Alignments
-
---------------------------------------------------------------*/
-
-/*--------------------------------------------------------------
-# Generic
---------------------------------------------------------------*/
-
-/* Normalize
---------------------------------------------- */
-
-/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
-
-/* Document
-	 ========================================================================== */
-
 /**
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
-html {
+ html {
 	line-height: 1.15;
 	-webkit-text-size-adjust: 100%;
 }
@@ -72,6 +15,34 @@ html {
  */
 body {
 	margin: 0;
+}
+
+/* Typography
+--------------------------------------------- */
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+	color: #404040;
+	font-size: 1rem;
+	line-height: 1.5;
+  font-family: "Lato", "Helvetica", "Arial", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Lato", "Helvetica", "Arial", sans-serif;
+	clear: both;
+}
+
+p {
+	margin-bottom: 1.5em;
 }
 
 /**
@@ -88,6 +59,29 @@ main {
 h1 {
 	font-size: 2em;
 	margin: 0.67em 0;
+}
+
+h1, .entry-content h1 {
+	font-size: 40px;
+}
+h2, .entry-content h2 {
+	font-size: 30px;
+}
+h3, .entry-content h3 {
+	font-size: 25px;
+}
+h4, .entry-content h4 {
+	font-size: 20px;
+}
+h5, .entry-content h5 {
+	font-size: 18px;
+}
+h6, .entry-content h6 {
+	font-size: 15px;
+}
+
+.entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6 {
+	margin-bottom: 20px;
 }
 
 /* Grouping content
@@ -389,30 +383,6 @@ html {
 
 /* Typography
 --------------------------------------------- */
-body,
-button,
-input,
-select,
-optgroup,
-textarea {
-	color: #404040;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-	font-size: 1rem;
-	line-height: 1.5;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	clear: both;
-}
-
-p {
-	margin-bottom: 1.5em;
-}
 
 dfn,
 cite,
@@ -477,11 +447,13 @@ hr {
 
 ul,
 ol {
-	margin: 0 3em 1.5em 0;
+	margin: 0;
+  list-style: none;
 }
 
 ul {
 	list-style: disc;
+  list-style: none;
 }
 
 ol {
@@ -491,7 +463,7 @@ ol {
 li > ul,
 li > ol {
 	margin-bottom: 0;
-	margin-right: 1.5em;
+	margin-left: 1.5em;
 }
 
 dt {
@@ -649,27 +621,27 @@ textarea {
 	display: none;
 	list-style: none;
 	margin: 0;
-	padding-right: 0;
+	padding-left: 0;
 }
 
 .main-navigation ul ul {
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	float: right;
+	float: left;
 	position: absolute;
 	top: 100%;
-	right: -999em;
+	left: -999em;
 	z-index: 99999;
 }
 
 .main-navigation ul ul ul {
-	right: -999em;
+	left: -999em;
 	top: 0;
 }
 
 .main-navigation ul ul li:hover > ul,
 .main-navigation ul ul li.focus > ul {
 	display: block;
-	right: auto;
+	left: auto;
 }
 
 .main-navigation ul ul a {
@@ -678,7 +650,7 @@ textarea {
 
 .main-navigation ul li:hover > ul,
 .main-navigation ul li.focus > ul {
-	right: auto;
+	left: auto;
 }
 
 .main-navigation li {
@@ -738,11 +710,6 @@ textarea {
 --------------------------------------------- */
 .sticky {
 	display: block;
-}
-
-.post,
-.page {
-	margin: 0 0 1.5em;
 }
 
 .updated:not(.published) {
@@ -805,8 +772,8 @@ textarea {
 
 .wp-caption img[class*="wp-image-"] {
 	display: block;
-	margin-right: auto;
 	margin-left: auto;
+	margin-right: auto;
 }
 
 .wp-caption .wp-caption-text {
@@ -917,7 +884,7 @@ textarea {
 	font-size: 0.875rem;
 	font-weight: 700;
 	height: auto;
-	right: 5px;
+	left: 5px;
 	line-height: normal;
 	padding: 15px 23px 14px;
 	text-decoration: none;
@@ -934,13 +901,21 @@ textarea {
 /* Alignments
 --------------------------------------------- */
 .alignleft {
+
+	/*rtl:ignore*/
 	float: left;
+
+	/*rtl:ignore*/
 	margin-right: 1.5em;
 	margin-bottom: 1.5em;
 }
 
 .alignright {
+
+	/*rtl:ignore*/
 	float: right;
+
+	/*rtl:ignore*/
 	margin-left: 1.5em;
 	margin-bottom: 1.5em;
 }
@@ -948,7 +923,7 @@ textarea {
 .aligncenter {
 	clear: both;
 	display: block;
-	margin-right: auto;
 	margin-left: auto;
+	margin-right: auto;
 	margin-bottom: 1.5em;
 }
