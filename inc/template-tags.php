@@ -209,3 +209,14 @@ function remark_add_sub_toggles_to_main_menu( $args, $item, $depth ) {
 
 }
 add_filter( 'nav_menu_item_args', 'remark_add_sub_toggles_to_main_menu', 10, 3 );
+
+/**
+ * Add class of nav item
+ */
+function remark_add_class_nav_item( $classes, $item, $args ) {
+	if ( isset( $args->a_class ) ) {
+		$classes['class'] = $args->a_class;
+	}
+	return $classes;
+}
+add_filter( 'nav_menu_link_attributes', 'remark_add_class_nav_item', 1, 3 );

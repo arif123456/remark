@@ -234,14 +234,3 @@ require get_template_directory() . '/inc/class-remark-walker-menu.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-
-/**
- * Add class of nav item
- */
-function remark_add_class_nav_item( $classes, $item, $args ) {
-	if ( isset( $args->a_class ) ) {
-		$classes['class'] = $args->a_class;
-	}
-	return $classes;
-}
-add_filter( 'nav_menu_link_attributes', 'remark_add_class_nav_item', 1, 3 );
