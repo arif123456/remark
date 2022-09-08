@@ -335,7 +335,6 @@ if ( ! function_exists( 'remark_site_logo' ) ) {
 			<button class="toggle nav-toggle mobile-nav-toggle" data-toggle-target=".menu-modal"  data-toggle-body-class="showing-menu-modal" aria-expanded="false" data-set-focus=".close-nav-toggle">
 					<span class="toggle-inner">
 							<span class="toggle-icon">
-									<!-- <img src="<?php echo esc_url( get_theme_file_uri( '/images/toggle-menu.png' ) ); ?>" alt="Icon"> -->
 									<i class="fa-solid fa-list"></i>
 							</span>
 					</span>
@@ -368,7 +367,8 @@ if ( ! function_exists( 'remark_navigation' ) ) {
 							'theme_location'  => 'primary',
 							'li_class'        => 'lg:mx-4',
 							'fallback_cb'     => false,
-							'a_class'     => 'text-sm text-[#222] visited:text-[#222] active:text-[#222] hover:text-[#BB0000] font-semibold uppercase pr-5',
+							'depth'           => 3,
+							'a_class'     		=> 'text-sm text-[#222] visited:text-[#222] active:text-[#222] hover:text-[#BB0000] font-semibold uppercase pr-5',
 						)
 					);
 				} else {

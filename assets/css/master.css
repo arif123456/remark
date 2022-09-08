@@ -148,6 +148,12 @@ Pagination
   color: #ffffff;
 }
 
+.post-meta .post-comments {
+  color: #818181;
+}
+.post-meta .post-comments:hover {
+  color: #bb2a26;
+}
 .post-meta li {
   display: inline-block;
   margin: 0 15px 8px 0;
@@ -232,6 +238,9 @@ Post comment
   margin-bottom: 30px;
   color: #222222;
   font-weight: 700;
+}
+.comments-area ol, .comments-area ul {
+  list-style: none;
 }
 .comments-area .logged-in-as a {
   color: #BB0000;
@@ -366,26 +375,25 @@ Submenu
     display: block;
   }
 }
+.nav-menu li ul.sub-menu li ul.sub-menu li:before {
+  display: none;
+}
 .nav-menu .menu-item-has-children {
   position: relative;
 }
 .nav-menu .menu-item-has-children:before {
-  content: "";
+  content: "\f105";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 700;
   position: absolute;
-  background: url("../../assets/images/angle-right.svg");
-  width: 16px;
-  height: 16px;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: right;
-  right: 0;
+  right: 8px;
   top: -3px;
   transform: rotate(90deg);
 }
 .nav-menu .menu-item-has-children .sub-menu .menu-item-has-children:before {
   transform: rotate(0deg) translateY(-50%);
-  top: 50%;
-  right: 8px;
+  top: 19px;
+  right: 12px;
 }
 
 .nav-menu li a {
@@ -575,16 +583,12 @@ End Submenu
   position: relative;
 }
 .site-header .remark__default-menu li.page_item_has_children .icon:before {
-  content: "";
+  content: "\f105";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 700;
   position: absolute;
-  background: url("../../assets/images/angle-right.svg");
-  width: 14px;
-  height: 14px;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: right;
-  right: -16px;
-  top: 2px;
+  right: 8px;
+  top: -3px;
   transform: rotate(90deg);
 }
 .site-header .remark__default-menu li:hover .children {
@@ -615,8 +619,8 @@ End Submenu
 }
 .site-header .remark__default-menu .children li .icon:before {
   transform: rotate(0deg) translateY(-50%);
-  top: 50%;
-  right: 8px;
+  top: 19px;
+  right: 12px;
 }
 .site-header .remark__default-menu .children li a {
   display: block;
@@ -716,7 +720,7 @@ Mobile Menu
 .remark__mobile-menu .modal-menu > li > .anchor-wrapper > a {
   font-size: 18px;
   font-weight: 700;
-  letter-spacing: -0.0375em;
+  letter-spacing: 0.4px;
   color: #222222;
 }
 .remark__mobile-menu .modal-menu > li:last-child {
@@ -765,20 +769,18 @@ Mobile Menu
   flex-shrink: 0;
 }
 .remark__mobile-menu .anchor-wrapper .sub-menu-toggle {
-  background: url("../../assets/images/toggle-down.png");
-  background-repeat: no-repeat;
-  background-size: auto;
-  background-size: contain;
-  height: 24px;
-  background-position: center;
+  position: relative;
 }
-.remark__mobile-menu .anchor-wrapper .sub-menu-toggle.active {
-  background: url("../../assets/images/toggle-up.png");
-  background-repeat: no-repeat;
-  background-size: auto;
-  background-size: contain;
-  height: 24px;
-  background-position: center;
+.remark__mobile-menu .anchor-wrapper .sub-menu-toggle:before {
+  content: "\f078";
+  position: absolute;
+  font-family: "Font Awesome 6 Free";
+  font-weight: 700;
+  top: 0;
+}
+.remark__mobile-menu .anchor-wrapper .sub-menu-toggle.active:before {
+  content: "\f078";
+  transform: rotate(180deg);
 }
 
 /* =========================

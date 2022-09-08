@@ -116,10 +116,12 @@
 		<?php if ( ! empty( $blog_post_tag ) ) { ?> 
 			<div class="block">
 				<ul class="clear-both pb-3">
-					<span class="text-base font-bold text-slate-800 mr-2"><?php esc_html_e( 'Tags:', 'remark' ); ?></span>
 					<?php 
 						$post_tags = get_the_tags();
 						if ( is_array( $post_tags ) || is_object( $post_tags ) ) {
+							?>
+								<span class="text-base font-bold text-slate-800 mr-2"><?php esc_html_e( 'Tags:', 'remark' ); ?></span>
+							<?php
 							foreach( $post_tags as $post_tag ) {
 								echo '<li class="inline-block mb-2"><a class="text-sm	font-font-normal text-slate-800 bg-[#F2F4F3] hover:bg-[#BB0000] hover:text-white rounded-lg py-1 px-4 mr-2" href="' . esc_url( get_tag_link( $post_tag->term_id ) ) . '">' . $post_tag->name . '</a></li>';
 								

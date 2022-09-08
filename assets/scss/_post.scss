@@ -36,6 +36,15 @@ Pagination
 }
 
 .post-meta {
+  .post-comments {
+    color: #818181;
+
+    &:hover {
+      color: #bb2a26;
+
+    }
+  }
+
   li {
     display: inline-block;
     margin: 0 15px 8px 0;
@@ -144,6 +153,11 @@ Post comment
     margin-bottom: 30px;
     color: #222222;
     font-weight: 700;
+    
+  }
+
+  ol, ul {
+    list-style: none;
     
   }
 

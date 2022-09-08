@@ -40,20 +40,31 @@ Submenu
 
   }
 
+  li {
+    ul.sub-menu {
+      li {
+        ul.sub-menu {
+          li {
+            &:before { 
+              display: none;
+              
+            }
+          }
+        }
+      }
+    }
+  }
+
   .menu-item-has-children {
     position: relative;
 
     &:before {
-      content: "";
+      content: "\f105";
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 700;
       position: absolute;
-      background: url('../../assets/images/angle-right.svg');
-      width: 16px;
-      height: 16px;
-      background-repeat: no-repeat;
-      background-size: contain;
-      background-position: right;
-      right: 0;
-      top: -3px;
+      right: 8px;
+      top: -3px;  
       transform: rotate(90deg);
 
       @media( max-width: 1024px ) {
@@ -67,8 +78,8 @@ Submenu
       .menu-item-has-children {
         &:before {
           transform: rotate(0deg) translateY(-50%);
-          top: 50%;
-          right: 8px;
+          top: 19px;
+          right: 12px;
       
         }
       }
@@ -289,16 +300,12 @@ End Submenu
         .icon {
 
           &:before {
-            content: "";
+            content: "\f105";
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 700;
             position: absolute;
-            background: url('../../assets/images/angle-right.svg');
-            width: 14px;
-            height: 14px;
-            background-repeat: no-repeat;
-            background-size: contain;
-            background-position: right;
-            right: -16px;
-            top: 2px;
+            right: 8px;
+            top: -3px;  
             transform: rotate(90deg);
       
             @media( max-width: 1024px ) {
@@ -344,8 +351,8 @@ End Submenu
 
           &:before {
             transform: rotate(0deg) translateY(-50%);
-            top: 50%;
-            right: 8px;
+            top: 19px;
+            right: 12px;
         
           }
         }
@@ -468,7 +475,7 @@ Mobile Menu
  .modal-menu > li > .anchor-wrapper > a {
 	font-size: 18px;
 	font-weight: 700;
-	letter-spacing: -0.0375em;
+	letter-spacing: 0.4px;
   color: #222222;
   
   }
@@ -532,21 +539,23 @@ Mobile Menu
   
   
   .anchor-wrapper .sub-menu-toggle {
-    background: url('../../assets/images/toggle-down.png');
-    background-repeat: no-repeat;
-    background-size: auto;
-    background-size: contain;
-    height: 24px;
-    background-position: center;
-  }
-  
-  .anchor-wrapper .sub-menu-toggle.active{ 
-    background: url('../../assets/images/toggle-up.png');
-    background-repeat: no-repeat;
-    background-size: auto;
-    background-size: contain;
-    height: 24px;
-    background-position: center;
+    position: relative;
+
+    &:before {
+      content: '\f078';
+      position: absolute;
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 700;
+      top: 0;
+    }
+
+    &.active {
+      &:before {
+        content: '\f078';
+        transform: rotate(180deg);
+
+      }
+    }
   }
 
 }
