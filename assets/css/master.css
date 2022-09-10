@@ -54,11 +54,11 @@
   transform: rotate(180deg);
 }
 .widget-area .widget .tagcloud a, .widget-area .widget .wp-block-tag-cloud a, .widget-area .widget_block .tagcloud a, .widget-area .widget_block .wp-block-tag-cloud a {
-  font-size: 12px !important;
+  font-size: 14px !important;
   font-weight: 400;
   color: #40454d;
   margin: 0 1px 6px 0;
-  padding: 3px 7px;
+  padding: 1px 14px;
   display: inline-block;
   border: 1px solid #1d495e;
   border-radius: 20px;
@@ -163,7 +163,7 @@ Pagination
   margin-bottom: 8px;
 }
 .post-meta li.post-category span a {
-  padding: 8px 8px;
+  padding: 8px 12px;
   display: inline-block;
   border-radius: 4px;
   color: #ffffff;
@@ -216,6 +216,7 @@ Pagination
   color: #222222;
   margin: 0px 8px 0px 0px;
   outline: none;
+  border-radius: 3px;
 }
 .pagination .nav-links .page-numbers:hover {
   background: #BB0000;
@@ -238,6 +239,12 @@ Post comment
   margin-bottom: 30px;
   color: #222222;
   font-weight: 700;
+}
+.comments-area #cancel-comment-reply-link {
+  color: #bb2a26;
+  font-size: 16px;
+  font-weight: 700;
+  margin-left: 7px;
 }
 .comments-area ol, .comments-area ul {
   list-style: none;
@@ -263,14 +270,22 @@ Post comment
   background: #BB0000;
   color: #ffffff;
   font-size: 14px;
-  font-weight: 300;
-  padding: 2px 12px;
+  font-weight: 400;
+  padding: 6px 14px;
   transition: 0.3s linear 0s;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+.comments-area .comment-body .reply a:hover {
+  background: #930303;
 }
 .comments-area .comment-body .comment-metadata a {
   color: #818181;
   font-size: 13px;
   font-weight: 400;
+}
+.comments-area .comment-body .comment-metadata a:hover {
+  text-decoration: underline;
 }
 .comments-area .comment-body .comment-metadata .edit-link a {
   color: #BB0000;
@@ -310,10 +325,14 @@ Post comment
   color: #fff;
   border: 0px;
   outline: none;
-  padding: 12px 30px;
+  padding: 14px 30px;
   text-transform: uppercase;
-  font-weight: 800;
+  font-weight: 500;
   cursor: pointer;
+  border-radius: 4px;
+}
+.comments-area .comment-form input[type=submit]:hover {
+  background: #930303;
 }
 .comments-area .comment-form .comment-form-cookies-consent[class] {
   display: flex;
@@ -337,6 +356,14 @@ Post comment
 
 .gallery-item .wp-caption-text {
   text-align: left;
+}
+
+.wp-block-cover-text[class] {
+  color: #ffffff !important;
+}
+
+.wp-block-button__link {
+  margin-bottom: 15px;
 }
 
 /* =========================
@@ -374,6 +401,21 @@ Submenu
   .nav-menu {
     display: block;
   }
+}
+.nav-menu li:last-child.menu-item-has-children ul, .nav-menu li:nth-last-child(2).menu-item-has-children ul {
+  right: 0;
+  left: auto;
+  padding: 0 8px;
+}
+.nav-menu li:last-child.menu-item-has-children ul li.menu-item-has-children:before, .nav-menu li:nth-last-child(2).menu-item-has-children ul li.menu-item-has-children:before {
+  transform: rotate(180deg) translateY(-50%);
+  top: -5px;
+  right: auto;
+  left: 0;
+}
+.nav-menu li:last-child.menu-item-has-children ul li ul, .nav-menu li:nth-last-child(2).menu-item-has-children ul li ul {
+  left: auto !important;
+  right: 100% !important;
 }
 .nav-menu li ul.sub-menu li ul.sub-menu li:before {
   display: none;

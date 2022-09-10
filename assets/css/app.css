@@ -988,8 +988,8 @@ video {
   padding-bottom: 2rem;
 }
 
-.pr-96 {
-  padding-right: 24rem;
+.pt-3 {
+  padding-top: 0.75rem;
 }
 
 .text-center {
@@ -1148,6 +1148,16 @@ video {
 .hover\:bg-\[\#BB0000\]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(187 0 0 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-red-700:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(185 28 28 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-red-800:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(153 27 27 / var(--tw-bg-opacity));
 }
 
 .hover\:text-\[\#BB0000\]:hover {

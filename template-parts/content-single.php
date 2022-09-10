@@ -69,13 +69,13 @@
 			<?php } ?>
 
 			<?php if ( ! empty( $comment_meta ) ) { ?>
-			<li class="text-sm font-medium text-[#818181] visited:text-[#818181] hover:text-[#BB0000]">
-				<i class="fa-solid fa-comment mr-2 text-[#818181]"></i>
-				<?php 
-					if ( comments_open() ) {
-							comments_popup_link( '0', '1', '%', 'post-comments' );
-					} ?>
-			</li>
+				<?php if ( comments_open() ) : ?>
+					<li class="text-sm font-medium text-[#818181] visited:text-[#818181] hover:text-[#BB0000]">
+						<i class="fa-solid fa-comment mr-2 text-[#818181]"></i>
+						<?php comments_popup_link( '0', '1', '%', 'post-comments' ); ?>
+					</li>
+				<?php endif; ?>
+			
 			<?php } ?>
 			
 			<?php if ( ! empty( $post_category ) ) { ?>
@@ -86,7 +86,7 @@
 					if ( is_array( $categories) || is_object( $categories )) {
 						foreach ( $categories as $category ) {
 							$category_link = get_category_link( $category->term_id );
-							echo '<span><a class="text-sm font-medium bg-[#BB0000] visited:text-white uppercase ml-4 py-1	px-3" href="' . esc_url( $category_link ) . '">' . $category->cat_name . '</a></span>';
+							echo '<span><a class="text-sm font-medium bg-[#BB0000] hover:bg-red-800 visited:text-white uppercase ml-4 py-2 px-4" href="' . esc_url( $category_link ) . '">' . $category->cat_name . '</a></span>';
 						}
 					}
 
@@ -115,7 +115,7 @@
 		?>
 		<?php if ( ! empty( $blog_post_tag ) ) { ?> 
 			<div class="block">
-				<ul class="clear-both pb-3">
+				<ul class="clear-both pb-3 pt-4">
 					<?php 
 						$post_tags = get_the_tags();
 						if ( is_array( $post_tags ) || is_object( $post_tags ) ) {
@@ -123,7 +123,7 @@
 								<span class="text-base font-bold text-slate-800 mr-2"><?php esc_html_e( 'Tags:', 'remark' ); ?></span>
 							<?php
 							foreach( $post_tags as $post_tag ) {
-								echo '<li class="inline-block mb-2"><a class="text-sm	font-font-normal text-slate-800 bg-[#F2F4F3] hover:bg-[#BB0000] hover:text-white rounded-lg py-1 px-4 mr-2" href="' . esc_url( get_tag_link( $post_tag->term_id ) ) . '">' . $post_tag->name . '</a></li>';
+								echo '<li class="inline-block mb-2"><a class="text-sm font-font-normal text-slate-800 bg-[#F2F4F3] hover:bg-[#BB0000] hover:text-white visited:text-slate-800 rounded-lg py-2 px-4 mr-2" href="' . esc_url( get_tag_link( $post_tag->term_id ) ) . '">' . $post_tag->name . '</a></li>';
 								
 							}
 						}

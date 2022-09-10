@@ -225,7 +225,7 @@ function remark_post_content() {
 					if ( 'excerpt' == $post_content ) {
 
 						the_excerpt();
-						echo '<a class="inline-block mb-4 text-sm font-semibold bg-[#BB0000] hover:text-white visited:text-white text-white p-2 rounded" href="' . esc_url( get_permalink() ) . '">' . esc_html__( 'Read More', 'remark' ) . '</a>'; 
+						echo '<a class="inline-block mb-4 text-sm font-semibold bg-[#BB0000] hover:bg-red-800 hover:text-white visited:text-white text-white p-2 rounded" href="' . esc_url( get_permalink() ) . '">' . esc_html__( 'Read More', 'remark' ) . '</a>'; 
 					} else {
 	
 						the_content(
@@ -333,11 +333,11 @@ if ( ! function_exists( 'remark_site_logo' ) ) {
 			</div><!-- .site-branding -->
 
 			<button class="toggle nav-toggle mobile-nav-toggle" data-toggle-target=".menu-modal"  data-toggle-body-class="showing-menu-modal" aria-expanded="false" data-set-focus=".close-nav-toggle">
-					<span class="toggle-inner">
-							<span class="toggle-icon">
-									<i class="fa-solid fa-list"></i>
-							</span>
+				<span class="toggle-inner">
+					<span class="toggle-icon">
+						<i class="fa-solid fa-list"></i>
 					</span>
+				</span>
 			</button><!-- .nav-toggle -->
 		<?php
 	}

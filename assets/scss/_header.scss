@@ -7,12 +7,48 @@ Submenu
 
 }
 
+// #primary-menu ul ul li:hover>ul, #primary-menu ul ul li.focus>ul {
+//   right: 100%;
+//   left: unset;
+// }
+
 .current-menu-item {
   a {
     color: #BB0000 !important;
 
   }
 }
+
+// .nav-menu {
+//   li {
+//     &:nth-last-child(2) {
+//       &.menu-item-has-children {
+//         ul {
+//           right: 0;
+//           left: auto;
+//           padding: 0 8px;
+    
+//           li {
+//             &.menu-item-has-children:before {
+//               transform: rotate(180deg) translateY(-50%);
+//               top: -5px;
+//               right: auto;
+//               left: 0;
+    
+//             }
+    
+//             ul {
+//               left: auto !important;
+//               right: 100% !important;
+    
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+
 
 .nav-menu li.menu-item-has-children:hover > ul,
 .nav-menu li.menu-item-has-children:focus > ul,
@@ -41,6 +77,33 @@ Submenu
   }
 
   li {
+    &:last-child, &:nth-last-child(2) {
+      &.menu-item-has-children {
+        ul {
+          right: 0;
+          left: auto;
+          padding: 0 8px;
+    
+          li {
+            &.menu-item-has-children:before {
+              transform: rotate(180deg) translateY(-50%);
+              top: -5px;
+              right: auto;
+              left: 0;
+    
+            }
+    
+            ul {
+              left: auto !important;
+              right: 100% !important;
+    
+            }
+          }
+        }
+      }
+      
+    }
+
     ul.sub-menu {
       li {
         ul.sub-menu {
@@ -57,6 +120,30 @@ Submenu
 
   .menu-item-has-children {
     position: relative;
+
+    // &:last-child {
+    //   ul {
+    //     right: 0;
+    //     left: auto;
+    //     padding: 0 8px;
+  
+    //     li {
+    //       &.menu-item-has-children:before {
+    //         transform: rotate(180deg) translateY(-50%);
+    //         top: -5px;
+    //         right: auto;
+    //         left: 0;
+  
+    //       }
+  
+    //       ul {
+    //         left: auto !important;
+    //         right: 100% !important;
+  
+    //       }
+    //     }
+    //   }
+    // }
 
     &:before {
       content: "\f105";
