@@ -616,10 +616,16 @@ End Submenu
   margin-right: 22px;
   position: relative;
 }
+.site-header .remark__default-menu li.current_page_item a {
+  color: #BB0000;
+}
 .site-header .remark__default-menu li a {
   font-size: 16px;
   color: #222;
   font-weight: 500;
+}
+.site-header .remark__default-menu li a:hover {
+  color: #BB0000;
 }
 .site-header .remark__default-menu li.page_item_has_children {
   position: relative;

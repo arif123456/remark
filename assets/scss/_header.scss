@@ -374,10 +374,22 @@ End Submenu
       margin-right: 22px;
       position: relative;
 
+      &.current_page_item {
+        a {
+          color: #BB0000;
+          
+        }
+      }
+
       a {
         font-size: 16px;
         color: #222;
         font-weight: 500;
+
+        &:hover {
+          color: #BB0000;
+
+        }
 
       }
 
