@@ -163,7 +163,6 @@ function remark_scripts() {
 	wp_enqueue_style( 'tailwind-css', get_template_directory_uri() . '/assets/css/app.css', [], $ver_app_css );
 	wp_enqueue_style( 'fontawesome-css', get_template_directory_uri() . '/assets/css/fontawesome.css', array(), date( 's' ), 'all' );
 	wp_enqueue_style( 'master-style', get_template_directory_uri() . '/assets/css/master.css', [], $ver_master_css );
-	wp_enqueue_style( 'theme-style', get_template_directory_uri() . '/assets/css/theme-style.css', array(), _S_VERSION );
 
 	// Load webfont url.
 	wp_enqueue_style(
