@@ -1,8 +1,6 @@
 === remark ===
-
 Contributors: wpfound
 Tags: right-sidebar,  two-columns, custom-menu, custom-logo, featured-images, sticky-post, threaded-comments
-
 Requires at least: 5.9
 Tested up to: 6.0
 Requires PHP: 5.6
@@ -21,10 +19,6 @@ Remark is a WordPress Blog Theme for personal use. Fully responsive design. This
 1. In your admin panel, go to Appearance > Themes and click the Add New button.
 2. Click Upload Theme and Choose File, then select the theme's .zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
-
-== Changelog ==
-1.0.1
-* Initial release
 
 == Credits ==
 

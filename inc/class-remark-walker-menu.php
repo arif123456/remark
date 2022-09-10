@@ -3,8 +3,8 @@
  * Custom page walker for this theme.
  *
  * @package WordPress
- * @subpackage Twenty_Twenty
- * @since Twenty Twenty 1.0
+ * @subpackage Remark
+ * @since Remark 1.0
  */
 
 if ( ! class_exists( 'Remark_Walker_Page' ) ) {
@@ -12,15 +12,15 @@ if ( ! class_exists( 'Remark_Walker_Page' ) ) {
 	 * CUSTOM PAGE WALKER
 	 * A custom walker for pages.
 	 *
-	 * @since Twenty Twenty 1.0
+	 * @since Remark 1.0
 	 */
 	class Remark_Walker_Page extends Walker_Page {
 
 		/**
 		 * Outputs the beginning of the current element in the tree.
 		 *
-		 * @since Twenty Twenty 1.0
-		 * @since Twenty Twenty 1.9 Renamed `$page` to `$data_object` and `$current_page` to `$current_object_id`
+		 * @since Remark 1.0
+		 * @since Remark 1.9 Renamed `$page` to `$data_object` and `$current_page` to `$current_object_id`
 		 *                          to match parent class for PHP 8 named parameter support.
 		 *
 		 * @see Walker::start_el()

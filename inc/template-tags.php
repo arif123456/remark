@@ -220,3 +220,14 @@ function remark_add_class_nav_item( $classes, $item, $args ) {
 	return $classes;
 }
 add_filter( 'nav_menu_link_attributes', 'remark_add_class_nav_item', 1, 3 );
+
+/**
+ * Enqueue customizer stylesheet.
+ */
+function remark_enqueue_customizer_style() {
+
+	wp_register_style( 'remark-customizer', get_template_directory_uri() . '/assets/css/customizer.css', null, null, 'all' );
+	wp_enqueue_style( 'remark-customizer' );
+
+}
+add_action( 'customize_controls_print_styles', 'remark_enqueue_customizer_style' );
