@@ -33,8 +33,8 @@ remark_breadcrumbs();
 
 						the_post_navigation(
 							array(
-								'prev_text' => '<span class="nav-subtitle text-blue-500 pl-8"><span class="mr-2" aria-hidden="true">&larr;</span>' . esc_html__( 'Previous:', 'remark' ),
-								'next_text' => '<span class="nav-subtitle text-blue-500 pr-8">' . esc_html__( 'Next:', 'remark' ) . '<span class="ml-2" aria-hidden="true">&rarr;</span>',
+								'prev_text' => '<span class="nav-subtitle font-bold	text-slate-700 hover:text-[#BB0000] pl-8"><span class="mr-2" aria-hidden="true">&larr;</span>' . esc_html__( 'Previous:', 'remark' ),
+								'next_text' => '<span class="nav-subtitle font-bold	text-slate-700 hover:text-[#BB0000] pr-8">' . esc_html__( 'Next:', 'remark' ) . '<span class="ml-2" aria-hidden="true">&rarr;</span>',
 							)
 						);
 
