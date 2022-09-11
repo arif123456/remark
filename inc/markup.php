@@ -30,7 +30,7 @@
                         
                     ?>
                 
-                    <ul class="gap-10 mb-2 post-meta">
+                    <ul class="gap-10 mb-2 post-meta mt-4">
                         <?php 
                             /**
                              * @func post_author
@@ -188,7 +188,7 @@
                         if ( 'excerpt' == $post_content ) {
 
                             the_excerpt();
-                            echo '<a class="inline-block mb-4 text-sm font-semibold bg-[#BB0000] hover:bg-red-800 hover:text-white visited:text-white text-white p-2 rounded" href="' . esc_url( get_permalink() ) . '">' . esc_html__( 'Read More', 'remark' ) . '</a>'; 
+                            echo '<a class="inline-block mb-4 mt-2.5 text-sm font-semibold bg-[#BB0000] hover:bg-red-800 hover:text-white visited:text-white text-white p-2 rounded" href="' . esc_url( get_permalink() ) . '">' . esc_html__( 'Read More', 'remark' ) . '</a>'; 
                         } else {
         
                             the_content(
