@@ -23,11 +23,19 @@ Remark is a WordPress Blog Theme for personal use. Fully responsive design. This
 == Credits ==
 
 Tailwind Css
-Copyright (c) Tailwind Labs, Inc.
-MIT License
-Source: https://github.com/tailwindlabs/tailwindcss
+    Copyright (c) Tailwind Labs, Inc.
+    MIT License
+    Source: https://github.com/tailwindlabs/tailwindcss
 
 Font Awesome Free 6.1.1
-Copyright 2022 Fonticons, Inc.
-License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
-Source: https://fontawesome.com
+    Copyright 2022 Fonticons, Inc.
+    License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+    Source: https://fontawesome.com
+
+
+Images
+	Image for theme screenshot, Credit World Wildlife
+    License: CC0 1.0 Universal (CC0 1.0)
+    License URL: https://stocksnap.io/license
+    Source: https://stocksnap.io/photo/bird-perched-FS48GNRYK4
+
