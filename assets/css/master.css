@@ -600,6 +600,9 @@ End Submenu
     display: none;
   }
 }
+.site-header button {
+  color: inherit;
+}
 @media (min-width: 768px) and (max-width: 1024px) {
   .site-header #site-navigation {
     width: 100%;
@@ -727,6 +730,9 @@ Mobile Menu
   top: 0;
   transition: opacity 0.25s ease-in, left 0s 0.25s, right 0s 0.25s;
   z-index: 99;
+}
+.remark__mobile-menu button {
+  color: inherit;
 }
 .remark__mobile-menu ul li {
   border-color: #dedfdf;

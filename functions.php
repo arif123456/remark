@@ -7,9 +7,9 @@
  * @package remark
  */
 
-if ( ! defined( '_S_VERSION' ) ) {
+if ( ! defined( 'REMARK_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.0.1' );
+	define( 'REMARK_VERSION', '1.0.0' );
 }
 
 /**
@@ -17,6 +17,11 @@ if ( ! defined( '_S_VERSION' ) ) {
  */
 define( 'REMARK_THEME_DIR', trailingslashit( get_template_directory() ) );
 define( 'REMARK_THEME_URI', trailingslashit( esc_url( get_template_directory_uri() ) ) );
+
+/**
+ * Load enqueue function
+ */
+require_once REMARK_THEME_DIR . '/inc/enqueue-scripts.php';
 
 /**
  * Implement the Custom Header feature.
@@ -48,7 +53,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 /**
  * Load markup function
  */
-require_once REMARK_THEME_DIR . 'inc/markup.php';
+require_once REMARK_THEME_DIR . '/inc/markup.php';
 
 /**
  * Walker menu.
@@ -58,24 +63,19 @@ require_once REMARK_THEME_DIR . '/inc/class-remark-walker-menu.php';
 /**
  * Functions and definitions.
  */
-require_once REMARK_THEME_DIR . 'inc/class-remark-after-setup-theme.php';
+require_once REMARK_THEME_DIR . '/inc/class-remark-after-setup-theme.php';
 
 /**
  * Load widget
  */
-require_once REMARK_THEME_DIR . 'inc/widgets.php';
-
-/**
- * Load enqueue function
- */
-require_once REMARK_THEME_DIR . 'inc/enqueue-scripts.php';
+require_once REMARK_THEME_DIR . '/inc/widgets.php';
 
 /**
  * Load breadcrumbs function
  */
-require_once REMARK_THEME_DIR . 'inc/breadcrumbs.php';
+require_once REMARK_THEME_DIR . '/inc/breadcrumbs.php';
 
 /**
  * Load webfont loader
  */
-require_once REMARK_THEME_DIR . 'inc/class-remark-webfont-loader.php';
+require_once REMARK_THEME_DIR . '/inc/class-remark-webfont-loader.php';
