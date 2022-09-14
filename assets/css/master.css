@@ -21,7 +21,8 @@
 }
 .widget-area .widget, .widget-area .widget_block {
   background: #ffffff;
-  padding: 20px;
+  padding: 30px;
+  margin-bottom: 30px;
 }
 .widget-area .widget .cat-toggle-icon, .widget-area .widget_block .cat-toggle-icon {
   position: absolute;
@@ -36,7 +37,18 @@
   font-weight: 600;
   font-size: 24px;
   color: #222222;
-  margin-bottom: 20px;
+  margin-bottom: 45px;
+  line-height: 24px;
+  position: relative;
+}
+.widget-area .widget .widget-title:after, .widget-area .widget h2:after, .widget-area .widget_block .widget-title:after, .widget-area .widget_block h2:after {
+  content: "";
+  position: absolute;
+  background: #bb0000;
+  width: 60px;
+  height: 2px;
+  left: 0;
+  top: 37px;
 }
 .widget-area .widget select, .widget-area .widget_block select {
   padding: 10px;
@@ -194,8 +206,8 @@ Pagination
   width: 100%;
   background: #fff;
   text-align: center;
-  padding: 15px 0;
-  margin: 30px 14px 80px;
+  padding: 30px 0;
+  margin: 0 14px 80px;
 }
 @media (max-width: 767px) {
   .pagination {
@@ -365,6 +377,22 @@ Post comment
 
 .wp-block-button__link {
   margin-bottom: 15px;
+}
+
+.no-results form {
+  position: relative;
+}
+.no-results form label {
+  display: block;
+}
+.no-results form input[type=search] {
+  width: 100%;
+}
+.no-results form input[type=submit] {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
 }
 
 /* =========================

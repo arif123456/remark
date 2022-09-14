@@ -29,7 +29,8 @@
 
   .widget, .widget_block {
     background: #ffffff;
-    padding: 20px;
+    padding: 30px;
+    margin-bottom: 30px;
 
     .cat-toggle-icon {
       position: absolute;
@@ -47,7 +48,20 @@
       font-weight: 600;
       font-size: 24px;
       color: #222222;
-      margin-bottom: 20px;
+      margin-bottom: 45px;
+      line-height: 24px;
+      position: relative;
+
+      &:after {
+        content: "";
+        position: absolute;
+        background: #bb0000;
+        width: 60px;
+        height: 2px;
+        left: 0;
+        top: 37px;
+
+      }
 
     }
 

@@ -7,46 +7,36 @@
  * @package remark
  */
 
-	$feature_image = get_theme_mod( 'remark_single_blog_post_feature_image', true );
-	$post_title = get_theme_mod( 'remark_single_blog_post_title_tag', true );
-	$author_meta = get_theme_mod( 'remark_signle_blog_post_author', true );
-	$comment_meta = get_theme_mod( 'remark_single_blog_post_comment', false );
-	$publish_date = get_theme_mod( 'remark_single_blog_post_publish_date', true );
-	$post_category = get_theme_mod( 'remark_single_blog_post_category', false );
-	$blog_post_tag = get_theme_mod( 'remark_single_blog_post_tag', true );
+	$remark_feature_image = get_theme_mod( 'remark_single_blog_post_feature_image', true );
+	$remark_post_title    = get_theme_mod( 'remark_single_blog_post_title_tag', true );
+	$remark_author_meta   = get_theme_mod( 'remark_signle_blog_post_author', true );
+	$remark_comment_meta  = get_theme_mod( 'remark_single_blog_post_comment', false );
+	$remark_publish_date  = get_theme_mod( 'remark_single_blog_post_publish_date', true );
+	$remark_post_category = get_theme_mod( 'remark_single_blog_post_category', false );
+	$remark_blog_post_tag = get_theme_mod( 'remark_single_blog_post_tag', true );
 
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'mb-7' ); ?>>
 
-	<?php if ( ! empty( $feature_image ) ) { ?>
-
-	<div class="mb-7">
-
-		<?php 
-
-		if ( has_post_thumbnail() ) {
-
-			remark_post_thumbnail();
-
-		}
-		
-		?>
-
-	</div>
-
+	<?php if ( ! empty( $remark_feature_image ) ) { ?>
+		<?php if ( has_post_thumbnail() ) : ?>
+			<div class="mb-8">
+				<?php remark_post_thumbnail(); ?>
+			</div>
+		<?php endif; ?>
 	<?php } ?>
 	
-	<div class="bg-white p-8 mb-7">
-		<?php if ( ! empty( $post_title ) ) { ?> 
+	<div class="bg-white p-8 mb-8 pb-5">
+		<?php if ( ! empty( $remark_post_title ) ) { ?> 
 			<?php if ( get_the_title() ) : ?>
-				<h2 class="break-all text-3xl font-bold text-[#222] visited:text-[#222] mb-4"><?php the_title(); ?></h2>
+				<h2 class="break-all text-3xl font-bold text-[#222] visited:text-[#222] mb-6"><?php the_title(); ?></h2>
 			<?php endif; ?>
 			<?php if ( is_sticky() ) echo '<span class="sticky-post">' . __( 'Sticky post', 'remark' ) . '</span>'; ?>
 		<?php } ?>
 		
 		<ul class="post-meta gap-10 mb-2">
-			<?php if ( ! empty( $author_meta ) ) { ?> 
+			<?php if ( ! empty( $remark_author_meta ) ) { ?> 
 			<li>
 				<a class="mb-8 md:mb-0 lg:mb-0 text-sm font-medium text-[#818181] visited:text-[#818181] hover:text-[#BB0000]" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>">
 						<i class="fa fa-user mr-2 text-[#818181]"></i>
@@ -61,14 +51,14 @@
 			</li>
 			<?php } ?>
 
-			<?php if ( ! empty( $publish_date ) ) { ?>
+			<?php if ( ! empty( $remark_publish_date ) ) { ?>
 			<li class="text-sm mb-4 md:mb-0 lg:mb-0 font-medium text-[#818181] visited:text-[#818181]">
 				<i class="far fa-clock mr-2 text-[#818181]"></i>
 				<?php echo get_the_date( 'M j, Y' ); ?>
 			</li>
 			<?php } ?>
 
-			<?php if ( ! empty( $comment_meta ) ) { ?>
+			<?php if ( ! empty( $remark_comment_meta ) ) { ?>
 				<?php if ( comments_open() ) : ?>
 					<li class="text-sm font-medium text-[#818181] visited:text-[#818181] hover:text-[#BB0000]">
 						<i class="fa-solid fa-comment mr-2 text-[#818181]"></i>
@@ -78,7 +68,7 @@
 			
 			<?php } ?>
 			
-			<?php if ( ! empty( $post_category ) ) { ?>
+			<?php if ( ! empty( $remark_post_category ) ) { ?>
 			<li class="post-category">
 				<?php
 
@@ -95,7 +85,7 @@
 			<?php } ?>
 		</ul>
 	</div>
-	<div class="entry-content bg-white p-8 text-[#3a3a3a] leading-[30px]">
+	<div class="entry-content bg-white p-8 pb-6 text-[#3a3a3a] leading-[30px]">
 		<?php
 			the_content(
 				sprintf(
@@ -113,7 +103,7 @@
 			);
 
 		?>
-		<?php if ( ! empty( $blog_post_tag ) ) { ?> 
+		<?php if ( ! empty( $remark_blog_post_tag ) ) { ?> 
 			<div class="block">
 				<ul class="clear-both pb-3 pt-4">
 					<?php 

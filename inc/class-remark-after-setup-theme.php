@@ -142,6 +142,12 @@ if ( ! class_exists( 'Remark_After_Setup_Theme' ) ) {
             add_theme_support( 'wp-block-styles' );
 
             /**
+             * Add support for align-wide
+             *
+             */
+            add_theme_support( 'align-wide' );
+
+            /**
              * Set the content width in pixels, based on the theme's design and stylesheet.
              *
              * Priority 0 to make it available to lower priority callbacks.

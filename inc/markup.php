@@ -19,7 +19,7 @@
                     remark_feature_image()
                     
                 ?>
-                <div class="px-7 pt-6 pb-3">
+                <div class="px-7 pt-6 pb-4">
                     
                     
                     <?php 
@@ -58,11 +58,11 @@
      * Post title
      */
     function remark_post_title() {
-        $post_title = get_theme_mod( 'remark_blog_post_title_tag', true );
+        $remark_post_title = get_theme_mod( 'remark_blog_post_title_tag', true );
         ?>
-            <?php if ( ! empty ( $post_title ) ) { ?>
+            <?php if ( ! empty ( $remark_post_title ) ) { ?>
                 <?php if ( get_the_title() ) : ?>
-                    <h2 class="text-lg font-bold mb-2 post-title"><a class="break-all	font-bold text-[#222] visited:text-[#222] hover:text-[#BB0000]" href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+                    <h2 class="text-3xl font-bold mb-2"><a class="break-all	font-bold text-[#222] visited:text-[#222] hover:text-[#BB0000]" href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
                 <?php endif; ?>
                 <?php if ( is_sticky() ) echo '<span class="sticky-post">' . __( 'Sticky post', 'remark' ) . '</span>'; ?>
             <?php } ?>
@@ -73,36 +73,36 @@
      * Post meta
      */
     function remark_post_meta() {
-        $comment = get_theme_mod( 'remark_blog_post_comment', false );
-        $author = get_theme_mod( 'remark_blog_post_author', true );
-        $publish_date = get_theme_mod( 'remark_blog_post_publish_date', true );
-        $post_category = get_theme_mod( 'remark_blog_post_category', false );
+        $remark_comment = get_theme_mod( 'remark_blog_post_comment', false );
+        $remark_author = get_theme_mod( 'remark_blog_post_author', true );
+        $remark_publish_date = get_theme_mod( 'remark_blog_post_publish_date', true );
+        $remark_postcategory = get_theme_mod( 'remark_blog_post_category', false );
         
         /**
          * author
          */
-        if ( ! empty( $author ) ) {
+        if ( ! empty( $remark_author ) ) {
             post_author();
         }
 
         /**
          * post date
          */
-        if ( ! empty( $publish_date ) ) {
+        if ( ! empty( $remark_publish_date ) ) {
             remark_post_date();
         }
 
         /**
          * post comment
          */
-        if ( ! empty( $comment ) ) {
+        if ( ! empty( $remark_comment ) ) {
             remark_post_comment();
         }
 
         /**
          * post category
          */
-        if ( ! empty( $post_category ) ) {
+        if ( ! empty( $remark_postcategory ) ) {
             remark_post_category();
         }
     }
@@ -178,14 +178,14 @@
      * Post content
      */
     function remark_post_content() {
-        $show_content = get_theme_mod( 'remark_post_content_show', true );
-        $post_content = get_theme_mod( 'remark_blog_post_content_option', 'excerpt' );
+        $remark_show_content = get_theme_mod( 'remark_post_content_show', true );
+        $remark_post_content = get_theme_mod( 'remark_blog_post_content_option', 'excerpt' );
         ?>
-            <?php if ( ! empty( $show_content ) ) { ?>
+            <?php if ( ! empty( $remark_show_content ) ) { ?>
             <div class="entry-content font-medium text-[#3a3a3a] leading-7">
                 <?php
                     
-                        if ( 'excerpt' == $post_content ) {
+                        if ( 'excerpt' == $remark_post_content ) {
 
                             the_excerpt();
                             echo '<a class="inline-block mb-4 mt-2.5 text-sm font-semibold bg-[#BB0000] hover:bg-red-800 hover:text-white visited:text-white text-white p-2 rounded" href="' . esc_url( get_permalink() ) . '">' . esc_html__( 'Read More', 'remark' ) . '</a>'; 
@@ -216,9 +216,9 @@
     }
 
     function remark_feature_image() {
-        $feature_image = get_theme_mod( 'remark_blog_post_feature_image', true );
+        $remark_feature_image = get_theme_mod( 'remark_blog_post_feature_image', true );
 
-        if ( ! empty ( $feature_image ) ) {
+        if ( ! empty ( $remark_feature_image ) ) {
             if ( has_post_thumbnail() ) {
                 remark_post_thumbnail();
             }

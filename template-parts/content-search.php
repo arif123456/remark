@@ -28,7 +28,7 @@
 		<div class="font-medium text-[#3a3a3a] leading-7 mt-4">
 			<?php echo wp_trim_words( get_the_content(), 45 ); ?>
 			<div class="mt-8">
-				<a class="inline-block text-xs font-semibold bg-red-700 hover:bg-slate-800 hover:text-white visited:text-white text-white uppercase py-2 px-3" href="<?php echo esc_url( the_permalink() ); ?>"><?php echo esc_html_e( 'Read More', 'remark' ); ?></a>
+				<a class="inline-block mb-4 mt-2.5 text-sm font-semibold bg-[#BB0000] hover:bg-red-800 hover:text-white visited:text-white text-white p-2 rounded" href="<?php echo esc_url( the_permalink() ); ?>"><?php echo esc_html_e( 'Read More', 'remark' ); ?></a>
 			</div>
 		</div><!-- .entry-summary -->
 	</div>

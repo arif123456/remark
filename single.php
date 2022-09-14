@@ -22,7 +22,7 @@ remark_breadcrumbs();
 
 		<div class="container mx-auto">
 
-			<div class="flex-none md:flex lg:flex gap-10 pt-8 pb-10 md:pb-16 lg:pb-24">
+			<div class="flex-none md:flex lg:flex gap-9 pt-16 pb-10 md:pb-16 lg:pb-24">
 
 				<div class="w-full md:w-3/4 lg:w-3/4">
 					<?php

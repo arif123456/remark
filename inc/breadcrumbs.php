@@ -9,9 +9,9 @@ if ( ! function_exists( 'remark_breadcrumbs' ) ) {
 	 * @since 1.0.0
 	 */
 	function remark_breadcrumbs() {
-		$enable_bradcrumb = get_theme_mod( 'remark_enable_breadcrumb', 'hide' );
+		$remark_enable_bradcrumb = get_theme_mod( 'remark_enable_breadcrumb', 'hide' );
 
-		if ( $enable_bradcrumb === 'show' ) {
+		if ( $remark_enable_bradcrumb === 'show' ) {
 			?>
 				<div class="bg-slate-800 border-t-2 border-slate-100 py-16 -mt-8 mb-6">
 					<div class="container mx-auto text-center">

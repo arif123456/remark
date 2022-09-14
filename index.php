@@ -14,12 +14,12 @@
 
 get_header();
 
-$post_layout = get_theme_mod( 'remark_blog_post_layout_option', 'one-column' );
+$remark_post_layout = get_theme_mod( 'remark_blog_post_layout_option', 'one-column' );
 
-if ( 'one-column' == $post_layout ) {
-	$post_layout = 'w-full';
+if ( 'one-column' == $remark_post_layout ) {
+	$remark_post_layout = 'w-full';
 } else {
-	$post_layout = 'w-full md:w-full lg:w-1/2';
+	$remark_post_layout = 'w-full md:w-full lg:w-1/2';
 }
 
 /**
@@ -34,7 +34,7 @@ remark_breadcrumbs();
 
 	<main id="primary" class="site-main">
 		<div class="container mx-auto">
-			<div class="flex-none md:flex lg:flex gap-10 pt-8 md:p-6 lg:p-6">
+			<div class="flex-none md:flex lg:flex gap-9 pt-8 md:pt-12 lg:pt-16 pb-4">
 				<div class="w-full md:w-3/4 lg:w-3/4">
 					<div class="flex-none md:flex lg:flex flex-wrap -ml-3.5 -mr-3.5">
 						<?php
@@ -58,7 +58,7 @@ remark_breadcrumbs();
 								* called content-___.php (where ___ is the Post Type name) and that will be used instead.
 								*/
 								?>
-									<div class="<?php echo $post_layout; ?> pl-3.5 pr-3.5">
+									<div class="<?php echo $remark_post_layout; ?> pl-3.5 pr-3.5">
 									
 										<?php get_template_part( 'template-parts/content', get_post_type() ); ?>
 
