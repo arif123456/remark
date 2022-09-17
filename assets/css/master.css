@@ -1939,3 +1939,17 @@ textarea {
   margin-right: auto;
   margin-bottom: 1.5em;
 }
+
+.error404 .error-404 h1.page-title {
+  font-size: 190px;
+  margin: 0;
+  line-height: 0.7;
+  font-weight: 900;
+  text-shadow: -2vmin 0vmin #8c1d1a;
+  letter-spacing: 16px;
+}
+@media (max-width: 767px) {
+  .error404 .error-404 h1.page-title {
+    font-size: 125px;
+  }
+}
