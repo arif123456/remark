@@ -328,6 +328,10 @@ Post comment
   width: 100%;
   padding: 12px 10px;
   outline: none;
+  margin-bottom: 13px;
+}
+.comments-area .comment-form input[type=url] {
+  margin-bottom: 0;
 }
 .comments-area .comment-form textarea {
   padding: 7px 10px;
