@@ -18,19 +18,10 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'mb-7' ); ?>>
-
-	<?php if ( ! empty( $remark_feature_image ) ) { ?>
-		<?php if ( has_post_thumbnail() ) : ?>
-			<div class="mb-8">
-				<?php remark_post_thumbnail(); ?>
-			</div>
-		<?php endif; ?>
-	<?php } ?>
-	
-	<div class="bg-white p-8 mb-8 pb-5">
+	<div class="bg-white p-8 pb-5">
 		<?php if ( ! empty( $remark_post_title ) ) { ?> 
 			<?php if ( get_the_title() ) : ?>
-				<h2 class="break-all text-3xl font-bold text-[#222] visited:text-[#222] mb-6"><?php the_title(); ?></h2>
+				<h1 class="break-all mt-0 font-bold text-[#222] visited:text-[#222] mb-6"><?php the_title(); ?></h1>
 			<?php endif; ?>
 			<?php if ( is_sticky() ) echo '<span class="sticky-post">' . __( 'Sticky post', 'remark' ) . '</span>'; ?>
 		<?php } ?>
@@ -85,7 +76,16 @@
 			<?php } ?>
 		</ul>
 	</div>
-	<div class="entry-content bg-white p-8 pb-6 text-[#3a3a3a] leading-[30px]">
+
+	<?php if ( ! empty( $remark_feature_image ) ) { ?>
+		<?php if ( has_post_thumbnail() ) : ?>
+			<div>
+				<?php remark_post_thumbnail(); ?>
+			</div>
+		<?php endif; ?>
+	<?php } ?>
+	
+	<div class="entry-content bg-white p-8 px-8 pb-6 text-[#3a3a3a] leading-[30px]">
 		<?php
 			the_content(
 				sprintf(

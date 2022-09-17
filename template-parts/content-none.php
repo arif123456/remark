@@ -9,12 +9,14 @@
 
 ?>
 
-<section class="no-results not-found bg-white pt-4 md:pt-8 lg:pt-8 pb-16 px-8 md:px-12 lg:px-12">
-	<header class="page-header">
-		<h1 class="page-title text-3xl">
-			<span class="text-[#BB0000]"><?php echo get_search_query(); ?></span>
-			<?php esc_html_e( '- search results', 'remark' ); ?>
+<section class="no-results not-found -mt-6 pb-16 px-1 md:px-12 lg:px-12">
+
+	<header class="page-header pb-3">
+		<h1 class="page-title text-3xl mb-3">
+			<?php esc_html_e( 'Search Results for:', 'remark' ); ?>
+			<span><?php echo get_search_query(); ?></span>
 		</h1>
+		<p class="text-lg mb-0 text-[#464646] font-light"><?php esc_html_e( 'Showing 0 results for your search', 'remark' ) ?></p>
 	</header><!-- .page-header -->
 
 	<div class="page-content">
@@ -37,8 +39,7 @@
 		elseif ( is_search() ) :
 			get_search_form();
 			?>
-				<p class="pt-4 text-[#3a3a3a] leading-[30px]"><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'remark' ); ?></p>
-				<h2 class="pt-4"><?php esc_html_e( 'No posts to display', 'remark' ); ?></h2>
+				<p class="pt-10 mx-auto text-[#3a3a3a] text-xl font-bold w-full	md:w-3/4 lg:w-1/2"><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'remark' ); ?></p>
 			<?php
 			
 

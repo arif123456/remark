@@ -236,7 +236,7 @@
          */
         function remarK_header() {
             ?>
-                <header id="masthead" class="site-header bg-white shadow-md py-2">
+                <header id="masthead" class="site-header bg-white py-2">
                     <div class="container mx-auto">
                         <div class="menu-wrap flex-none md:flex lg:flex items-center gap-12 py-4 md:py-0 lg:py-0 items-center">
                             <?php 

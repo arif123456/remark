@@ -21,8 +21,8 @@ remark_breadcrumbs();
 	<main id="primary" class="site-main">
 
 		<div class="container">
-			<div class="flex-none md:flex lg:flex gap-9 pt-16 pb-10 md:pb-16 lg:pb-24">
-				<div class="w-full md:w-3/4 lg:w-3/4">
+			<div class="remark-search-wrap flex-none md:flex lg:flex gap-9 pt-16 pb-10 md:pb-16 lg:pb-24">
+				<div class="remar-search-content w-full md:w-3/4 lg:w-3/4">
 					<?php if ( have_posts() ) : ?>
 
 						<header class="page-header bg-gray-200 p-4">
@@ -36,31 +36,30 @@ remark_breadcrumbs();
 
 						<?php
 						/* Start the Loop */
-						while ( have_posts() ) :
-							the_post();
+						while ( have_posts() ) : 
+							the_post(); 
+							?>
 
-							/**
-							 * Run the loop for the search to output the results.
-							 * If you want to overload this in a child theme then include a file
-							 * called content-search.php and that will be used instead.
-							 */
-							get_template_part( 'template-parts/content', 'search' );
+							<?php get_template_part( 'template-parts/content', 'search' ); ?>
 
-						endwhile;
+						<?php endwhile; ?>
 
+						<?php 
 						the_posts_pagination( array(
 							'prev_text' => __( 'Prev', 'remark' ),
 							'next_text' => __( 'Next', 'remark' ),
-						) );
-
-						else :
-
-						get_template_part( 'template-parts/content', 'none' );
-
-						endif;
+						) ); 
 						?>
+
+					<?php else : ?>
+
+						<?php 
+						get_template_part( 'template-parts/content', 'none' ); 
+						?>
+
+					<?php endif; ?>
 				</div>
-				<div class="w-full md:w-1/4 lg:w-1/4 pt-8 md:pt-0 lg:pt-0">
+				<div class="remark__search-sidebar w-full md:w-1/4 lg:w-1/4 pt-8 md:pt-0 lg:pt-0">
 					<?php get_sidebar(); ?>
 				</div>
 			</div>
