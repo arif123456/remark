@@ -39,21 +39,22 @@
   position: relative;
   color: #000;
   font-size: 17px;
-  margin-bottom: 30px;
+  margin-bottom: 23px;
   line-height: 1.4;
   z-index: 2;
   text-transform: uppercase;
   transition: all ease 0.31s;
+  padding-left: 17px;
 }
-.widget-area .widget .widget-title:after, .widget-area .widget h2:after, .widget-area .widget_block .widget-title:after, .widget-area .widget_block h2:after {
+.widget-area .widget .widget-title:before, .widget-area .widget h2:before, .widget-area .widget_block .widget-title:before, .widget-area .widget_block h2:before {
   background: #bb0000;
-  height: 2px;
-  width: 81px;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
   content: "";
   position: absolute;
-  top: 50%;
-  transform: translateY(50%);
-  margin-left: 15px;
+  left: 0;
+  top: 7px;
 }
 .widget-area .widget select, .widget-area .widget_block select {
   padding: 10px;
