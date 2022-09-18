@@ -34,8 +34,8 @@ Font Awesome Free 6.1.1
 
 
 Images
-	Image for theme screenshot, Credit World Wildlife
+	Image for theme screenshot, Benjamin Child
     License: CC0 1.0 Universal (CC0 1.0)
     License URL: https://stocksnap.io/license
-    Source: https://stocksnap.io/photo/bird-perched-FS48GNRYK4
+    Source: https://stocksnap.io/photo/table-chairs-7OPWOSQFXS
 
