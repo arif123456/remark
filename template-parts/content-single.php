@@ -27,10 +27,10 @@
 		<?php endif; ?>
 	<?php } ?>
 
-	<div class="bg-white p-8 pb-5">
+	<div class="bg-white p-8 pt-[21px] pb-5">
 		<?php if ( ! empty( $remark_post_title ) ) { ?> 
 			<?php if ( get_the_title() ) : ?>
-				<h1 class="break-all mt-0 font-bold text-[#222] visited:text-[#222] mb-6"><?php the_title(); ?></h1>
+				<h1 class="break-all mt-0 font-bold text-[#222] visited:text-[#222] mb-[20px]"><?php the_title(); ?></h1>
 			<?php endif; ?>
 			<?php if ( is_sticky() ) echo '<span class="sticky-post">' . __( 'Sticky post', 'remark' ) . '</span>'; ?>
 		<?php } ?>

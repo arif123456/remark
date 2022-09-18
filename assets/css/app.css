@@ -736,6 +736,22 @@ video {
   margin-top: -1.5rem;
 }
 
+.mb-5 {
+  margin-bottom: 1.25rem;
+}
+
+.mb-\[19px\] {
+  margin-bottom: 19px;
+}
+
+.mb-\[21px\] {
+  margin-bottom: 21px;
+}
+
+.mb-\[20px\] {
+  margin-bottom: 20px;
+}
+
 .block {
   display: block;
 }
@@ -1056,6 +1072,26 @@ video {
 
 .pb-1 {
   padding-bottom: 0.25rem;
+}
+
+.pt-5 {
+  padding-top: 1.25rem;
+}
+
+.pt-\[35px\] {
+  padding-top: 35px;
+}
+
+.pt-\[20px\] {
+  padding-top: 20px;
+}
+
+.pt-\[22px\] {
+  padding-top: 22px;
+}
+
+.pt-\[21px\] {
+  padding-top: 21px;
 }
 
 .text-center {
