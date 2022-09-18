@@ -11,6 +11,11 @@ Pagination
 .entry-content[class] {
   margin: 0;
 
+  ul {
+    list-style: inherit;
+    padding: inherit;
+  }
+
 }
 
 .entry-title {
@@ -166,7 +171,7 @@ Post comment
 
   .comment-reply-title {
     font-weight: 600;
-    margin-bottom: 4px;
+    margin-bottom: 20px;
 
   }
 
@@ -281,7 +286,7 @@ Post comment
 
     input[type="url"] {
       margin-bottom: 0;
-      
+
     }
 
     textarea {

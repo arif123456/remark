@@ -393,11 +393,15 @@ i {
 }
 
 blockquote {
-    margin: 0 1.5em;
-    border-left: 4px solid #BB0000;
-    padding-left: 25px;
-    margin-left: 0;
-    margin-right: 0;
+    margin: 21px 1.5em !important;
+    border-left: 4px solid #BB0000 !important;
+    padding-left: 16px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    font-style: italic;
+    font-size: 15px;
+    line-height: 25px;
+    font-weight: 400;
 
 }
 

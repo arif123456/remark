@@ -143,6 +143,10 @@ Pagination
 .entry-content[class] {
   margin: 0;
 }
+.entry-content[class] ul {
+  list-style: inherit;
+  padding: inherit;
+}
 
 .entry-title {
   color: #272368;
@@ -260,7 +264,7 @@ Post comment
 }
 .comments-area .comment-reply-title {
   font-weight: 600;
-  margin-bottom: 4px;
+  margin-bottom: 20px;
 }
 .comments-area #cancel-comment-reply-link {
   color: #bb2a26;
@@ -1459,11 +1463,15 @@ i {
 }
 
 blockquote {
-  margin: 0 1.5em;
-  border-left: 4px solid #BB0000;
-  padding-left: 25px;
-  margin-left: 0;
-  margin-right: 0;
+  margin: 21px 1.5em !important;
+  border-left: 4px solid #BB0000 !important;
+  padding-left: 16px !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  font-style: italic;
+  font-size: 15px;
+  line-height: 25px;
+  font-weight: 400;
 }
 
 address {

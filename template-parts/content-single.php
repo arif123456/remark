@@ -18,6 +18,15 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'mb-7' ); ?>>
+
+	<?php if ( ! empty( $remark_feature_image ) ) { ?>
+		<?php if ( has_post_thumbnail() ) : ?>
+			<div>
+				<?php remark_post_thumbnail(); ?>
+			</div>
+		<?php endif; ?>
+	<?php } ?>
+
 	<div class="bg-white p-8 pb-5">
 		<?php if ( ! empty( $remark_post_title ) ) { ?> 
 			<?php if ( get_the_title() ) : ?>
@@ -76,16 +85,8 @@
 			<?php } ?>
 		</ul>
 	</div>
-
-	<?php if ( ! empty( $remark_feature_image ) ) { ?>
-		<?php if ( has_post_thumbnail() ) : ?>
-			<div>
-				<?php remark_post_thumbnail(); ?>
-			</div>
-		<?php endif; ?>
-	<?php } ?>
 	
-	<div class="entry-content bg-white p-8 px-8 pb-6 text-[#3a3a3a] leading-[30px]">
+	<div class="entry-content bg-white pt-0 p-8 px-8 pb-6 text-[#3a3a3a] leading-[30px]">
 		<?php
 			the_content(
 				sprintf(
@@ -104,23 +105,23 @@
 
 		?>
 		<?php if ( ! empty( $remark_blog_post_tag ) ) { ?> 
-			<div class="block">
-				<ul class="clear-both pb-3 pt-4">
-					<?php 
-						$post_tags = get_the_tags();
-						if ( is_array( $post_tags ) || is_object( $post_tags ) ) {
-							?>
-								<span class="text-base font-bold text-slate-800 mr-2"><?php esc_html_e( 'Tags:', 'remark' ); ?></span>
-							<?php
-							foreach( $post_tags as $post_tag ) {
-								echo '<li class="inline-block mb-2"><a class="text-sm font-font-normal text-slate-800 bg-[#F2F4F3] hover:bg-[#BB0000] hover:text-white visited:text-slate-800 rounded-lg py-2 px-4 mr-2" href="' . esc_url( get_tag_link( $post_tag->term_id ) ) . '">' . $post_tag->name . '</a></li>';
-								
-							}
-						}
+			<?php 
+				$post_tags = get_the_tags();
+				if ( is_array( $post_tags ) || is_object( $post_tags ) ) : ?>
+				<div class="clear-both pb-1 pt-2 pl-0">
+					<ul>
 						
-					?>
-				</ul>
-			</div>
+						<span class="text-base font-bold text-slate-800 mr-2"><?php esc_html_e( 'Tags:', 'remark' ); ?></span>
+						<?php
+						foreach( $post_tags as $post_tag ) : ?>
+							<?php echo '<li class="inline-block mb-2"><a class="text-sm font-font-normal text-slate-800 bg-[#F2F4F3] hover:bg-[#BB0000] hover:text-white visited:text-slate-800 rounded-lg py-2 px-4 mr-2" href="' . esc_url( get_tag_link( $post_tag->term_id ) ) . '">' . $post_tag->name . '</a></li>'; ?>
+							
+						<?php endforeach; ?>
+							
+					</ul>
+				</div>
+			<?php endif;?>
+			
 		<?php } ?>
 	</div><!-- .entry-content -->
 	
