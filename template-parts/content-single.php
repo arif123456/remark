@@ -35,7 +35,7 @@
 			<?php if ( is_sticky() ) echo '<span class="sticky-post">' . __( 'Sticky post', 'remark' ) . '</span>'; ?>
 		<?php } ?>
 		
-		<ul class="post-meta gap-10 mb-2">
+		<ul class="post-meta gap-10 mb-0">
 			<?php if ( ! empty( $remark_author_meta ) ) { ?> 
 			<li>
 				<a class="mb-8 md:mb-0 lg:mb-0 text-sm font-medium text-[#818181] visited:text-[#818181] hover:text-[#BB0000]" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>">
