@@ -31,6 +31,7 @@
     background: #ffffff;
     padding: 30px;
     margin-bottom: 30px;
+    box-shadow: 0 10px 40px rgba(23, 34, 43, 0.05);
 
     .cat-toggle-icon {
       position: absolute;
@@ -45,21 +46,25 @@
     }
 
     .widget-title, h2 {
-      font-weight: 600;
-      font-size: 24px;
-      color: #222222;
-      margin-bottom: 45px;
-      line-height: 24px;
+      font-weight: 700;
       position: relative;
+      color: #000;
+      font-size: 17px;
+      margin-bottom: 30px;
+      line-height: 1.4;
+      z-index: 2;
+      text-transform: uppercase;
+      transition: all ease 0.31s;
 
       &:after {
+        background: #bb0000;
+        height: 2px;
+        width: 81px;
         content: "";
         position: absolute;
-        background: #bb0000;
-        width: 60px;
-        height: 2px;
-        left: 0;
-        top: 37px;
+        top: 50%;
+        transform: translateY(50%);
+        margin-left: 15px;
 
       }
 

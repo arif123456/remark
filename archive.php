@@ -18,13 +18,13 @@ remark_breadcrumbs();
 
 ?>
 
-	<main id="primary" class="site-main">
+	<main id="primary" class="site-main pb-12">
 		<div class="container">
-			<div class="flex-none md:flex lg:flex gap-9 pt-8 md:pt-12 lg:pt-16 pb-16">
+			<div class="flex-none md:flex lg:flex gap-9 pt-8 md:pt-12 lg:pt-16">
 				<div class="w-full md:w-3/4 lg:w-3/4">
 					<?php if ( have_posts() ) : ?>
 
-						<header class="bg-gray-200 p-4">
+						<header class="bg-[#f7f7f7] p-4">
 							<?php
 							the_archive_title( '<h1 class="page-title">', '</h1>' );
 							the_archive_description( '<div class="archive-description">', '</div>' );

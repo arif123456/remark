@@ -13,7 +13,7 @@ if ( ! function_exists( 'remark_breadcrumbs' ) ) {
 
 		if ( $remark_enable_bradcrumb === 'show' ) {
 			?>
-				<div class="py-4 -mb-[30px]">
+				<div class="py-7 bg-[#f7f7f7] -mt-4 mb-4">
 					<div class="container mx-auto">
 						<div class="text-[#17222b] text-[16px]">
 							<?php 

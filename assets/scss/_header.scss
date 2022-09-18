@@ -85,30 +85,6 @@ Submenu
   .menu-item-has-children {
     position: relative;
 
-    // &:last-child {
-    //   ul {
-    //     right: 0;
-    //     left: auto;
-    //     padding: 0 8px;
-  
-    //     li {
-    //       &.menu-item-has-children:before {
-    //         transform: rotate(180deg) translateY(-50%);
-    //         top: -5px;
-    //         right: auto;
-    //         left: 0;
-  
-    //       }
-  
-    //       ul {
-    //         left: auto !important;
-    //         right: 100% !important;
-  
-    //       }
-    //     }
-    //   }
-    // }
-
     &:before {
       content: "\f105";
       font-family: 'Font Awesome 6 Free';
@@ -305,7 +281,7 @@ End Submenu
 
 .site-header {
   padding: 25px 0;
-  margin-bottom: 30px;
+  margin-bottom: 16px;
   box-shadow: 0 10px 40px rgba(23, 34, 43, 0.05);
 
   @media(max-width: 1024px) {

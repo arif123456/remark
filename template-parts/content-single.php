@@ -17,7 +17,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'mb-7' ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'mb-7 remark__single-post' ); ?>>
 
 	<?php if ( ! empty( $remark_feature_image ) ) { ?>
 		<?php if ( has_post_thumbnail() ) : ?>

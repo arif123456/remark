@@ -23,9 +23,9 @@ remark_breadcrumbs();
 
 ?>
 
-	<main id="primary" class="site-main">
+	<main id="primary" class="site-main pt-16 pb-20">
 		<div class="container mx-auto">
-			<div class="gap-10 pt-10 pb-28">
+			<div class="gap-10">
 				<div class="w-full">
 					<div class="bg-white p-10 pt-2">
 						<?php

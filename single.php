@@ -18,11 +18,11 @@ remark_breadcrumbs();
 
 ?>
 
-	<main id="primary" class="site-main">
+	<main id="primary" class="site-main pb-10 md:pb-16 lg:pb-20">
 
 		<div class="container mx-auto">
 
-			<div class="flex-none md:flex lg:flex gap-9 pt-16 pb-10 md:pb-16 lg:pb-24">
+			<div class="flex-none md:flex lg:flex gap-9 pt-16">
 
 				<div class="w-full md:w-3/4 lg:w-3/4">
 					<?php

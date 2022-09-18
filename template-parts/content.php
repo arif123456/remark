@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'bg-white mb-8' ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'bg-white mb-8 remark__post-item' ); ?>>
 	<?php 
 		/**
 		 * @func remark_post_action
