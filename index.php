@@ -34,7 +34,7 @@ remark_breadcrumbs();
 
 	<main id="primary" class="site-main">
 		<div class="container mx-auto">
-			<div class="flex-none md:flex lg:flex gap-9 pt-8 md:pt-12 lg:pt-16 pb-4">
+			<div class="flex-none md:flex lg:flex gap-9 pt-8 md:pt-12 lg:pt-16 pb-16">
 				<div class="w-full md:w-3/4 lg:w-3/4">
 					<div class="flex-none md:flex lg:flex flex-wrap -ml-3.5 -mr-3.5">
 						<?php
