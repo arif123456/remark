@@ -409,3 +409,40 @@ Post comment
   box-shadow: 0 10px 40px rgba(23, 34, 43, 0.05);
 
 }
+
+.single-post {
+  .sidebar_hide {
+    .remark__single-post {
+      box-shadow: inherit;
+
+      .entry-content {
+        ul {
+          padding-left: 20px;
+
+        }
+      }
+
+    }
+    
+    .comments-area {
+      box-shadow: inherit;
+
+      .comment-respond {
+        background: #f9fafa;
+        padding: 30px;
+        border-radius: 20px;
+        margin-top: 20px;
+
+        form {
+          input, textarea {
+            border: 0;
+
+          }
+        }
+
+      }
+
+    }
+  }
+  
+}

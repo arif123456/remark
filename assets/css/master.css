@@ -19,6 +19,18 @@
   line-height: 28px;
   font-weight: 500;
 }
+.widget-area .widget.widget_categories form {
+  position: relative;
+}
+.widget-area .widget.widget_categories form:after {
+  content: "\f107";
+  position: absolute;
+  right: 15px;
+  font-family: "Font Awesome 6 Free";
+  font-size: 20px;
+  font-weight: 900;
+  top: 4px;
+}
 .widget-area .widget, .widget-area .widget_block {
   background: #ffffff;
   padding: 30px;
@@ -56,8 +68,22 @@
   left: 0;
   top: 7px;
 }
+.widget-area .widget .wp-block-categories-dropdown, .widget-area .widget_block .wp-block-categories-dropdown {
+  position: relative;
+}
+.widget-area .widget .wp-block-categories-dropdown:after, .widget-area .widget_block .wp-block-categories-dropdown:after {
+  content: "\f107";
+  position: absolute;
+  right: 15px;
+  font-family: "Font Awesome 6 Free";
+  font-size: 20px;
+  font-weight: 900;
+  top: 4px;
+}
 .widget-area .widget select, .widget-area .widget_block select {
   padding: 10px;
+  appearance: none;
+  outline: none;
 }
 .widget-area .widget .cat-item, .widget-area .widget_block .cat-item {
   position: relative;
@@ -430,6 +456,25 @@ Post comment
 
 .remark__single-post, .remark__post-item {
   box-shadow: 0 10px 40px rgba(23, 34, 43, 0.05);
+}
+
+.single-post .sidebar_hide .remark__single-post {
+  box-shadow: inherit;
+}
+.single-post .sidebar_hide .remark__single-post .entry-content ul {
+  padding-left: 20px;
+}
+.single-post .sidebar_hide .comments-area {
+  box-shadow: inherit;
+}
+.single-post .sidebar_hide .comments-area .comment-respond {
+  background: #f9fafa;
+  padding: 30px;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+.single-post .sidebar_hide .comments-area .comment-respond form input, .single-post .sidebar_hide .comments-area .comment-respond form textarea {
+  border: 0;
 }
 
 /* =========================
