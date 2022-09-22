@@ -293,6 +293,14 @@ function remark_customize_register( $wp_customize ) {
 			) 
 		);
 
+		$wp_customize->add_section( 'remark_single_blog_layout_section', 
+			array(
+					'title'         => __( 'Sidebar', 'remark' ),
+					'priority'      => 1,
+					'panel'         => 'remark_single_blog_post_panel'
+			) 
+		);
+
 		/* Feature Image */
 		$wp_customize->add_setting( 'remark_single_blog_post_feature_image',
 			array(
@@ -419,6 +427,28 @@ function remark_customize_register( $wp_customize ) {
 			) 
 		);
 
+		/* Sidebar */
+		$wp_customize->add_setting( 'remark_single_blog_post_layout',
+			array(
+				'sanitize_callback' => 'remark_sanitize_single_post_layout',
+				'transport'         => 'refresh',
+				'default'       =>  'sidebar_hide'
+			)
+		);
+
+		$wp_customize->add_control( 'remark_single_blog_post_layout', 
+			array(
+				'type'        => 'radio',
+				'label'       => 'Sidebar',
+				'priority'    => 10,
+				'section'     => 'remark_single_blog_layout_section',
+				'choices'           => array(
+					'sidebar_hide'       => __( 'Hide', 'remark' ),
+					'sidebar_show'      => __( 'Show', 'remark' ),
+				),
+			) 
+		);
+
 		/* Breadcrumbs */
 		$wp_customize->add_setting( 'remark_enable_breadcrumb',
 			array(
@@ -441,7 +471,7 @@ function remark_customize_register( $wp_customize ) {
 			) 
 		);
 		/*==========================
-		Start Single Post Setting 
+		End Single Post Setting 
 		==========================*/
 
 }
@@ -467,6 +497,10 @@ function remark_sanitize_post_content_option( $input ) {
 
 function remark_sanitize_breadcrumb( $input ) {
 	return ( 'hide' === $input ) ? 'hide' : 'show';
+}
+
+function remark_sanitize_single_post_layout( $input ) {
+	return ( 'sidebar_hide' === $input ) ? 'sidebar_hide' : 'sidebar_show';
 }
 
 /**
