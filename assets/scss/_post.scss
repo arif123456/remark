@@ -423,10 +423,16 @@ Post comment
       }
 
     }
+
+    .post-navigation {
+      // margin-bottom: 0;
+
+    }
     
     .comments-area {
       box-shadow: inherit;
-
+      padding: 0;
+      
       .comment-respond {
         background: #f9fafa;
         padding: 30px;

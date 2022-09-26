@@ -466,6 +466,7 @@ Post comment
 }
 .single-post .sidebar_hide .comments-area {
   box-shadow: inherit;
+  padding: 0;
 }
 .single-post .sidebar_hide .comments-area .comment-respond {
   background: #f9fafa;
