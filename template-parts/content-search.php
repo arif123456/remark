@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'bg-white' ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'bg-white remark__post-item' ); ?>>
 	<?php remark_post_thumbnail(); ?>
 	<div class="px-6 pt-4 pb-8 mb-8">
 		<header class="entry-header mb-2">

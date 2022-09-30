@@ -19,11 +19,13 @@ get_header();
  *
  * @since 1.0.0
  */
-remark_breadcrumbs();
+if ( ! is_front_page() ) {
+	remark_breadcrumbs();
+}
 
 ?>
 
-	<main id="primary" class="site-main pt-16 pb-20">
+	<main id="primary" class="site-main pt-8 pb-20">
 		<div class="container mx-auto">
 			<div class="gap-10">
 				<div class="w-full">

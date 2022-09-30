@@ -13,36 +13,57 @@ if ( ! function_exists( 'remark_breadcrumbs' ) ) {
 
 		if ( $remark_enable_bradcrumb === 'show' ) {
 			?>
-				<div class="py-7 bg-[#f7f7f7] -mt-4 mb-4">
+				<div class="remark-breadcrumbs py-20 bg-[#17222b] -mt-4 mb-4 text-center">
 					<div class="container mx-auto">
-						<div class="text-[#17222b] text-[16px]">
+						<div class="!text-white text-[16px]">
 							<?php 
-								echo '<i class="fa-solid fa-house text-[#bb0000] mr-1 text-[15px]"></i><a class="text-[#17222b] visited:text-[#17222b] hover:text-[#bb0000]" href="' . esc_url( home_url() ) . '" rel="nofollow">' . esc_html( 'Home', 'remark' ) . '</a>';
-								if ( is_category() ) {
-									echo '<i class="fa-solid fa-angles-right mx-2 text-xs text-[#17222b]"></i>';
-									$category = get_the_category();
-									$category_link = get_category_link( $category[0]->term_id );
-									echo '<a class="visited:text-[#17222b] text-[#17222b] hover:text-[#bb0000]" href="' . esc_url( $category_link ) . '">' . $category[0]->cat_name . '</a>';
-									
-								} elseif ( is_single() ) {
-									echo '<i class="fa-solid fa-angles-right mx-2 text-xs text-[#17222b]"></i>';
-									the_title();
-									
-								} elseif( is_page() ) {
-									echo '<i class="fa-solid fa-angles-right mx-2 text-xs"></i>';
-									echo the_title();
-								} elseif ( is_search() ) {
-									echo '<i class="fa-solid fa-angles-right mx-2 text-xs"></i> Search Results for...';
-									echo '"<em>';
-									echo the_search_query();
-									echo '</em>"';
-								} elseif (  is_tag() ) {
-									echo '<i class="fa-solid fa-angles-right mx-2 text-xs"></i>';
-									$tag = get_the_tags();
-									$tag_link = get_category_link( $tag[0]->term_id );
-									echo '<a class="hover:text-[#bb0000]" href="' . esc_url( $tag_link ) . '">' . $tag[0]->name . '</a>';
-									
+								$home_link = '<i class="fa-solid fa-house text-[#bb0000] mr-1 text-[15px]"></i><a class="text-white visited:text-white hover:text-[#bb0000]" href="' . esc_url( home_url() ) . '" rel="nofollow">' . esc_html( 'Home', 'remark' ) . '</a>';
+
+								if ( is_home() ) {
+									echo '<h1 class="m-0 text-6xl">' . esc_html( 'Blog', 'remark' ) . '</h1>';
+								} else {
+									if ( is_archive() ) {
+										if ( is_category() ) {
+											echo '<h1 class="mt-0 mb-6 text-6xl">' . esc_html( 'Blog', 'remark' ) . '</h1>';
+											echo $home_link;
+											echo '<i class="fa-solid fa-angles-right mx-2 text-xs text-white"></i>';
+											$category = get_the_category();
+											echo 'Category: <span class="capitalize">' . $category[0]->cat_name . '</span>';
+											
+										}
+										elseif (  is_tag() ) {
+											echo '<h1 class="mt-0 mb-6 text-6xl">' . esc_html( 'Blog', 'remark' ) . '</h1>';
+											echo $home_link;
+											echo '<i class="fa-solid fa-angles-right mx-2 text-xs"></i>';
+											$tag = get_the_tags();
+											echo 'Tag: <span class="capitalize">' . $tag[0]->name . '</span>';
+											
+										}
+										elseif ( is_author() ) {
+											echo '<h1 class="mt-0 mb-6 text-6xl">' . esc_html( 'Blog', 'remark' ) . '</h1>';
+											echo $home_link;
+											echo '<i class="fa-solid fa-angles-right mx-2 text-xs"></i>';
+											$tag = get_the_tags();
+											echo 'Author: <span>' . get_the_author() . '</span>';
+										}
+									} elseif ( is_single() ) {
+										echo '<h1 class="mt-0 mb-6 text-6xl">' . esc_html( 'Blog', 'remark' ) . '</h1>';
+										echo $home_link;
+										echo '<i class="fa-solid fa-angles-right mx-2 text-xs text-white"></i>';
+										$category = get_the_category();
+										$cat_link = get_category_link( $category[0]->term_id );
+										echo '<a class="visited:text-white text-white hover:text-[#bb0000]" href="' . esc_url( $cat_link ) . '">' . esc_html( $category[0]->cat_name ) . '</a>';
+										
+									} elseif( is_page() ) {
+										the_title( '<h1 class="entry-title !text-white mb-2 mt-0 text-6xl">', '</h1>' );
+
+									} elseif ( is_search() ) {
+										echo '<h1 class="text-6xl"> Search Results</h1>';
+									}
+
 								}
+								
+								
 							?>
 						</div>
 					</div>

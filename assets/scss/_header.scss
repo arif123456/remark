@@ -316,7 +316,6 @@ End Submenu
 
     li {
       display: inline-block;
-      margin-right: 22px;
       position: relative;
 
       &.current_page_item {
@@ -327,9 +326,13 @@ End Submenu
       }
 
       a {
-        font-size: 16px;
+        font-size: .875rem;
+        line-height: 1.25rem;
         color: #222;
         font-weight: 500;
+        padding-right: 1.25rem;
+        text-transform: uppercase;
+        font-weight: 600;
 
         &:hover {
           color: #BB0000;
@@ -340,6 +343,7 @@ End Submenu
 
       &.page_item_has_children {
         position: relative;
+        margin-right: 25px;
 
         .icon {
 
@@ -348,14 +352,9 @@ End Submenu
             font-family: 'Font Awesome 6 Free';
             font-weight: 700;
             position: absolute;
-            right: 8px;
-            top: -3px;  
+            right: 0;
+            top: 0;  
             transform: rotate(90deg);
-      
-            @media( max-width: 1024px ) {
-              // display: none;
-          
-            }
             
           }
         }
@@ -370,9 +369,33 @@ End Submenu
 
     }
 
+    &.page_item_has_children {
+      ul {
+        right: 0;
+        left: auto;
+        padding: 0 8px;
+  
+        li {
+          &.menu-item-has-children:before {
+            transform: rotate(180deg) translateY(-50%);
+            top: -5px;
+            right: auto;
+            left: 0;
+  
+          }
+  
+          ul {
+            left: auto !important;
+            right: 100% !important;
+  
+          }
+        }
+      } 
+    }
+
     .children {
       position: absolute;
-      left: 0;
+      right: 0;
       top: 120%;
       width: 260px;
       z-index: 3;
@@ -386,6 +409,8 @@ End Submenu
       display: block;
       margin: 0;
       border: 1px solid #eee;
+      box-shadow: 0 10px 72px 4px rgb(9 21 0 / 10%);
+      margin-top: 8px;
 
       li {
         margin: 0;
@@ -395,22 +420,24 @@ End Submenu
 
           &:before {
             transform: rotate(0deg) translateY(-50%);
-            top: 19px;
-            right: 12px;
+            top: 20px;
+            left: 12px;
         
           }
         }
 
         a {
           display: block;
-          padding: 7px 15px;
+          padding: 10px 30px;
+          border-bottom: 1px solid #ddd;
 
         }
       }
 
       li .children {
         position: absolute;
-        left: 100%;
+        right: 100%;
+        left: auto;
         top: 0;
         opacity: 0;
         transform: translateY(10px);
@@ -419,9 +446,15 @@ End Submenu
         -moz-transition: .3s linear 0s;
         -ms-transition: .3s linear 0s;
         transition: .3s linear 0s;
+        margin-top: 0;
       
         @media( max-width: 767px ) {
-          left: 0;
+          left: auto;
+        }
+
+        a {
+          padding: 10px 15px;
+
         }
       }
     }

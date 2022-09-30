@@ -22,18 +22,8 @@ remark_breadcrumbs();
 
 		<div class="container">
 			<div class="remark-search-wrap flex-none md:flex lg:flex gap-9 pt-16 pb-10 md:pb-16 lg:pb-24">
-				<div class="remar-search-content w-full md:w-3/4 lg:w-3/4">
+				<div class="remar-search-content w-full md:w-8/12 lg:w-8/12 mx-auto">
 					<?php if ( have_posts() ) : ?>
-
-						<header class="page-header bg-gray-200 p-4">
-							<h1 class="page-title">
-								<?php
-								/* translators: %s: search query. */
-								printf( esc_html__( 'Search Results for: %s', 'remark' ), '<span>' . get_search_query() . '</span>' );
-								?>
-							</h1>
-						</header><!-- .page-header -->
-
 						<?php
 						/* Start the Loop */
 						while ( have_posts() ) : 
@@ -58,9 +48,6 @@ remark_breadcrumbs();
 						?>
 
 					<?php endif; ?>
-				</div>
-				<div class="remark__search-sidebar w-full md:w-1/4 lg:w-1/4 pt-8 md:pt-0 lg:pt-0">
-					<?php get_sidebar(); ?>
 				</div>
 			</div>
 		</div>

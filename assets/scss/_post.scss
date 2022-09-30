@@ -408,6 +408,16 @@ Post comment
 .remark__single-post, .remark__post-item {
   box-shadow: 0 10px 40px rgba(23, 34, 43, 0.05);
 
+  &.sticky {
+    border-bottom: 3px solid #930303;
+
+  }
+
+  .sticky-post {
+    display: none;
+
+  }
+
 }
 
 .single-post {
@@ -451,4 +461,15 @@ Post comment
     }
   }
   
+}
+
+.entry-content {
+  a {
+    font-weight: 700;
+
+    &:hover {
+      color: #BB0000;
+      
+    }
+  }
 }

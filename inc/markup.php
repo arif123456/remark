@@ -62,7 +62,7 @@
         ?>
             <?php if ( ! empty ( $remark_post_title ) ) { ?>
                 <?php if ( get_the_title() ) : ?>
-                    <h2 class="text-3xl font-bold mb-2"><a class="break-all	font-bold text-[#222] visited:text-[#222] hover:text-[#BB0000]" href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+                    <h2 class="text-3xl leading-[45px] font-bold mb-2"><a class="break-all	font-bold text-[#222] visited:text-[#222] hover:text-[#BB0000]" href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
                 <?php endif; ?>
                 <?php if ( is_sticky() ) echo '<span class="sticky-post">' . __( 'Sticky post', 'remark' ) . '</span>'; ?>
             <?php } ?>

@@ -457,6 +457,12 @@ Post comment
 .remark__single-post, .remark__post-item {
   box-shadow: 0 10px 40px rgba(23, 34, 43, 0.05);
 }
+.remark__single-post.sticky, .remark__post-item.sticky {
+  border-bottom: 3px solid #930303;
+}
+.remark__single-post .sticky-post, .remark__post-item .sticky-post {
+  display: none;
+}
 
 .single-post .sidebar_hide .remark__single-post {
   box-shadow: inherit;
@@ -476,6 +482,13 @@ Post comment
 }
 .single-post .sidebar_hide .comments-area .comment-respond form input, .single-post .sidebar_hide .comments-area .comment-respond form textarea {
   border: 0;
+}
+
+.entry-content a {
+  font-weight: 700;
+}
+.entry-content a:hover {
+  color: #BB0000;
 }
 
 /* =========================
@@ -729,30 +742,34 @@ End Submenu
 }
 .site-header .remark__default-menu li {
   display: inline-block;
-  margin-right: 22px;
   position: relative;
 }
 .site-header .remark__default-menu li.current_page_item a {
   color: #BB0000;
 }
 .site-header .remark__default-menu li a {
-  font-size: 16px;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
   color: #222;
   font-weight: 500;
+  padding-right: 1.25rem;
+  text-transform: uppercase;
+  font-weight: 600;
 }
 .site-header .remark__default-menu li a:hover {
   color: #BB0000;
 }
 .site-header .remark__default-menu li.page_item_has_children {
   position: relative;
+  margin-right: 25px;
 }
 .site-header .remark__default-menu li.page_item_has_children .icon:before {
   content: "\f105";
   font-family: "Font Awesome 6 Free";
   font-weight: 700;
   position: absolute;
-  right: 8px;
-  top: -3px;
+  right: 0;
+  top: 0;
   transform: rotate(90deg);
 }
 .site-header .remark__default-menu li:hover .children {
@@ -760,9 +777,24 @@ End Submenu
   visibility: visible;
   top: 100%;
 }
+.site-header .remark__default-menu.page_item_has_children ul {
+  right: 0;
+  left: auto;
+  padding: 0 8px;
+}
+.site-header .remark__default-menu.page_item_has_children ul li.menu-item-has-children:before {
+  transform: rotate(180deg) translateY(-50%);
+  top: -5px;
+  right: auto;
+  left: 0;
+}
+.site-header .remark__default-menu.page_item_has_children ul li ul {
+  left: auto !important;
+  right: 100% !important;
+}
 .site-header .remark__default-menu .children {
   position: absolute;
-  left: 0;
+  right: 0;
   top: 120%;
   width: 260px;
   z-index: 3;
@@ -776,6 +808,8 @@ End Submenu
   display: block;
   margin: 0;
   border: 1px solid #eee;
+  box-shadow: 0 10px 72px 4px rgba(9, 21, 0, 0.1);
+  margin-top: 8px;
 }
 .site-header .remark__default-menu .children li {
   margin: 0;
@@ -783,16 +817,18 @@ End Submenu
 }
 .site-header .remark__default-menu .children li .icon:before {
   transform: rotate(0deg) translateY(-50%);
-  top: 19px;
-  right: 12px;
+  top: 20px;
+  left: 12px;
 }
 .site-header .remark__default-menu .children li a {
   display: block;
-  padding: 7px 15px;
+  padding: 10px 30px;
+  border-bottom: 1px solid #ddd;
 }
 .site-header .remark__default-menu .children li .children {
   position: absolute;
-  left: 100%;
+  right: 100%;
+  left: auto;
   top: 0;
   opacity: 0;
   transform: translateY(10px);
@@ -801,11 +837,15 @@ End Submenu
   -moz-transition: 0.3s linear 0s;
   -ms-transition: 0.3s linear 0s;
   transition: 0.3s linear 0s;
+  margin-top: 0;
 }
 @media (max-width: 767px) {
   .site-header .remark__default-menu .children li .children {
-    left: 0;
+    left: auto;
   }
+}
+.site-header .remark__default-menu .children li .children a {
+  padding: 10px 15px;
 }
 .site-header .remark__default-menu li .children li:hover > .children {
   opacity: 1;
@@ -1173,6 +1213,15 @@ h5,
 h6 {
   font-family: "Lato", "Helvetica", "Arial", sans-serif;
   clear: both;
+}
+
+.entry-content h2,
+.entry-content h3,
+.entry-content h4,
+.entry-content h5,
+.entry-content h6 {
+  font-weight: 700;
+  color: #17222b;
 }
 
 p {
@@ -1547,6 +1596,13 @@ pre {
   padding: 1.6em;
 }
 
+code {
+  margin: 10px 6px;
+  color: #bb2a26;
+  display: inline-block;
+  padding: 10px;
+}
+
 code,
 kbd,
 tt,
@@ -1634,19 +1690,24 @@ table {
   width: 100%;
 }
 
+table tr th, table tr td {
+  padding: 8px;
+  border: 1px solid #d7e1ea;
+}
+
 /* Forms
 --------------------------------------------- */
 button,
 input[type=button],
 input[type=reset],
 input[type=submit] {
-  border: 1px solid;
-  border-color: #BB0000;
-  border-radius: 3px;
-  background: #BB0000;
-  color: #fff;
-  line-height: 1;
-  padding: 9px 1em 10px;
+  border: 1px solid !important;
+  border-color: #BB0000 !important;
+  border-radius: 3px !important;
+  background: #BB0000 !important;
+  color: #fff !important;
+  line-height: 1 !important;
+  padding: 9px 1em 10px !important;
 }
 
 button:hover,
@@ -2075,6 +2136,14 @@ textarea {
   border-bottom-left-radius: 0 !important;
   border-radius: 7px;
 }
-.search-no-results .remark__search-sidebar {
+.search-no-results .remark__search-sidebar, .search-no-results .remark-breadcrumbs {
   display: none;
+}
+
+.single-post .remark__single-post .post-category {
+  word-break: break-all;
+}
+.single-post .remark__single-post .post-category span {
+  margin: 7px 6px;
+  display: inline-block;
 }
