@@ -13,18 +13,18 @@ if ( ! function_exists( 'remark_breadcrumbs' ) ) {
 
 		if ( $remark_enable_bradcrumb === 'show' ) {
 			?>
-				<div class="remark-breadcrumbs py-20 bg-[#17222b] -mt-4 mb-4 text-center">
+				<div class="remark-breadcrumbs py-16 md:py-20 lg:py-20 bg-[#17222b] -mt-4 mb-4 text-center">
 					<div class="container mx-auto">
 						<div class="!text-white text-[16px]">
 							<?php 
 								$home_link = '<i class="fa-solid fa-house text-[#bb0000] mr-1 text-[15px]"></i><a class="text-white visited:text-white hover:text-[#bb0000]" href="' . esc_url( home_url() ) . '" rel="nofollow">' . esc_html( 'Home', 'remark' ) . '</a>';
 
 								if ( is_home() ) {
-									echo '<h1 class="m-0 text-6xl">' . esc_html( 'Blog', 'remark' ) . '</h1>';
+									echo '<h1 class="m-0 text-4xl md:text-6xl lg:text-6xl">' . esc_html( 'Blog', 'remark' ) . '</h1>';
 								} else {
 									if ( is_archive() ) {
 										if ( is_category() ) {
-											echo '<h1 class="mt-0 mb-6 text-6xl">' . esc_html( 'Blog', 'remark' ) . '</h1>';
+											echo '<h1 class="mt-0 mb-6 text-4xl md:text-6xl lg:text-6xl">' . esc_html( 'Blog', 'remark' ) . '</h1>';
 											echo $home_link;
 											echo '<i class="fa-solid fa-angles-right mx-2 text-xs text-white"></i>';
 											$category = get_the_category();
@@ -32,7 +32,7 @@ if ( ! function_exists( 'remark_breadcrumbs' ) ) {
 											
 										}
 										elseif (  is_tag() ) {
-											echo '<h1 class="mt-0 mb-6 text-6xl">' . esc_html( 'Blog', 'remark' ) . '</h1>';
+											echo '<h1 class="mt-0 mb-6 text-4xl md:text-6xl lg:text-6xl">' . esc_html( 'Blog', 'remark' ) . '</h1>';
 											echo $home_link;
 											echo '<i class="fa-solid fa-angles-right mx-2 text-xs"></i>';
 											$tag = get_the_tags();
@@ -40,14 +40,14 @@ if ( ! function_exists( 'remark_breadcrumbs' ) ) {
 											
 										}
 										elseif ( is_author() ) {
-											echo '<h1 class="mt-0 mb-6 text-6xl">' . esc_html( 'Blog', 'remark' ) . '</h1>';
+											echo '<h1 class="mt-0 mb-6 text-4xl md:text-6xl lg:text-6xl">' . esc_html( 'Blog', 'remark' ) . '</h1>';
 											echo $home_link;
 											echo '<i class="fa-solid fa-angles-right mx-2 text-xs"></i>';
 											$tag = get_the_tags();
 											echo 'Author: <span>' . get_the_author() . '</span>';
 										}
 									} elseif ( is_single() ) {
-										echo '<h1 class="mt-0 mb-6 text-6xl">' . esc_html( 'Blog', 'remark' ) . '</h1>';
+										echo '<h1 class="mt-0 mb-6 text-4xl md:text-6xl lg:text-6xl">' . esc_html( 'Blog', 'remark' ) . '</h1>';
 										echo $home_link;
 										echo '<i class="fa-solid fa-angles-right mx-2 text-xs text-white"></i>';
 										$category = get_the_category();
@@ -55,10 +55,10 @@ if ( ! function_exists( 'remark_breadcrumbs' ) ) {
 										echo '<a class="visited:text-white text-white hover:text-[#bb0000]" href="' . esc_url( $cat_link ) . '">' . esc_html( $category[0]->cat_name ) . '</a>';
 										
 									} elseif( is_page() ) {
-										the_title( '<h1 class="entry-title !text-white mb-2 mt-0 text-6xl">', '</h1>' );
+										the_title( '<h1 class="entry-title !text-white mb-2 mt-0 text-4xl md:text-6xl lg:text-6xl">', '</h1>' );
 
 									} elseif ( is_search() ) {
-										echo '<h1 class="text-6xl"> Search Results</h1>';
+										echo '<h1 class="text-4xl md:text-6xl lg:text-6xl"> Search Results</h1>';
 									}
 
 								}

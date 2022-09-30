@@ -588,8 +588,17 @@ Mobile Menu
   button.sub-menu-toggle {
     border-left: 0.1rem solid #dedfdf;
     flex-shrink: 0;
-    margin: 1rem 0;
-    padding: 0 2.5rem;
+    margin: 10px 0;
+    padding: 15px 20px !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    &:before {
+      top: inherit !important;
+
+    }
+
   }
 
   .modal-menu ul {

@@ -21,7 +21,7 @@
 					<i class="fa-solid fa-xmark"></i>
 				</button><!-- .nav-toggle -->
 
-				<nav class="mobile-menu" aria-label="<?php esc_attr_e( 'Mobile', 'remark' ); ?>" role="navigation">
+				<nav class="mobile-menu pr-4" aria-label="<?php esc_attr_e( 'Mobile', 'remark' ); ?>" role="navigation">
 
 					<ul class="modal-menu">
 
