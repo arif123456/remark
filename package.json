@@ -2,8 +2,8 @@
   "name": "remark",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/arif123456/remark.git",
-  "author": "arif123456 <arif13414@gmail.com>",
+  "repository": "https://github.com/ariful93/remark.git",
+  "author": "ariful93 <arif13414@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "autoprefixer": "^10.4.7",
