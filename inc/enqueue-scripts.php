@@ -3,7 +3,6 @@
      * Enqueue scripts and styles.
      */
     function remark_scripts() {
-        wp_enqueue_style( 'tailwind-css', get_template_directory_uri() . '/assets/css/app.css', array(), REMARK_VERSION );
         wp_enqueue_style( 'fontawesome-css', get_template_directory_uri() . '/assets/css/fontawesome.css', array(), REMARK_VERSION );
         wp_enqueue_style( 'master-style', get_template_directory_uri() . '/assets/css/master.css', array(),  REMARK_VERSION);
 
