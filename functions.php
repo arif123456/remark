@@ -16,7 +16,6 @@ if ( ! defined( 'REMARK_VERSION' ) ) {
  * Define Constants
  */
 define( 'REMARK_THEME_DIR', trailingslashit( get_template_directory() ) );
-define( 'REMARK_THEME_URI', trailingslashit( esc_url( get_template_directory_uri() ) ) );
 
 /**
  * Load enqueue function
