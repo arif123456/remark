@@ -119,7 +119,7 @@
                         <span class="text-sm">
                             <?php 
                                     global $current_user; wp_get_current_user();
-                                    echo get_the_author(); 
+                                    echo esc_html( get_the_author() );
                             
                             ?>
                         </span>
@@ -137,7 +137,7 @@
                 <span class="mr-2">
                     <i class="far fa-clock text-[#818181]"></i>
                 </span>
-                <?php echo get_the_date( 'M j, Y' ); ?>
+                <?php echo esc_html( get_the_date( 'M j, Y' ) ); ?>
             </li>
         <?php
     }
@@ -167,7 +167,7 @@
 
                     $category = get_the_category();
                     $category_link = get_category_link( $category[0]->term_id );
-                    echo '<span><a class="text-sm font-medium bg-[#BB0000] visited:text-white uppercase ml-0 md:ml-4 lg:ml-4 py-1 px-3" href="'. esc_url( $category_link ) .'">'. $category[0]->cat_name .'</a></span>';
+                    echo '<span><a class="text-sm font-medium bg-[#BB0000] visited:text-white uppercase ml-0 md:ml-4 lg:ml-4 py-1 px-3" href="'. esc_url( $category_link ) .'">' . $category[0]->cat_name . '</a></span>';
 
                 ?>
             </li>
@@ -285,7 +285,7 @@
                         <?php
                     else :
                         ?>
-                        <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+                        <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
                         <?php
                     endif;
                     $remark_description = get_bloginfo( 'description', 'display' );

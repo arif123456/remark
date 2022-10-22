@@ -9,5 +9,16 @@
 
             }
         }
+
+        .post-tag[class] {
+            a {
+                text-decoration: none;
+
+                &:hover {
+                    color: white;
+                    
+                }
+            }
+        }
     }
 }

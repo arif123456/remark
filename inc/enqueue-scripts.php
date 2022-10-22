@@ -26,4 +26,15 @@
         }
     }
     add_action( 'wp_enqueue_scripts', 'remark_scripts' );
+
+    /**
+     * Enqueue customizer stylesheet.
+     */
+    function remark_enqueue_customizer_style() {
+
+        wp_register_style( 'remark-customizer', get_template_directory_uri() . '/assets/css/customizer.css', null, null, 'all' );
+        wp_enqueue_style( 'remark-customizer' );
+
+    }
+    add_action( 'customize_controls_print_styles', 'remark_enqueue_customizer_style' );
 ?>

@@ -531,14 +531,16 @@ Mobile Menu
 
   button.close-nav-toggle[class] {
     align-items: center;
+    border: 0 !important;
+    border-radius: 0 !important;
     display: flex;
     font-size: 1.6rem;
     font-weight: 500;
     justify-content: flex-end;
-    padding: 13px 22px 15px;
+    padding: 13px 22px 15px !important;
     width: 100%;
-    border: 0;
-    border-radius: 0;
+    background: transparent !important;
+    color: inherit !important;
   }
 
   button.close-nav-toggle {
@@ -586,13 +588,15 @@ Mobile Menu
   }
 
   button.sub-menu-toggle {
-    border-left: 0.1rem solid #dedfdf;
-    flex-shrink: 0;
-    margin: 10px 0;
-    padding: 15px 20px !important;
-    display: inline-flex;
     align-items: center;
+    border: 0.1rem solid #dedfdf !important;
+    display: inline-flex;
+    flex-shrink: 0;
     justify-content: center;
+    margin: 10px 0;
+    padding: 15px 20px!important;
+    background: transparent !important;
+    color: inherit !important;
 
     &:before {
       top: inherit !important;
@@ -683,8 +687,11 @@ button.toggle {
 }
 
 .nav-toggle[class] {
-  border: 1px solid #ddd;
-  padding: 6px 10px;
-  border-radius: 4px;
+  background: transparent !important;
+  border: 1px solid #ddd !important;
+  border-radius: 4px !important;
+  color: inherit !important;
+  padding: 6px 10px !important;
+  margin-right: 13px !important;
 
 }

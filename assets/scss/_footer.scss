@@ -1,4 +1,9 @@
 .remark__widget-area {
+  .widget, .widget_block {
+    color: #ddd;
+
+  }
+
   .widget {
     margin: 0;
 
@@ -106,6 +111,14 @@
           color: #888;
           font-weight: 700;
 
+        }
+
+        div, p{
+          a {
+            color: #bb0000 !important;
+            display: inline-block;
+            
+          }
         }
 
         a {

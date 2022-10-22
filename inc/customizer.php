@@ -104,7 +104,7 @@ function remark_customize_register( $wp_customize ) {
 		$wp_customize->add_control( 'remark_blog_post_feature_image', 
 				array(
 						'type'        => 'checkbox',
-						'label'       => 'Featured Image',
+						'label'       => __( 'Featured Image', 'remark' ),
 						'priority'    => 10,
 						'section'     => 'remark_blog_post_structure',
 				) 
@@ -122,7 +122,7 @@ function remark_customize_register( $wp_customize ) {
 		$wp_customize->add_control( 'remark_blog_post_title_tag', 
 				array(
 						'type'        => 'checkbox',
-						'label'       => 'Title & Blog Meta',
+						'label'       => __( 'Title & Blog Meta', 'remark' ),
 						'priority'    => 10,
 						'section'     => 'remark_blog_post_structure',
 				) 
@@ -140,7 +140,7 @@ function remark_customize_register( $wp_customize ) {
 		$wp_customize->add_control( 'remark_blog_post_author', 
 				array(
 						'type'        => 'checkbox',
-						'label'       => 'Author',
+						'label'       => __( 'Author', 'remark' ),
 						'priority'    => 10,
 						'section'     => 'remark_blog_post_title_meta',
 				) 
@@ -158,7 +158,7 @@ function remark_customize_register( $wp_customize ) {
 		$wp_customize->add_control( 'remark_blog_post_publish_date', 
 				array(
 						'type'        => 'checkbox',
-						'label'       => 'Publish Date',
+						'label'       => __( 'Publish Date'. 'remark' ),
 						'priority'    => 10,
 						'section'     => 'remark_blog_post_title_meta',
 				) 
@@ -177,7 +177,7 @@ function remark_customize_register( $wp_customize ) {
 		$wp_customize->add_control( 'remark_blog_post_comment', 
 				array(
 						'type'        => 'checkbox',
-						'label'       => 'Comment',
+						'label'       => __( 'Comment', 'remark' ),
 						'priority'    => 10,
 						'section'     => 'remark_blog_post_title_meta',
 				) 
@@ -195,7 +195,7 @@ function remark_customize_register( $wp_customize ) {
 		$wp_customize->add_control( 'remark_blog_post_category', 
 				array(
 						'type'        => 'checkbox',
-						'label'       => 'Category',
+						'label'       => __( 'Category', 'remark' ),
 						'priority'    => 10,
 						'section'     => 'remark_blog_post_title_meta',
 				) 
@@ -207,14 +207,14 @@ function remark_customize_register( $wp_customize ) {
 				array(
 						'sanitize_callback' => 'remark_sanitize_checkbox',
 						'transport'         => 'refresh',
-						'default'       =>  false
+						'default'       =>  true
 				)
 		);
 
 		$wp_customize->add_control( 'remark_post_content_show', 
 				array(
 						'type'        => 'checkbox',
-						'label'       => 'Content',
+						'label'       => __( 'Content', 'remark' ),
 						'priority'    => 10,
 						'section'     => 'remark_blog_post_content',
 				) 
@@ -231,7 +231,7 @@ function remark_customize_register( $wp_customize ) {
 		$wp_customize->add_control( 'remark_blog_post_content_option', 
 				array(
 						'type'        => 'radio',
-						'label'       => 'Post Content',
+						'label'       => __( 'Post Content', 'remark' ),
 						'priority'    => 10,
 						'section'     => 'remark_blog_post_content',
 						'choices'           => array(
@@ -253,7 +253,8 @@ function remark_customize_register( $wp_customize ) {
 		$wp_customize->add_control( 'remark_blog_post_layout_option', 
 				array(
 						'type'        => 'select',
-						'label'       => 'Post Layout',
+						'label'       => __( 'Post Layout', 'remark' ),
+						'description' => __( 'This layout settings only blog page & archive page (Without Search result Page)', 'remark' ),
 						'priority'    => 10,
 						'section'     => 'remark_blog_post_layout_section',
 						'choices'           => array(
@@ -313,7 +314,7 @@ function remark_customize_register( $wp_customize ) {
 		$wp_customize->add_control( 'remark_single_blog_post_feature_image', 
 			array(
 					'type'        => 'checkbox',
-					'label'       => 'Featured Image',
+					'label'       => __( 'Featured Image', 'remark' ),
 					'priority'    => 10,
 					'section'     => 'remark_single_blog_post_structure_section',
 			) 
@@ -331,7 +332,7 @@ function remark_customize_register( $wp_customize ) {
 		$wp_customize->add_control( 'remark_single_blog_post_title_tag', 
 			array(
 					'type'        => 'checkbox',
-					'label'       => 'Title & Blog Meta',
+					'label'       => __( 'Title & Blog Meta', 'remark' ),
 					'priority'    => 10,
 					'section'     => 'remark_single_blog_post_structure_section',
 			) 
@@ -349,7 +350,7 @@ function remark_customize_register( $wp_customize ) {
 		$wp_customize->add_control( 'remark_signle_blog_post_author', 
 			array(
 					'type'        => 'checkbox',
-					'label'       => 'Author',
+					'label'       => __( 'Author', 'remark' ),
 					'priority'    => 10,
 					'section'     => 'remark_single_blog_post_title_meta_section',
 			) 
@@ -367,7 +368,7 @@ function remark_customize_register( $wp_customize ) {
 		$wp_customize->add_control( 'remark_single_blog_post_publish_date', 
 			array(
 					'type'        => 'checkbox',
-					'label'       => 'Publish Date',
+					'label'       => __( 'Publish Date', 'remark' ),
 					'priority'    => 10,
 					'section'     => 'remark_single_blog_post_title_meta_section',
 			) 
@@ -385,7 +386,7 @@ function remark_customize_register( $wp_customize ) {
 		$wp_customize->add_control( 'remark_single_blog_post_comment', 
 			array(
 					'type'        => 'checkbox',
-					'label'       => 'Comment',
+					'label'       => __( 'Comment', 'remark' ),
 					'priority'    => 10,
 					'section'     => 'remark_single_blog_post_title_meta_section',
 			) 
@@ -403,7 +404,7 @@ function remark_customize_register( $wp_customize ) {
 		$wp_customize->add_control( 'remark_single_blog_post_category', 
 			array(
 					'type'        => 'checkbox',
-					'label'       => 'Category',
+					'label'       => __( 'Category', 'remark' ),
 					'priority'    => 10,
 					'section'     => 'remark_single_blog_post_title_meta_section',
 			) 
@@ -421,7 +422,7 @@ function remark_customize_register( $wp_customize ) {
 		$wp_customize->add_control( 'remark_single_blog_post_tag', 
 			array(
 					'type'        => 'checkbox',
-					'label'       => 'Tag',
+					'label'       => __( 'Tag', 'remark' ),
 					'priority'    => 10,
 					'section'     => 'remark_single_blog_post_title_meta_section',
 			) 
@@ -439,7 +440,7 @@ function remark_customize_register( $wp_customize ) {
 		$wp_customize->add_control( 'remark_single_blog_post_layout', 
 			array(
 				'type'        => 'radio',
-				'label'       => 'Sidebar',
+				'label'       => __( 'Sidebar', 'remark' ),
 				'priority'    => 10,
 				'section'     => 'remark_single_blog_layout_section',
 				'choices'           => array(
@@ -461,7 +462,7 @@ function remark_customize_register( $wp_customize ) {
 		$wp_customize->add_control( 'remark_enable_breadcrumb', 
 			array(
 					'type'        => 'radio',
-					'label'       => 'Breadcrumbs',
+					'label'       => __( 'Breadcrumbs', 'remark' ),
 					'priority'    => 10,
 					'section'     => 'remark_breadcrumbs_section',
 					'choices'           => array(

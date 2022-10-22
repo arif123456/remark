@@ -152,12 +152,20 @@
       li {
         margin-bottom: 10px;
 
+        div , p{
+          a {
+            color: #bb0000 !important;
+            display: inline-block;
+            
+          }
+        }
+
         a {
           color: #40454d;
-          font-size: 16px;
+          font-size: 15px;
           letter-spacing: .15px;
           line-height: 24px;
-          font-weight: 400;
+          font-weight: 600;
           transition: .3s linear 0s;
 
           &:hover {

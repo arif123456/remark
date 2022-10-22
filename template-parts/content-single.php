@@ -43,7 +43,7 @@
 						<span>
 							<?php 
 									global $current_user; wp_get_current_user();
-									echo get_the_author(); 
+									echo esc_html( get_the_author() ); 
 							
 							?>
 						</span>
@@ -54,7 +54,7 @@
 			<?php if ( ! empty( $remark_publish_date ) ) { ?>
 			<li class="text-sm mb-4 md:mb-0 lg:mb-0 font-medium text-[#818181] visited:text-[#818181]">
 				<i class="far fa-clock mr-2 text-[#818181]"></i>
-				<?php echo get_the_date( 'M j, Y' ); ?>
+				<?php echo esc_html( get_the_date( 'M j, Y' ) ); ?>
 			</li>
 			<?php } ?>
 
@@ -76,7 +76,7 @@
 					if ( is_array( $categories) || is_object( $categories )) {
 						foreach ( $categories as $category ) {
 							$category_link = get_category_link( $category->term_id );
-							echo '<span><a class="text-sm font-medium bg-[#BB0000] hover:bg-red-800 visited:text-white uppercase ml-4 py-2 px-4" href="' . esc_url( $category_link ) . '">' . $category->cat_name . '</a></span>';
+							echo '<span><a class="text-sm font-medium bg-[#BB0000] hover:bg-red-800 visited:text-white uppercase ml-4 py-2 px-4" href="' . esc_url( $category_link ) . '">' . esc_html( $category->cat_name ) . '</a></span>';
 						}
 					}
 
@@ -114,7 +114,9 @@
 						<span class="text-base font-bold text-slate-800 mr-2"><?php esc_html_e( 'Tags:', 'remark' ); ?></span>
 						<?php
 						foreach( $post_tags as $post_tag ) : ?>
-							<?php echo '<li class="inline-block mb-2"><a class="text-sm font-font-normal text-slate-800 bg-[#F2F4F3] hover:bg-[#BB0000] hover:text-white visited:text-slate-800 rounded-lg py-2 px-4 mr-2" href="' . esc_url( get_tag_link( $post_tag->term_id ) ) . '">' . $post_tag->name . '</a></li>'; ?>
+							<li class="inline-block mb-2">
+								<a class="text-sm font-font-normal text-slate-800 bg-[#F2F4F3] hover:bg-[#BB0000] hover:text-white visited:text-slate-800 rounded-lg py-2 px-4 mr-2" href="<?php echo esc_url( get_tag_link( $post_tag->term_id ) ); ?>"><?php echo esc_html( $post_tag->name ); ?></a>
+							</li>
 							
 						<?php endforeach; ?>
 							

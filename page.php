@@ -29,7 +29,7 @@ if ( ! is_front_page() ) {
 		<div class="container mx-auto">
 			<div class="gap-10">
 				<div class="w-full">
-					<div class="bg-white p-10 pt-2">
+					<div class="bg-white p-4 md:p-10 lg:p-10 pt-2">
 						<?php
 						while ( have_posts() ) :
 							the_post();

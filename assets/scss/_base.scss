@@ -25,10 +25,20 @@ input,
 select,
 optgroup,
 textarea {
-	color: #404040;
+	color: #4b4f58;
 	font-size: 1rem;
-	line-height: 1.5;
-  font-family: "Lato", "Helvetica", "Arial", sans-serif;
+	line-height: 1.8;
+  	font-family: "Lato", "Helvetica", "Arial", sans-serif;
+}
+address, blockquote, body, dd, dl, dt, fieldset, figure, h1, h2, h3, h4, h5, h6, hr, html, iframe, legend, li, ol, p, pre, textarea, ul {
+    border: 0;
+    font-size: 100%;
+    font-style: inherit;
+    font-weight: inherit;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    vertical-align: baseline;
 }
 
 h1,
@@ -54,8 +64,12 @@ h6 {
 }
 
 p {
-	margin-bottom: 10px;
+	margin-bottom: 1.75em;
 	
+}
+
+.entry-content p {
+	margin-bottom: 1.6em;
 }
 
 /**
@@ -127,7 +141,10 @@ pre {
  */
 a {
 	background-color: transparent;
+	color: #BB0000;
+
 }
+
 
 /**
  * 1. Remove the bottom border in Chrome 57-
@@ -135,7 +152,6 @@ a {
  */
 abbr[title] {
 	border-bottom: none;
-	text-decoration: underline;
 	text-decoration: underline dotted;
 }
 
@@ -417,6 +433,11 @@ blockquote {
 
 }
 
+blockquote code {
+	padding: inherit;
+	
+}
+
 address {
 	margin: 0 0 1.5em;
 }
@@ -430,14 +451,14 @@ pre {
 	overflow: auto;
 	padding: 1.6em;
 }
-code {
-    margin: 10px 6px;
-    // background: #eee;
-	color: #bb2a26;
-    display: inline-block;
-    padding: 10px;
+// code {
+//     margin: 10px 6px;
+//     // background: #eee;
+// 	color: #bb2a26;
+//     display: inline-block;
+//     padding: 10px;
 
-}
+// }
 
 code,
 kbd,

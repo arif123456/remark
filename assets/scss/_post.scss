@@ -200,7 +200,6 @@ Post comment
     position: relative;
 
     a {
-      color: #222222;
       font-weight: 700;
       margin-bottom: 5px;
       display: inline-block;
@@ -238,9 +237,11 @@ Post comment
         color: #818181;
         font-size: 13px;
         font-weight: 400;
+        text-decoration: underline;
 
         &:hover {
           text-decoration: underline;
+          color: #BB0000;
 
         }
 
@@ -264,6 +265,14 @@ Post comment
       img {
         position: absolute;
         left: 0;
+      }
+      a {
+        color: #222222;
+
+        &:hover {
+          color: #BB0000;
+        }
+
       }
     }
 
@@ -464,12 +473,13 @@ Post comment
 }
 
 .entry-content {
+  ul {
+    list-style: none;
+
+  }
+  
   a {
     font-weight: 700;
 
-    &:hover {
-      color: #BB0000;
-      
-    }
   }
 }
