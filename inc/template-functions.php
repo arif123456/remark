@@ -22,6 +22,11 @@ function remark_body_classes( $classes ) {
 		$classes[] = 'no-sidebar';
 	}
 
+	$remark_enable_bradcrumb = get_theme_mod( 'remark_enable_breadcrumb', 'hide' );
+	if ( $remark_enable_bradcrumb === 'show' ) {
+		$classes[] = 'remark-breadcrumb-active';
+	}
+
 	return $classes;
 }
 add_filter( 'body_class', 'remark_body_classes' );

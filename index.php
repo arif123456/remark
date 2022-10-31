@@ -22,13 +22,6 @@ if ( 'one-column' == $remark_post_layout ) {
 	$remark_post_layout = 'w-full md:w-full lg:w-1/2';
 }
 
-/**
- * Breadcrumbs
- *
- * @since 1.0.0
- */
-remark_breadcrumbs();
-
 ?>
 
 

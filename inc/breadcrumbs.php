@@ -22,42 +22,67 @@ if ( ! function_exists( 'remark_breadcrumbs' ) ) {
 								if ( is_home() ) {
 									echo '<h1 class="m-0 text-4xl md:text-6xl lg:text-6xl">' . esc_html( 'Blog', 'remark' ) . '</h1>';
 								} else {
+
 									if ( is_archive() ) {
-										if ( is_category() ) {
+										if ( is_shop() ) {
+											woocommerce_breadcrumb();
+										} elseif ( is_product_category() ) {
+											woocommerce_breadcrumb();
+										} elseif ( is_product_tag() ) {
+											woocommerce_breadcrumb();
+										}
+										else {
 											echo '<h1 class="mt-0 mb-6 text-4xl md:text-6xl lg:text-6xl">' . esc_html( 'Blog', 'remark' ) . '</h1>';
+										}
+
+										
+
+										if ( is_category() ) {
+										
 											echo $home_link;
 											echo '<i class="fa-solid fa-angles-right mx-2 text-xs text-white"></i>';
 											$category = get_the_category();
 											echo 'Category: <span class="capitalize">' . $category[0]->cat_name . '</span>';
 											
 										}
-										elseif (  is_tag() ) {
-											echo '<h1 class="mt-0 mb-6 text-4xl md:text-6xl lg:text-6xl">' . esc_html( 'Blog', 'remark' ) . '</h1>';
+										if (  is_tag() ) {
+											
 											echo $home_link;
 											echo '<i class="fa-solid fa-angles-right mx-2 text-xs"></i>';
 											$tag = get_the_tags();
 											echo 'Tag: <span class="capitalize">' . $tag[0]->name . '</span>';
 											
 										}
-										elseif ( is_author() ) {
-											echo '<h1 class="mt-0 mb-6 text-4xl md:text-6xl lg:text-6xl">' . esc_html( 'Blog', 'remark' ) . '</h1>';
+										if ( is_author() ) {
+											
 											echo $home_link;
 											echo '<i class="fa-solid fa-angles-right mx-2 text-xs"></i>';
 											$tag = get_the_tags();
 											echo 'Author: <span>' . get_the_author() . '</span>';
 										}
-									} elseif ( is_single() ) {
-										echo '<h1 class="mt-0 mb-6 text-4xl md:text-6xl lg:text-6xl">' . esc_html( 'Blog', 'remark' ) . '</h1>';
-										echo $home_link;
-										echo '<i class="fa-solid fa-angles-right mx-2 text-xs text-white"></i>';
-										$category = get_the_category();
-										$cat_link = get_category_link( $category[0]->term_id );
-										echo '<a class="visited:text-white text-white hover:text-[#bb0000]" href="' . esc_url( $cat_link ) . '">' . esc_html( $category[0]->cat_name ) . '</a>';
-										
-									} elseif( is_page() ) {
+									}
+									
+									if ( is_single() ) {
+										if ( is_product() ) {
+											woocommerce_breadcrumb();
+										}
+										 else {
+											echo '<h1 class="mt-0 mb-6 text-4xl md:text-6xl lg:text-6xl">' . esc_html( 'Blog', 'remark' ) . '</h1>';
+											echo $home_link;
+											echo '<i class="fa-solid fa-angles-right mx-2 text-xs text-white"></i>';
+											$category = get_the_category();
+											if ( $category ) {
+												$cat_link = get_category_link( $category[0]->term_id );
+												echo '<a class="visited:text-white text-white hover:text-[#bb0000]" href="' . esc_url( $cat_link ) . '">' . esc_html( $category[0]->cat_name ) . '</a>';
+											}
+										}
+
+									} 
+									if( is_page() ) {
 										the_title( '<h1 class="entry-title !text-white mb-2 mt-0 text-4xl md:text-6xl lg:text-6xl">', '</h1>' );
 
-									} elseif ( is_search() ) {
+									} 
+									if ( is_search() ) {
 										echo '<h1 class="text-4xl md:text-6xl lg:text-6xl"> Search Results</h1>';
 									}
 
