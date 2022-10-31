@@ -9,13 +9,6 @@
 
 get_header();
 
-/**
- * Breadcrumbs
- *
- * @since 1.0.0
- */
-remark_breadcrumbs();
-
 $remark_post_layout = get_theme_mod( 'remark_blog_post_layout_option', 'one-column' );
 
 if ( 'one-column' == $remark_post_layout ) {

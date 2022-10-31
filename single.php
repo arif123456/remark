@@ -9,13 +9,6 @@
 
 get_header();
 
-/**
- * Breadcrumbs
- *
- * @since 1.0.0
- */
-remark_breadcrumbs();
-
 $remark_single_post_layout = get_theme_mod( 'remark_single_blog_post_layout', 'sidebar_hide' );
 
 ?>

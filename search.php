@@ -9,13 +9,6 @@
 
 get_header();
 
-/**
- * Breadcrumbs
- *
- * @since 1.0.0
- */
-remark_breadcrumbs();
-
 ?>
 
 	<main id="primary" class="site-main">

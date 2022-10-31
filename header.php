@@ -30,5 +30,17 @@
 		 * @hook remark_header_action
 		*/
 		do_action( 'remark_header_action' );
+
+		/**
+		 * Breadcrumbs
+		 *
+		 * @since 1.0.0
+		 */
+		if ( ! is_front_page() ) {
+			remark_breadcrumbs();
+		}
 		
 	?>
+	
+
+	<div class="container mx-auto">

@@ -155,6 +155,16 @@ if ( ! class_exists( 'Remark_After_Setup_Theme' ) ) {
              * @global int $content_width
              */
             $GLOBALS['content_width'] = apply_filters( 'remark_content_width', 640 );
+
+            /**
+             * Declare woocommerce support
+             *
+             */
+            add_theme_support( 'woocommerce' );
+            add_theme_support( 'wc-product-gallery-zoom' );
+            add_theme_support( 'wc-product-gallery-lightbox' );
+            add_theme_support( 'wc-product-gallery-slider' );
+
 		}
 
 	}

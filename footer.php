@@ -10,7 +10,9 @@
  */
 
 ?>
-
+	</div>
+	<!-- container -->
+	
 	<?php 
 		/**
 		 * remark_footer hook.

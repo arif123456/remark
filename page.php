@@ -14,15 +14,6 @@
 
 get_header();
 
-/**
- * Breadcrumbs
- *
- * @since 1.0.0
- */
-if ( ! is_front_page() ) {
-	remark_breadcrumbs();
-}
-
 ?>
 
 	<main id="primary" class="site-main pt-8 pb-20">
