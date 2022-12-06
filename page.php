@@ -17,23 +17,20 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main pt-8 pb-20">
-		<div class="container mx-auto">
-			<div class="gap-10">
-				<div class="w-full">
-					<div class="bg-white p-4 md:p-10 lg:p-10 pt-2">
-						<?php
-						while ( have_posts() ) :
-							the_post();
+		<div class="gap-10">
+			<div class="w-full">
+				<div class="bg-white p-4 md:p-10 lg:p-10 pt-2">
+					<?php
+					while ( have_posts() ) :
+						the_post();
 
-							get_template_part( 'template-parts/content', 'page' );
+						get_template_part( 'template-parts/content', 'page' );
 
-						endwhile; // End of the loop.
-						?>
-					</div>
+					endwhile; // End of the loop.
+					?>
 				</div>
 			</div>
 		</div>
-
 	</main><!-- #main -->
 
 <?php

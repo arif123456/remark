@@ -4,7 +4,7 @@ Tags: right-sidebar,  two-columns, custom-menu, custom-logo, featured-images, st
 Requires at least: 5.9
 Tested up to: 6.0
 Requires PHP: 5.6
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -21,6 +21,12 @@ Remark is a WordPress Blog Theme for personal use. Fully responsive design. This
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+
+1.0.3
+* Add Cart of the Header
+* Add WC My Account of header
+* Add Customizer Settings Enable / Disable of header Cart & My Account
+* Add Social Share of the single blog page
 
 1.0.2
 * Woocommerce support

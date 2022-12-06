@@ -14,67 +14,61 @@ $remark_single_post_layout = get_theme_mod( 'remark_single_blog_post_layout', 's
 ?>
 
 	<main id="primary" class="site-main pb-10 md:pb-16 lg:pb-20">
+		<div class="flex-none md:flex lg:flex gap-9 pt-16 <?php echo $remark_single_post_layout ?>">
+			<?php if ( 'sidebar_hide' === $remark_single_post_layout ) : ?>
+			<div class="w-full md:w-3/4 lg:w-3/4 mx-auto">
+				<?php
+				while ( have_posts() ) :
+					the_post();
 
-		<div class="container mx-auto">
+					get_template_part( 'template-parts/content', 'single-no-sidebar' );
 
-			<div class="flex-none md:flex lg:flex gap-9 pt-16 <?php echo $remark_single_post_layout ?>">
-				<?php if ( 'sidebar_hide' === $remark_single_post_layout ) : ?>
-				<div class="w-full md:w-3/4 lg:w-3/4 mx-auto">
-					<?php
-					while ( have_posts() ) :
-						the_post();
+					the_post_navigation(
+						array(
+							'prev_text' => '<span class="nav-subtitle font-bold	text-slate-700 hover:text-[#BB0000] pl-8"><span class="mr-2" aria-hidden="true">&larr;</span>' . esc_html__( 'Previous:', 'remark' ),
+							'next_text' => '<span class="nav-subtitle font-bold	text-slate-700 hover:text-[#BB0000] pr-8">' . esc_html__( 'Next:', 'remark' ) . '<span class="ml-2" aria-hidden="true">&rarr;</span>',
+						)
+					);
 
-						get_template_part( 'template-parts/content', 'single-no-sidebar' );
+					// If comments are open or we have at least one comment, load up the comment template.
+					if ( comments_open() || get_comments_number() ) :
+						comments_template();
+					endif;
 
-						the_post_navigation(
-							array(
-								'prev_text' => '<span class="nav-subtitle font-bold	text-slate-700 hover:text-[#BB0000] pl-8"><span class="mr-2" aria-hidden="true">&larr;</span>' . esc_html__( 'Previous:', 'remark' ),
-								'next_text' => '<span class="nav-subtitle font-bold	text-slate-700 hover:text-[#BB0000] pr-8">' . esc_html__( 'Next:', 'remark' ) . '<span class="ml-2" aria-hidden="true">&rarr;</span>',
-							)
-						);
+				endwhile; // End of the loop.
+				?>
+			</div>
+			<?php else : ?>
+			<div class="w-full md:w-3/4 lg:w-3/4">
+				<?php
+				while ( have_posts() ) :
+					the_post();
 
-						// If comments are open or we have at least one comment, load up the comment template.
-						if ( comments_open() || get_comments_number() ) :
-							comments_template();
-						endif;
+					get_template_part( 'template-parts/content', 'single' );
 
-					endwhile; // End of the loop.
-					?>
-				</div>
-				<?php else : ?>
-				<div class="w-full md:w-3/4 lg:w-3/4">
-					<?php
-					while ( have_posts() ) :
-						the_post();
+					the_post_navigation(
+						array(
+							'prev_text' => '<span class="nav-subtitle font-bold	text-slate-700 hover:text-[#BB0000] pl-8"><span class="mr-2" aria-hidden="true">&larr;</span>' . esc_html__( 'Previous:', 'remark' ),
+							'next_text' => '<span class="nav-subtitle font-bold	text-slate-700 hover:text-[#BB0000] pr-8">' . esc_html__( 'Next:', 'remark' ) . '<span class="ml-2" aria-hidden="true">&rarr;</span>',
+						)
+					);
 
-						get_template_part( 'template-parts/content', 'single' );
+					// If comments are open or we have at least one comment, load up the comment template.
+					if ( comments_open() || get_comments_number() ) :
+						comments_template();
+					endif;
 
-						the_post_navigation(
-							array(
-								'prev_text' => '<span class="nav-subtitle font-bold	text-slate-700 hover:text-[#BB0000] pl-8"><span class="mr-2" aria-hidden="true">&larr;</span>' . esc_html__( 'Previous:', 'remark' ),
-								'next_text' => '<span class="nav-subtitle font-bold	text-slate-700 hover:text-[#BB0000] pr-8">' . esc_html__( 'Next:', 'remark' ) . '<span class="ml-2" aria-hidden="true">&rarr;</span>',
-							)
-						);
+				endwhile; // End of the loop.
+				?>
+			</div>
+			<div class="w-full md:w-1/4 lg:w-1/4 pt-8 md:pt-0 lg:pt-0">
 
-						// If comments are open or we have at least one comment, load up the comment template.
-						if ( comments_open() || get_comments_number() ) :
-							comments_template();
-						endif;
-
-					endwhile; // End of the loop.
-					?>
-				</div>
-				<div class="w-full md:w-1/4 lg:w-1/4 pt-8 md:pt-0 lg:pt-0">
-
-					<?php get_sidebar(); ?>
-
-				</div>
-				<?php endif; ?>
+				<?php get_sidebar(); ?>
 
 			</div>
+			<?php endif; ?>
 
 		</div>
-
 	</main><!-- #main -->
 
 <?php
