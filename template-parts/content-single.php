@@ -125,6 +125,7 @@
 			<?php endif;?>
 			
 		<?php } ?>
+		<?php get_template_part( 'inc/social-share' ); ?>
 	</div><!-- .entry-content -->
 	
 </article><!-- #post-<?php the_ID(); ?> -->

@@ -253,6 +253,14 @@
                                  * @since 1.0.0
                                  */
                                 remark_navigation();
+
+                                /**
+                                 * Header cart.
+                                 *
+                                 * @since 1.0.0
+                                 */
+                                remark_header_right();
+
                             ?>
                         </div>
                     </div>
@@ -356,6 +364,46 @@
             <?php
         }
     }
+
+    /**
+     * Header cart
+     */
+    if ( ! function_exists( 'remark_header_right' ) ) {
+        /**
+         * Navigation
+         *
+         * @since 1.0.0
+         */
+        function remark_header_right() {
+            if ( class_exists( 'WooCommerce' ) ) { 
+                $header_cart = get_theme_mod( 'remark_header_cart', 'hide' );
+                $header_myaccount = get_theme_mod( 'remark_header_my_account', 'hide' );
+
+                ?>
+                    <div class="remark-header-cart">
+                        <?php if ( $header_myaccount === 'show' ) : ?>
+                        <a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>">
+                            <i class="fa-solid fa-user"></i>
+                        </a>
+                        <?php endif; ?>
+                        
+                        <?php if ( $header_cart === 'show' ) : ?>
+                        <div class="min-cart">
+                            <a href="<?php echo wc_get_cart_url(); ?>">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                <div class="cart-item">
+                                    <span><?php echo WC()->cart->get_cart_contents_count() ?></span>
+                                </div>
+                            </a>
+                        </div>
+                        <?php endif; ?>
+                    </div>  
+                <?php
+            }
+            
+        }
+    }
+
 
     /**
      * Footer inside

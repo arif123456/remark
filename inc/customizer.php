@@ -461,19 +461,69 @@ function remark_customize_register( $wp_customize ) {
 
 		$wp_customize->add_control( 'remark_enable_breadcrumb', 
 			array(
-					'type'        => 'radio',
-					'label'       => __( 'Breadcrumbs', 'remark' ),
-					'priority'    => 10,
-					'section'     => 'remark_breadcrumbs_section',
-					'choices'           => array(
-							'hide'       => __( 'Hide', 'remark' ),
-							'show'      => __( 'Show', 'remark' ),
-					),
+				'type'        => 'radio',
+				'label'       => __( 'Breadcrumbs', 'remark' ),
+				'priority'    => 10,
+				'section'     => 'remark_breadcrumbs_section',
+				'choices'           => array(
+						'hide'       => __( 'Hide', 'remark' ),
+						'show'      => __( 'Show', 'remark' ),
+				),
 			) 
 		);
 		/*==========================
 		End Single Post Setting 
 		==========================*/
+
+		$wp_customize->add_section( 'remark_header_section', 
+			array(
+				'title'         => __( 'Remark: Header', 'remark' ),
+				'priority'      => 40,
+			) 
+		);
+
+		$wp_customize->add_setting( 'remark_header_my_account',
+			array(
+				'sanitize_callback' => 'remark_sanitize_header',
+				'transport'         => 'refresh',
+				'default'   => 'hide',
+			)
+		);
+
+		$wp_customize->add_control( 'remark_header_my_account', 
+			array(
+				'type'        => 'radio',
+				'label'       => __( 'Enable Header My Account', 'remark' ),
+				'priority'    => 10,
+				'section'     => 'remark_header_section',
+				'choices'           => array(
+					'hide'       => __( 'Hide', 'remark' ),
+					'show'      => __( 'Show', 'remark' ),
+				),
+			) 
+		);
+
+
+		$wp_customize->add_setting( 'remark_header_cart',
+			array(
+				'sanitize_callback' => 'remark_sanitize_header',
+				'transport'         => 'refresh',
+				'default'   => 'hide',
+			)
+		);
+
+		$wp_customize->add_control( 'remark_header_cart', 
+			array(
+				'type'        => 'radio',
+				'label'       => __( 'Enable Header Cart', 'remark' ),
+				'priority'    => 10,
+				'section'     => 'remark_header_section',
+				'choices'           => array(
+					'hide'       => __( 'Hide', 'remark' ),
+					'show'      => __( 'Show', 'remark' ),
+				),
+			) 
+		);
 
 }
 add_action( 'customize_register', 'remark_customize_register' );
@@ -497,6 +547,10 @@ function remark_sanitize_post_content_option( $input ) {
 }
 
 function remark_sanitize_breadcrumb( $input ) {
+	return ( 'hide' === $input ) ? 'hide' : 'show';
+}
+
+function remark_sanitize_header( $input ) {
 	return ( 'hide' === $input ) ? 'hide' : 'show';
 }
 
