@@ -1,10 +1,10 @@
 === remark ===
-Contributors: wpfound
+Contributors: wpfound, ariful93
 Tags: right-sidebar,  two-columns, custom-menu, custom-logo, featured-images, sticky-post, threaded-comments
-Requires at least: 5.9
-Tested up to: 6.0
+Requires at least: 6.1
+Tested up to: 6.4.3
 Requires PHP: 5.6
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -21,6 +21,9 @@ Remark is a WordPress Blog Theme for personal use. Fully responsive design. This
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+
+1.0.4
+* Compatible wordpress 6.4.3
 
 1.0.3
 * Add Cart of the Header
