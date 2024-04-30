@@ -279,9 +279,18 @@ End Submenu
   }
 }
 
+.boxed-layout {
+  .site-header {
+    padding-left: 25px;
+    padding-right: 25px;
+
+  }
+
+}
+
 .site-header {
   padding: 25px 0;
-  margin-bottom: 16px;
+  // margin-bottom: 16px;
   box-shadow: 0 10px 40px rgba(23, 34, 43, 0.05);
 
   @media(max-width: 1024px) {

@@ -156,7 +156,7 @@ Pagination
 Post comment
 =======================*/
 .comments-area {
-  box-shadow: 0 10px 40px rgba(23, 34, 43, 0.05);
+  // box-shadow: 0 10px 40px rgba(23, 34, 43, 0.05);
 
   .comments-title {
     margin-bottom: 30px;
@@ -415,7 +415,7 @@ Post comment
 }
 
 .remark__single-post, .remark__post-item {
-  box-shadow: 0 10px 40px rgba(23, 34, 43, 0.05);
+  // box-shadow: 0 10px 40px rgba(23, 34, 43, 0.05);
 
   &.sticky {
     border-bottom: 3px solid #930303;

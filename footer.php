@@ -10,8 +10,8 @@
  */
 
 ?>
-	</div>
-	<!-- container -->
+	</div><!-- #content -->
+	</div><!-- container -->
 	
 	<?php 
 		/**
@@ -23,6 +23,7 @@
 		do_action( 'remark_footer' );
 	
 	?>
+	</div><!-- #wrapper -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

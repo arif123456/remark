@@ -35,6 +35,20 @@
         wp_register_style( 'remark-customizer', get_template_directory_uri() . '/assets/css/customizer.css', null, null, 'all' );
         wp_enqueue_style( 'remark-customizer' );
 
+        wp_enqueue_style( 'remark-customizer-css', 'https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css' );
+        wp_enqueue_style( 'remark-customizer-custom', get_template_directory_uri() . '/inc/customizer/assets/css/customizer.css', null, null, 'all' );
+
     }
     add_action( 'customize_controls_print_styles', 'remark_enqueue_customizer_style' );
+
+
+    /**
+     * Enqueue customizer stylesheet.
+     */
+    function remark_enqueue_customizer_script() {
+
+        wp_enqueue_script( 'remark-customizer', get_template_directory_uri() . '/inc/customizer/assets/js/script.js', array( 'jquery' ), REMARK_VERSION, true );
+
+    }
+    add_action( 'customize_controls_enqueue_scripts', 'remark_enqueue_customizer_script' );
 ?>

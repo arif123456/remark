@@ -19,7 +19,7 @@
                     remark_feature_image()
                     
                 ?>
-                <div class="px-7 pt-6 pb-4">
+                <div class="entry-summary">
                     
                     
                     <?php 
@@ -188,7 +188,7 @@
                         if ( 'excerpt' == $remark_post_content ) {
 
                             the_excerpt();
-                            echo '<a class="inline-block mb-4 mt-2.5 text-sm font-semibold bg-[#BB0000] hover:bg-red-800 hover:text-white visited:text-white text-white p-2 rounded" href="' . esc_url( get_permalink() ) . '">' . esc_html__( 'Read More', 'remark' ) . '</a>'; 
+                            echo '<a class="readmore-btn inline-block text-sm font-semibold bg-[#BB0000] hover:bg-red-800 hover:text-white visited:text-white text-white p-2 rounded" href="' . esc_url( get_permalink() ) . '">' . esc_html__( 'Read More', 'remark' ) . '</a>'; 
                         } else {
         
                             the_content(
@@ -237,7 +237,7 @@
         function remarK_header() {
             ?>
                 <header id="masthead" class="site-header bg-white py-2">
-                    <div class="container mx-auto">
+                    <div class="grid-container mx-auto">
                         <div class="menu-wrap flex-none md:flex lg:flex items-center gap-12 py-4 md:py-0 lg:py-0 items-center">
                             <?php 
                                 /**
@@ -459,7 +459,7 @@
             }
             ?>
                 <div class="bg-[#111111] py-20">
-                    <div class="container mx-auto">
+                    <div class="grid-container mx-auto">
                         <div class="remark__widget-area justify-between gap-0 md:gap-8 lg:gap-8">
                             <?php 
                             
@@ -489,7 +489,7 @@
         function remark_footer_copyright() {
             ?>
                 <div class="site-info bg-[#0B0B0B] py-8">
-                    <div class="container mx-auto text-center text-gray-400	">
+                    <div class="grid-container mx-auto text-center text-gray-400	">
                         <p class="mb-0">
                             <?php
 

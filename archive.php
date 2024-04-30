@@ -56,9 +56,19 @@ if ( 'one-column' == $remark_post_layout ) {
 					?>
 				</div>
 			</div>
-			<div class="w-full md:w-1/4 lg:w-1/4 pt-8 md:pt-0 lg:pt-0">
-				<?php get_sidebar(); ?>
-			</div>
+
+			<?php 
+				/**
+				 * Load sidebar
+				 *
+				 * @access protected
+				 * @since 1.0.0
+				 * @var string
+				 */
+				get_sidebar(); 
+			
+			?>
+			
 		</div>
 	</main><!-- #main -->
 

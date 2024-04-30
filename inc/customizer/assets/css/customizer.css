@@ -1,0 +1,64 @@
+.customize-control-remark-slider[class] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.remark-slider-range {
+    height: 0.4em;
+    border: 0 !important;
+    background: #c3c4c7;
+
+}
+
+.remark-slider-range .ui-widget-header {
+    border: 0 !important;
+    background: #0f86e7;
+
+}
+
+.customize-control-remark-slider .ui-slider-horizontal .ui-slider-handle {
+    top: -6px;
+    margin-left: -.6em;
+    border-radius: 50%;
+    background: #0f86e7 !important;
+    border: 0 !important;
+
+}
+
+.customize-control-remark-slider .remark-slider-range {
+    width: calc(100% - 90px);
+}
+
+.customize-control-remark-slider input[type="number"] {
+    font-size: 12px;
+    padding: 0px;
+    text-align: center;
+    min-height: 30px;
+    height: auto;
+    border-radius: 0;
+    border-color: #ddd;
+}
+
+.customize-control-remark-slider input[type="number"] { 
+    width: 80px;
+    margin-left: 10px;
+
+}
+
+.remark-customizer-heading {
+    display: block;
+    margin: 0 -12px;
+    padding: 13px 12px;
+    background-color: #fff;
+    color: #555;
+    border: 1px solid #ddd;
+    border-left: 0;
+    border-right: 0;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    line-height: 1;
+    text-transform: uppercase;
+}

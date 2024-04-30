@@ -13,10 +13,10 @@ $remark_single_post_layout = get_theme_mod( 'remark_single_blog_post_layout', 's
 
 ?>
 
-	<main id="primary" class="site-main pb-10 md:pb-16 lg:pb-20">
-		<div class="flex-none md:flex lg:flex gap-9 pt-16 <?php echo $remark_single_post_layout ?>">
+	<div class="content-area" id="primary">
+		<main id="main" class="site-main">
 			<?php if ( 'sidebar_hide' === $remark_single_post_layout ) : ?>
-			<div class="w-full md:w-3/4 lg:w-3/4 mx-auto">
+			
 				<?php
 				while ( have_posts() ) :
 					the_post();
@@ -37,10 +37,8 @@ $remark_single_post_layout = get_theme_mod( 'remark_single_blog_post_layout', 's
 
 				endwhile; // End of the loop.
 				?>
-			</div>
 			<?php else : ?>
-			<div class="w-full md:w-3/4 lg:w-3/4">
-				<?php
+			<?php
 				while ( have_posts() ) :
 					the_post();
 
@@ -60,16 +58,21 @@ $remark_single_post_layout = get_theme_mod( 'remark_single_blog_post_layout', 's
 
 				endwhile; // End of the loop.
 				?>
-			</div>
-			<div class="w-full md:w-1/4 lg:w-1/4 pt-8 md:pt-0 lg:pt-0">
-
-				<?php get_sidebar(); ?>
-
-			</div>
 			<?php endif; ?>
 
 		</div>
 	</main><!-- #main -->
+	<?php 
+		/**
+		 * Load sidebar
+		 *
+		 * @access protected
+		 * @since 1.0.0
+		 * @var string
+		 */
+		get_sidebar(); 
+	
+	?>
 
 <?php
 get_footer();

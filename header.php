@@ -24,7 +24,7 @@
 <?php wp_body_open(); ?>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'remark' ); ?></a>
-
+	<div id="wrapper">
 	<?php 
 		/**
 		 * @hook remark_header_action
@@ -41,6 +41,7 @@
 		}
 		
 	?>
-	
 
-	<div class="container mx-auto">
+	<div class="grid-container mx-auto">
+		<div id="content" class="site-content">
+			

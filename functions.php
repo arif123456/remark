@@ -38,9 +38,9 @@ require_once REMARK_THEME_DIR . '/inc/template-tags.php';
 require_once REMARK_THEME_DIR . '/inc/template-functions.php';
 
 /**
- * Customizer additions.
+ * Load Theme Customizer.
  */
-require_once REMARK_THEME_DIR . '/inc/customizer.php';
+require_once REMARK_THEME_DIR . '/inc/customizer/functions.php';
 
 /**
  * Load Jetpack compatibility file.
@@ -78,3 +78,8 @@ require_once REMARK_THEME_DIR . '/inc/breadcrumbs.php';
  * Load webfont loader
  */
 require_once REMARK_THEME_DIR . '/inc/class-remark-webfont-loader.php';
+
+/**
+ * Load webfont loader
+ */
+require_once REMARK_THEME_DIR . '/inc/helper-functions.php';
